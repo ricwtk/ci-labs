@@ -1,5 +1,5 @@
 module.exports = {
-  title: "CI Labs",
+  title: "CSC3034",
   base: "/ci-labs/",
   head: [
     ["link", { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" }],
@@ -19,10 +19,22 @@ module.exports = {
         title: '2019 August',
         collapsable: false,
         children: [
-          '/lab1'
+          '/lab1',
+          '/lab2',
+          '/lab3',
+          '/lab4',
+          '/lab5',
+          '/lab6',
+          '/lab7',
+          '/lab8',
+          '/lab9',
+          '/lab10',
+          '/lab11',
+          '/lab12'
         ]
       }
-    ]
+    ],
+    lastUpdated: 'Last Updated'
   },
   markdown: {
     lineNumbers: true
