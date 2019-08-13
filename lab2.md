@@ -16,11 +16,13 @@ Binary string is often used in the implementation of genetic algorithm. However,
 
 ## Genetic algorithm
 
-Consider the following problem: You are given a sheet of paper with width `w` and height `h`. Your task is to cut the paper into squares of equal size. The aim of the task is to have as many squares as possible, and to have the area of each square as large as possible.
+Consider the following problem: 
+
+> You are given a sheet of paper with width `w` and height `h`. Your task is to cut the paper into squares of equal size. The aim of the task is to have as many squares as possible, and to have the area of each square as large as possible.
 
 1. An optimisation problem can always be phrased in the form of
 
-    > to optimise ... to maximise/minimise ...
+    > to optimise ... such that it maximises/minimises ...
 
     In this problem, what is the parameter to be optimised and what are the parameters to be maximised or minimised?
 
@@ -77,10 +79,24 @@ def mutation(chromosome, p_m):
   # this function takes a chromosome and perform uniform mutation using the mutation probability of p_m
   ...
   return mutated
-  
+
 if __name__ == "__main__":
   # main function
+  ## initialise population
   ...
+  while (<termination conditions>):
+    ## calculate fitness
+    ...
+    ## select for mating
+    ...
+    ## select parent pairs
+    ...
+    ## perform crossover
+    ...
+    ## perform mutation
+    ...
+    ## update current population
+    ...
 ```
 
 ### Feature encoding
