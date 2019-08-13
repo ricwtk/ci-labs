@@ -10,6 +10,12 @@
 
 2. Create a function, in Python, which takes the sequence length *sl* as the input of the function and prints the Fibonacci sequence of the length *sl*.
 
+    ```python
+    def fibonacci(sl):
+      ...
+      return fib_seq
+    ```
+
 ## Random selection based on probability
 
 For this section. assume the `random.random()` function selects the random number with even probability.

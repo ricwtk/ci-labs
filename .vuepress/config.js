@@ -38,5 +38,8 @@ module.exports = {
   },
   markdown: {
     lineNumbers: true
-  }
+  },
+  plugins: [
+    'clean-urls'
+  ]
 }

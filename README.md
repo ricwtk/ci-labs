@@ -49,8 +49,6 @@ The labs are designed to follow the schedule of the lectures, therefore you will
 <v-timeline-item v-for="x in $page.frontmatter.timelineItem" right>
 <v-flex slot="opposite">{{ x.date }}</v-flex>
 <v-chip :href="x.link">{{ x.title }}</v-chip>
-<!-- <v-card><v-card-text><a :href='x.link'>{{ x.title }}</a></v-card-text></v-card> -->
-<!-- <v-flex :href='x.link' shrink>{{ x.title }}</v-flex> -->
 </v-timeline-item>
 </v-timeline>
 </v-app>
