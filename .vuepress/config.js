@@ -40,6 +40,5 @@ module.exports = {
     lineNumbers: true
   },
   plugins: [
-    'clean-urls'
   ]
 }
