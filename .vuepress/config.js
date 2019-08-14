@@ -9,8 +9,8 @@ module.exports = {
   ],
   themeConfig: {
     nav: [
-      { text: 'AI', link: '/ai' },
-      { text: 'CI', link: '/ci' },
+      { text: 'AI', link: 'https://ricwtk.github.io/ai-labs' },
+      { text: 'CI', link: '/' },
     ],
     sidebarDepth: 2,
     sidebar: [
