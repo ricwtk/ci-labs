@@ -33,7 +33,6 @@ Consider the following problem:
 <v-timeline-item right><v-flex slot="opposite">feature encoding</v-flex></v-timeline-item>
 <v-timeline-item right><v-flex slot="opposite">population initialisation</v-flex></v-timeline-item>
 <v-timeline-item right><v-flex slot="opposite">fitness calculation</v-flex></v-timeline-item>
-<v-timeline-item right><v-flex slot="opposite">selection for mating</v-flex></v-timeline-item>
 <v-timeline-item right><v-flex slot="opposite">selection as parents</v-flex></v-timeline-item>
 <v-timeline-item right><v-flex slot="opposite">crossover</v-flex></v-timeline-item>
 <v-timeline-item right><v-flex slot="opposite">mutation</v-flex></v-timeline-item>
@@ -175,7 +174,7 @@ if __name__ == "__main__":
 
     The printed output should be the fitness of a chromosome of value 5, which would be a decimal value larger than zero.
 
-### Selection for mating
+<!-- ### Selection for mating
 
 1. In genetic algorithm, the common practice is to generate the same number of offspring as the number of parents. 
 
@@ -197,13 +196,13 @@ if __name__ == "__main__":
       print(canItCrossover([8, 12, 6, 13], 0.78))
     ```
 
-    The printed output should be a series of `0` and/or `1` which denotes the ability of each chromosome to crossover, for example, `[0, 1, 1, 1]`.
+    The printed output should be a series of `0` and/or `1` which denotes the ability of each chromosome to crossover, for example, `[0, 1, 1, 1]`. -->
 
 ### Selection as parents
 
-1. From the list of the chromosomes that can crossover, we will next select the chromosome pairs as parents. As we will be using one-point crossover, each pair of parents will produce exactly two offsprings. Therefore for population size of `pop_size`, we need `pop_size/2` pairs of parents.
+1. From the list of the chromosomes, we will select the chromosome pairs as parents. As we will be using one-point crossover, each pair of parents will produce exactly two offsprings. Therefore for population size of `pop_size`, we need `pop_size/2` pairs of parents.
 
-2. Define a function that takes the inputs of the current population that can crossover and the total number of chromosomes in current population, and returns the chromosome pairs which will act as parents. The selection process is performed with the roulette wheel selection. The same chromosome can be selected more than once.
+2. Define a function that takes the inputs of the current population and the total number of chromosomes in current population, and returns the chromosome pairs which will act as parents. The selection process is performed with the roulette wheel selection. The same chromosome can be selected more than once.
 
     ```python
     def selectParents(chromosomesForCrossover, pop_size):
@@ -319,10 +318,8 @@ if __name__ == "__main__":
         curr_iter += 1
         ## calculate fitness
         fitness = [calculateFitness(x) for x in population[-1]]
-        ## select for mating
-        can_crossover = canItCrossover(population[-1], p_crossover)
         ## select parent pairs
-        parents = selectParents([x for x, can_x in zip(population[-1], can_crossover) if can_x], len(population))
+        parents = selectParents(population[-1], len(population))
         ## perform crossover
         offsprings = []
         for p in parents:
