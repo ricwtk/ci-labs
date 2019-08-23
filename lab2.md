@@ -32,7 +32,6 @@ Consider the following problem:
 <v-timeline class="my-2" reverse>
 <v-timeline-item right><v-flex slot="opposite">feature encoding</v-flex></v-timeline-item>
 <v-timeline-item right><v-flex slot="opposite">population initialisation</v-flex></v-timeline-item>
-<v-timeline-item right><v-flex slot="opposite">fitness calculation</v-flex></v-timeline-item>
 <v-timeline-item right><v-flex slot="opposite">selection as parents</v-flex></v-timeline-item>
 <v-timeline-item right><v-flex slot="opposite">crossover</v-flex></v-timeline-item>
 <v-timeline-item right><v-flex slot="opposite">mutation</v-flex></v-timeline-item>
@@ -316,8 +315,6 @@ if __name__ == "__main__":
       population.append(generatePopulation(pop_size, pop_min, pop_max))
       while (curr_iter < max_iter and findOverallDistance(population[-1]) > min_overalldistance):
         curr_iter += 1
-        ## calculate fitness
-        fitness = [calculateFitness(x) for x in population[-1]]
         ## select parent pairs
         parents = selectParents(population[-1], len(population))
         ## perform crossover
