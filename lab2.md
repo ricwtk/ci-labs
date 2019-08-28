@@ -315,7 +315,7 @@ if __name__ == "__main__":
       while (curr_iter < max_iter and findOverallDistance(population[-1]) > min_overalldistance):
         curr_iter += 1
         ## select parent pairs
-        parents = selectParents(population[-1], len(population))
+        parents = selectParents(population[-1], len(population[-1]))
         ## perform crossover
         offsprings = []
         for p in parents:
