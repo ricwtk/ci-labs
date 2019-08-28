@@ -308,7 +308,6 @@ if __name__ == "__main__":
       curr_iter = 0
       max_iter = 100
       min_overalldistance = 0.5
-      p_crossover = 0.78
       p_mutation = 0.05
       ## initialise population
       population = []
