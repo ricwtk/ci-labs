@@ -204,7 +204,7 @@ if __name__ == "__main__":
 2. Define a function that takes the inputs of the current population and the total number of chromosomes in current population, and returns the chromosome pairs which will act as parents. The selection process is performed with the roulette wheel selection. The same chromosome can be selected more than once.
 
     ```python
-    def selectParents(chromosomesForCrossover, pop_size):
+    def selectParents(chromosomes, pop_size):
       ...
       return parent_pairs
     ```
