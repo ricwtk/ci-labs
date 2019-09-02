@@ -384,3 +384,7 @@ Solve the following problem using global best particle swarm optimisation:
 3. Reduce the value of &alpha;<sub>1</sub> to 0. How does this affect the result?
 
 4. Modify such that &alpha;<sub>1</sub> is larger than &alpha;<sub>2</sub>. What's the effect?
+
+### Optional
+
+1. How may you modify the formulae for particles with two variables, in which the fitness function is defined as f(x,y) = x<sup>2</sup> + y<sup>2</sup>? 
