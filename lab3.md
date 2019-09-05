@@ -35,7 +35,7 @@ Solve the following problem using global best particle swarm optimisation:
 
 1. With global best particle swarm optimisaton, the position update function is given by
 
-    > x<sub>i</sub>(t+1) = x<sub>i</sub>(t)
+    > x<sub>i</sub>(t+1) = x<sub>i</sub>(t) + v<sub>i</sub>(t+1)
 
     and the velocity update function is
 
