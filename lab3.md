@@ -264,7 +264,7 @@ Solve the following problem using global best particle swarm optimisation:
       space_ax.set_ylabel("Fitness")
       ```
 
-    - add the following lines between line 14 and line 15 in the [last code block in the previous section](#code-block-to-update), as well as after line 29.
+    - add the following lines between line 14 and line 15 in the [last code block in the previous section](#code-block-to-update), as well as after line 30.
       ```python
       if len(space_ax.lines) > 1:
         del space_ax.lines[1]
