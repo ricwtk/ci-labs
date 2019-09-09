@@ -108,60 +108,333 @@ The road map of Romania is provided as follows:
 
 </svg>
 
-```python
-location_list = [ # [x,y,name]
-  ['75', '125', 'Arad'],
-  ['100', '75', 'Zerind'],
-  ['125', '25', 'Oradea'],
-  ['265', '175', 'Sibiu'],
-  ['425', '175', 'Fagaras'],
-  ['320', '230', 'Rimnicu Vilcea'],
-  ['475', '310', 'Pitesti'],
-  ['350', '465', 'Craiova'],
-  ['185', '450', 'Drobeta'],
-  ['190', '390', 'Mehadia'],
-  ['185', '335', 'Lugoj'],
-  ['85', '280', 'Timisoara'],
-  ['640', '390', 'Bucharest'],
-  ['575', '485', 'Giurgiu'],
-  ['745', '340', 'Urziceni'],
-  ['875', '340', 'Hirsova'],
-  ['935', '440', 'Eforie'],
-  ['850', '225', 'Vaslui'],
-  ['760', '120', 'Iasi'],
-  ['625', '60', 'Neamt']
-]
-```
+### Problem formulation
+1. The coordinates of each town are provided as follows. This will be used later for the purpose of visualisation.
 
-```python
-step_cost = [
-  ['Arad', 'Zerind', 75],
-  ['Zerind', 'Oradea', 71],
-  ['Oradea', 'Sibiu', 151],
-  ['Sibiu', 'Arad', 140],
-  ['Sibiu', 'Fagaras', 99],
-  ['Sibiu', 'Rimnicu Vilcea', 80],
-  ['Fagaras', 'Bucharest', 211],
-  ['Bucharest', 'Giurgiu', 90],
-  ['Bucharest', 'Pitesti', 101],
-  ['Pitesti', 'Rimnicu Vilcea', 97],
-  ['Rimnicu Vilcea', 'Craiova', 146],
-  ['Craiova', 'Pitesti', 138],
-  ['Craiova', 'Drobeta', 120],
-  ['Drobeta', 'Mehadia', 75],
-  ['Mehadia', 'Lugoj', 70],
-  ['Lugoj', 'Timisoara', 111],
-  ['Arad', 'Timisoara', 118],
-  ['Bucharest', 'Urziceni', 85],
-  ['Urziceni', 'Vaslui', 142],
-  ['Vaslui', 'Iasi', 92],
-  ['Iasi', 'Neamt', 87],
-  ['Urziceni', 'Hirsova', 98],
-  ['Hirsova', 'Eforie', 86]
-]
-```
+    ```python
+    location_list = [ # [x,y,name]
+      [75, 125, 'Arad'],
+      [100, 75, 'Zerind'],
+      [125, 25, 'Oradea'],
+      [265, 175, 'Sibiu'],
+      [425, 175, 'Fagaras'],
+      [320, 230, 'Rimnicu Vilcea'],
+      [475, 310, 'Pitesti'],
+      [350, 465, 'Craiova'],
+      [185, 450, 'Drobeta'],
+      [190, 390, 'Mehadia'],
+      [185, 335, 'Lugoj'],
+      [85, 280, 'Timisoara'],
+      [640, 390, 'Bucharest'],
+      [575, 485, 'Giurgiu'],
+      [745, 340, 'Urziceni'],
+      [875, 340, 'Hirsova'],
+      [935, 440, 'Eforie'],
+      [850, 225, 'Vaslui'],
+      [760, 120, 'Iasi'],
+      [625, 60, 'Neamt']
+    ]
+    ```
 
-Consolidate the information of the connections into object of class `Town`.
+2. Then define the travel cost between connected cities. 
 
+    ```python
+    step_cost = [
+      ['Arad', 'Zerind', 75],
+      ['Zerind', 'Oradea', 71],
+      ['Oradea', 'Sibiu', 151],
+      ['Sibiu', 'Arad', 140],
+      ['Sibiu', 'Fagaras', 99],
+      ['Sibiu', 'Rimnicu Vilcea', 80],
+      ['Fagaras', 'Bucharest', 211],
+      ['Bucharest', 'Giurgiu', 90],
+      ['Bucharest', 'Pitesti', 101],
+      ['Pitesti', 'Rimnicu Vilcea', 97],
+      ['Rimnicu Vilcea', 'Craiova', 146],
+      ['Craiova', 'Pitesti', 138],
+      ['Craiova', 'Drobeta', 120],
+      ['Drobeta', 'Mehadia', 75],
+      ['Mehadia', 'Lugoj', 70],
+      ['Lugoj', 'Timisoara', 111],
+      ['Arad', 'Timisoara', 118],
+      ['Bucharest', 'Urziceni', 85],
+      ['Urziceni', 'Vaslui', 142],
+      ['Vaslui', 'Iasi', 92],
+      ['Iasi', 'Neamt', 87],
+      ['Urziceni', 'Hirsova', 98],
+      ['Hirsova', 'Eforie', 86]
+    ]
+    ```
 
+3. We will define two class, `City` and `Road`.
 
+4. An object of class `City` has the attributes of `name` (the name of the city), `roads` (an array of references to the roads connected to the current city), and `coordinates` (coordinates of the cities).
+
+    ```python
+    class City:
+      def __init__(self, name):
+        self.name = name
+        self.roads = []
+        self.coordinates = []
+        
+      def set_coordinates(self, coordinates):
+        self.coordinates = coordinates
+
+      def add_road(self, road):
+        if road not in self.roads:
+          self.roads.append(road)
+    ```
+
+5. An object of class `Road` has the attributes of `connected_cities` (an array of references to the cities connected through this road), `cost` (the step cost of this road), and `pheromone` (the pheromone on this road).
+
+    ```python
+    class Road:
+      def __init__(self, connected_cities, cost, pheromone=0):
+        self.connected_cities = connected_cities
+        self.cost = cost
+        self.pheromone = pheromone
+    ```
+
+6. We will construct the list of `City` objects and `Road` objects from the information provided by the question, i.e. information in `location_list` and `step_cost`. The following code block should be in the `main` code block.
+
+    ```python
+    cities = {}
+    for coord1, coord2, name in location_list:
+      cities[name] = City(name)
+      cities[name].set_coordinates([coord1, coord2])
+    roads = []
+    for city1, city2, cost in step_cost:
+      road = Road([cities[city1], cities[city2]], cost)
+      cities[city1].add_road(road)
+      cities[city2].add_road(road)
+      roads.append(road)
+    ```
+
+7. In the `main` code block, define the `origin` and `destination` cities.
+
+    ```python
+    origin = cities['Arad']
+    destination = cities['Bucharest']
+    ```
+
+### Initiating ACO algorithm
+
+1. We then define the parameters for ACO, i.e. number of ants, `n_ant`, pheromone influence constant, `alpha`, and evaporation rate, `rho`.
+
+    ```python
+    n_ant = 10
+    alpha = 1
+    rho = 0.1
+    ```
+
+2. Add the method `set_pheromone` to the class `Road`. 
+    ```python
+    class Road:
+      def __init__(...):
+        ...
+
+      def set_pheromone(self, pheromone):
+        self.pheromone = pheromone
+    ```
+
+3. Set the initial pheromone of each road to 0.01.
+    ```python
+    # in main block
+    initial_pheromone = 0.01
+    for road in roads:
+      road.set_pheromone(initial_pheromone)
+    ```
+
+4. Define the class `Ant`. 
+    ```python
+    class Ant:
+      def __init__(self):
+        self.cities = [] # cities the ant passes through, in sequence
+        self.path = [] # roads the ant uses, in sequence
+    ```
+
+5. Initiate `n_ants` ants.
+    ```python
+    ants = [Ant() for _ in range(n_ant)]
+    ```
+
+### Identify path of each ant
+1. In the `Ant` class, define a method to identify the path by taking the inputs of the available roads, the origin, the destination, and the pheromone influence constant &alpha;.
+
+    ```python
+    class Ant:
+      def __init__(...):
+        ...
+
+      def get_path(self, origin, destination, alpha):
+        # 1. append origin to the self.cities
+        # 2. if the last city is not destination, search for the next city to go
+    ```
+
+2. Define a method to calculate the path length.
+
+    ```python
+    class Ant:
+      def __init__(...):
+        ...
+
+      def get_path(...):
+        ...
+
+      def get_path_length(self):
+        # calculate path length based on self.path
+        return path_length
+    ```
+
+3. As the path of each ant will be reset every iteration, defiine a method that reset the `path` and `cities`.
+
+    ```python
+    class Ant:
+      def __init__(...):
+        ...
+      
+      def get_path(...):
+        ...
+
+      def get_path_length(...):
+        ...
+
+      def reset(self):
+        self.path = []
+        self.cities = []
+    ```
+
+### Evaporation
+1. In the `Road` class, define a method to evaporate the pheromone by taking the input of evaporation rate &rho;.
+
+    ```python
+    class Road:
+      def __init__(...):
+        ...
+      
+      def set_pheromone(...):
+        ...
+
+      def evaporate_pheromone(self, rho):
+        # update the pheromone of the road
+    ```
+
+### Deposition
+1. In the `Road` class, define a method to calculate the updated pheromone after pheromone deposition by taking the input of all the ants. We will use the following pheromone deposition formula for ant k on road i:
+
+    <div style="text-align: center">&Delta;&tau;<sub>i,k</sub> = 1/L<sub>k</sub></div>
+
+    ```python
+    class Road:
+      def __init__(...):
+        ...
+
+      def set_pheromone(...):
+        ...
+
+      def evaporate_pheromone(...):
+        ...
+
+      def deposit_pheromone(self, ants):
+        # 1. search for ants that uses the raod
+        # 2. deposit pheromone using the inversely proportionate relationship between path length and deposited pheromone
+    ```
+
+### Termination conditions
+1. We will use the following conditions as the termination conditions:
+    - maximum iteration of 200
+    - if &GreaterEqual;90% of the ants use the same path
+
+2. Define a function to calculate the percentage of the most dominant path.
+
+    ```python
+    def get_percentage_of_dominant_path(ants):
+      ...
+      return percentage
+    ```
+
+### Loop until termination
+1. Create a loop to iterate until termination.
+
+    ```python
+    # termination threshold
+    max_iteration = 200
+    percentage_of_dominant_path = 0.9
+    
+    iteration = 0
+    while ...: # termination conditions
+      # loop through all the ants to identify the path of each ant
+      for ant in ants:
+        # reset the path of the ant
+        ant.reset()
+        # identify the path of the ant
+        ant.get_path(origin, destination, alpha)
+      # loop through all roads
+      for road in roads:
+        # evaporate the pheromone on the road
+        road.evaporate_pheromone(rho)
+        # deposit the pheromone
+        road.deposit_pheromone(ants)
+      # increase iteration count
+      iteration += 1
+    # after exiting the loop, return the most occurred path as the solution
+    ...
+    ```
+
+### Visualisation
+1. Define the following functions:
+
+    ```python
+    import matplotlib.pyplot as plt
+    ...
+    def create_graph(cities):
+      fig = plt.figure()
+      ax = fig.add_subplot(1,1,1)
+      cities_x = [city.coordinates[0] for key, city in cities.items()]
+      cities_y = [city.coordinates[1] for key, city in cities.items()]
+      ax.scatter(cities_x, cities_y)
+      ax.set_aspect(aspect=1.0)
+      return ax
+    ```
+
+    ```python
+    def draw_pheromone(ax, roads):
+      lines = []
+      for road in roads:
+        from_coord = road.connected_cities[0].coordinates
+        to_coord = road.connected_cities[1].coordinates
+        coord_x = [from_coord[0], to_coord[0]]
+        coord_y = [from_coord[1], to_coord[1]]
+        lines.append(ax.plot(coord_x, coord_y, c='k', linewidth=road.pheromone**2))
+      return lines
+    ```
+
+2. Add the following lines to the `main` code block just before the `while` loop (loop until termination).
+
+    ```python
+    ax = create_graph(cities)
+    lines = draw_pheromone(ax, roads)
+    ```
+
+3. Add the following lines to after `iteration += 1`.
+
+    ```python
+    # visualise
+    for l in lines:
+      del l
+    lines = draw_pheromone(ax, roads)
+    plt.pause(0.05)
+    ```
+
+### Evaluate effect of parameters
+1. Modify the pheromone depositing formula to
+
+    <div style="text-align:center">&Delta;&tau;<sub>i,k</sub> = 1/L<sub>k</sub><sup>1.5</sup></div>
+
+    What is the effect of this?
+
+2. Investigate the effect of number of ants `n_ant`.
+
+3. Investigate the effect of pheromone influence constant &alpha; `alpha`.
+
+4. Investigate the effect of evaporation rate &rho; `rho`.
