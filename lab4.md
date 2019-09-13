@@ -269,6 +269,7 @@ The road map of Romania is provided as follows:
       def get_path(self, origin, destination, alpha):
         # 1. append origin to the self.cities
         # 2. if the last city is not destination, search for the next city to go
+        # 3. after getting to the destination, remove the loop within the path, i.e. if there are repeated cities in self.cities, remove the cities and the roads in between the repetition
     ```
 
 2. Define a method to calculate the path length.
@@ -286,7 +287,7 @@ The road map of Romania is provided as follows:
         return path_length
     ```
 
-3. As the path of each ant will be reset every iteration, defiine a method that reset the `path` and `cities`.
+3. As the path of each ant will be reset every iteration, define a method that reset the `path` and `cities`.
 
     ```python
     class Ant:
