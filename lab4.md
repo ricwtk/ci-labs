@@ -434,8 +434,14 @@ The road map of Romania is provided as follows:
 
     What is the effect of this?
 
-2. Investigate the effect of number of ants `n_ant`.
+2. Modify the pheromone depositing formula to
 
-3. Investigate the effect of pheromone influence constant &alpha; `alpha`.
+    <div style="text-align:center">&Delta;&tau;<sub>i,k</sub> = 5/L<sub>k</sub></div>
 
-4. Investigate the effect of evaporation rate &rho; `rho`.
+    What is the effect of this?
+
+3. Investigate the effect of number of ants `n_ant`.
+
+4. Investigate the effect of pheromone influence constant &alpha; `alpha`.
+
+5. Investigate the effect of evaporation rate &rho; `rho`.
