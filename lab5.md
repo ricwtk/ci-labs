@@ -1,4 +1,4 @@
-# Lab 5: ANN
+# Lab 5: ANN (Supervised learning)
 
 ## Artificial neural networks
 
