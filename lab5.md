@@ -43,7 +43,7 @@ print(wine.describe().transpose())
 scikit-learn library provides a function to split the data into training and testing sets easily. 
 
 ```python
-from sklearn.model_selection import train_test_split\
+from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(data.data, data.target, train_size=0.8)
 ```
 
