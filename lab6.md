@@ -124,8 +124,26 @@ X_train = scaler.transform(X_train)
 X_test = scaler.transform(X_test)
 ```
 
-### Visualise decision area with more input features
+### Construct and train the model
+```python
+mlp = MLPClassifier(hidden_layer_sizes=(3), max_iter=10000)
+mlp.fit(X_train, y_train)
+```
 
+### Visualise decision area with more input features
+We will be using parallel coordinates to display data with more than 2 input features. The following is not a complete parallel coordinates plot but a partial one.
+
+```python
+fig = plt.figure()
+axes = vis.vis3d(fig, mlp, X_train, y_train, X_test, y_test)
+for i,a in enumerate(axes):
+  a.set_title(iris.target_names[i])
+  a.set_xticklabels([])
+  a.get_yaxis().set_visible(False)
+axes[-1].set_xticklabels(iris.feature_names)
+```
+
+Is there other alternative to display data with more than 2 input features?
 
 ### Additional
 There is a [tensorflow playground](https://playground.tensorflow.org/) which tries to visualise the training process of a neural network. It's similar to what we did in this lab.
