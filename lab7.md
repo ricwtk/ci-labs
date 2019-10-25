@@ -1,3 +1,3 @@
-# Lab 7: ANN
+# Lab 7: Fuzzy Systems
 
-## Artificial neural networks
+## Fuzzy Systems
