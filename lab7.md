@@ -9,7 +9,7 @@
 ### Note
 As of 3<sup>rd</sup> Nov 2019, the `scikit-fuzzy` Python library only work properly with `networkx` Python library of version 2.3. `networkx` version 2.4 is not supported yet.
 
-### Fuzzy system 1
+### Fuzzy control system for a train
 
 1. Consider a fuzzy control system to control the **brake** and **throttle** of a train based on the **speed** of the train and the **distance** of the train to the next stop.
 
