@@ -38,7 +38,7 @@ As of 3<sup>rd</sup> Nov 2019, the `scikit-fuzzy` Python library only work prope
 3. As the inputs will be the antecedents of the rules, construct the variables `speed` and `distance` as `skfuzzy.control.Antecedent` objects. 
 
     ```python
-    speed = ctrl.Antecedent(np.arange(0, 85, 1), 'speed')
+    speed = ctrl.Antecedent(np.arange(0, 85, 0.1), 'speed')
     ```
 
 4. The initialisation function for `skfuzzy.control.Antecedent` object takes 2 arguments, the first is the *universe* of the variable, i.e. the values the variables can take, the second is the label of the variable. The initialisation function for `skfuzzy.control.Consequent` is similar. 
@@ -51,46 +51,46 @@ As of 3<sup>rd</sup> Nov 2019, the `scikit-fuzzy` Python library only work prope
 
 1. The fit vectors of the fuzzy sets for the linguistic variables are given as follows:
 
-- speed (0 to 85 km/h)
+    - speed (0 to 85 km/h)
 
-    |Linguistic value|Fit vector           |
-    |----------------|---------------------|
-    |Stopped         |(1/0,0/2)            |
-    |Very slow       |(0/1,1/2.5,0/4)      |
-    |Slow            |(0/2.5,1/6.5,0/10.5) |
-    |Medium fast     |(0/6.5,1/26.5,0/46.5)|
-    |Fast            |(0/26.5,1/70,1/85)   |
+        |Linguistic value|Fit vector           |
+        |----------------|---------------------|
+        |Stopped         |(1/0, 0/2)            |
+        |Very slow       |(0/1, 1/2.5, 0/4)      |
+        |Slow            |(0/2.5, 1/6.5, 0/10.5) |
+        |Medium fast     |(0/6.5, 1/26.5, 0/46.5)|
+        |Fast            |(0/26.5, 1/70, 1/85)   |
 
-- distance (0 to 3000 m)
+    - distance (0 to 3000 m)
 
-    |Linguistic value|Fit vector            |
-    |----------------|----------------------|
-    |At              |(1/0,0/2)             |
-    |Very near       |(0/1,1/3,0/5)         |
-    |Near            |(0/3,1/101.5,0/200)   |
-    |Medium far      |(0/100,1/1550,0/3000) |
-    |Far             |(0/1500,1/2250,1/3000)|
+        |Linguistic value|Fit vector            |
+        |----------------|----------------------|
+        |At              |(1/0, 0/2)             |
+        |Very near       |(0/1, 1/3, 0/5)         |
+        |Near            |(0/3, 1/101.5, 0/200)   |
+        |Medium far      |(0/100, 1/1550, 0/3000) |
+        |Far             |(0/1500, 1/2250, 1/3000)|
 
 
-- brake (0 to 100%)
+    - brake (0 to 100%)
 
-    |Linguistic value|Fit vector|
-    |----------------|----------|
-    |No              |(1/0,0/40)|
-    |Very slight     |(0/20,1/50,0/80)|
-    |Slight          |(0/70,1/83.5,0/97)|
-    |Medium          |(0/95,1/97,0/99)|
-    |Full            |(0/98,1/100)|
+        |Linguistic value|Fit vector|
+        |----------------|----------|
+        |No              |(1/0, 0/40)|
+        |Very slight     |(0/20, 1/50, 0/80)|
+        |Slight          |(0/70, 1/83.5, 0/97)|
+        |Medium          |(0/95, 1/97, 0/99)|
+        |Full            |(0/98, 1/100)|
 
-- throttle (0 to 100%)
+    - throttle (0 to 100%)
 
-    |Linguistic value|Fit vector|
-    |----------------|----------|
-    |No              |(1/0,0/2)|
-    |Very slight     |(0/1,1/3,0/5)|
-    |Slight          |(0/3,1/16.5,0/30)|
-    |Medium          |(0/20,1/50,0/80)|
-    |Full            |(0/60,1/80,1/100)|
+        |Linguistic value|Fit vector|
+        |----------------|----------|
+        |No              |(1/0, 0/2)|
+        |Very slight     |(0/1, 1/3, 0/5)|
+        |Slight          |(0/3, 1/16.5, 0/30)|
+        |Medium          |(0/20, 1/50, 0/80)|
+        |Full            |(0/60, 1/80, 1/100)|
 
 2. The `skfuzzy.membership` module provides the following membership functions:
 
@@ -157,7 +157,7 @@ As of 3<sup>rd</sup> Nov 2019, the `scikit-fuzzy` Python library only work prope
       <td>Very slow</td>
       <td>Full brake<br>No throttle</td>
       <td>Medium brake<br>Very slight throttle</td>
-      <td>Slow brake<br>Very slight throttle</td>
+      <td>Slight brake<br>Very slight throttle</td>
       <td></td>
       <td></td>
     </tr>
@@ -191,10 +191,12 @@ As of 3<sup>rd</sup> Nov 2019, the `scikit-fuzzy` Python library only work prope
 2. Rule can be defined using `skfuzzy.control.Rule(antecedent, consequent, label)`. To define the first rule, i.e. if distance is 'at' and speed is 'stopped', then full brake and no throttle, 
 
     ```python
-    rule1 = ctrl.Rule(distance['at'] & speed['stopped'], brake['full'] & throttle['no'])
+    rule1 = ctrl.Rule(distance['at'] & speed['stopped'], (brake['full'], throttle['no']))
     ```
 
-    If the antecedent and/or consequent consist of multiple parts, they can be combined using operators `|` (OR), `&` (AND), and `~` (NOT).
+    If the antecedent consists of multiple parts, they can be combined using operators `|` (OR), `&` (AND), and `~` (NOT).
+
+    If the consequent consists of multiple parts, they can be combined as a `list`/`tuple`.
 
     **Task**: Define all the rules. Then combine all the rules in a `list`, i.e. `rules = [rule1, rule2, ...]`.
 
@@ -216,7 +218,7 @@ As of 3<sup>rd</sup> Nov 2019, the `scikit-fuzzy` Python library only work prope
     ```python
     # define the values for the inputs
     train.input['speed'] = 30
-    train.input['distance'] = 6
+    train.input['distance'] = 2000
 
     # compute the outputs
     train.compute()
@@ -239,23 +241,26 @@ As of 3<sup>rd</sup> Nov 2019, the `scikit-fuzzy` Python library only work prope
 
 1. The control/output space allows us to identify if the outputs fit our expectation.
 
-2. Construct an empty 3D space.
+2. Construct an empty 3D space with 100-by-100 x-y grid.
 
     ```python
-    x, y = np.meshgrid(np.arange(speed.universe.min(), speed.universe.max(), 1),
-                       np.arange(distance.universe.min(), distance.universe.max(), 1))
-    z_brake = np.zeros_like(x)
-    z_throttle = np.zeros_like(x)
+    x, y = np.meshgrid(np.linspace(speed.universe.min(), speed.universe.max(), 100),
+                       np.linspace(distance.universe.min(), distance.universe.max(), 100))
+    z_brake = np.zeros_like(x, dtype=float)
+    z_throttle = np.zeros_like(x, dtype=float)
     ```
 
-3. Loop through every point and identify the value of brake and throttle of each point.
-
+3. Loop through every point and identify the value of brake and throttle of each point. As the specified rules are not exhaustive, i.e. some input combinations do not activate any rule, we will set the output of such input combinations to be `float('inf')`.
     ```python
     for i,r in enumerate(x):
       for j,c in enumerate(r):
         train.input['speed'] = x[i,j]
         train.input['distance'] = y[i,j]
-        train.compute()
+        try:
+          train.compute()
+        except:
+          z_brake[i,j] = float('inf')
+          z_throttle[i,j] = float('inf')
         z_brake[i,j] = train.output['brake']
         z_throttle[i,j] = train.output['throttle']
     ```
@@ -266,18 +271,96 @@ As of 3<sup>rd</sup> Nov 2019, the `scikit-fuzzy` Python library only work prope
     import matplotlib.pyplot as plt
     from mpl_toolkits.mplot3d import Axes3D
 
-    fig = plt.figure()
-    ax = fig.add_subplot(111, projection='3d')
+    def plot3d(x,y,z):
+      fig = plt.figure()
+      ax = fig.add_subplot(111, projection='3d')
 
-    ax.plot_surface(x, y, z_brake, rstride=1, cstride=1, cmap='viridis', linewidth=0.4, antialiased=True)
+      ax.plot_surface(x, y, z, rstride=1, cstride=1, cmap='viridis', linewidth=0.4, antialiased=True)
 
-    ax.contourf(x, y, z, zdir='z', offset=-2.5, cmap='viridis', alpha=0.5)
-    ax.contourf(x, y, z, zdir='x', offset=3, cmap='viridis', alpha=0.5)
-    ax.contourf(x, y, z, zdir='y', offset=3, cmap='viridis', alpha=0.5)
+      ax.contourf(x, y, z, zdir='z', offset=-2.5, cmap='viridis', alpha=0.5)
+      ax.contourf(x, y, z, zdir='x', offset=x.max()*1.5, cmap='viridis', alpha=0.5)
+      ax.contourf(x, y, z, zdir='y', offset=y.max()*1.5, cmap='viridis', alpha=0.5)
 
-    ax.view_init(30, 200)
+      ax.view_init(30, 200)
+
+    plot3d(x, y, z_brake)
+    plot3d(x, y, z_throttle)
     ```
 
-#### Modify the system
+### Fuzzy tipping recommendation system
 
-**Task**: Modify one of the linguistic variables and investigate the differences of the output space.
+1. A fuzzy expert system is designed to identify the percentage of tips a customer will give based on the service and the food the customer received.
+
+2. The system has service and food as inputs, and tips as output.
+
+3. The fit vectors of the fuzzy sets for the linguistic variables are given as follows:
+
+    - service (0 to 10)
+
+        |Linguistic value|Fit vector           |
+        |----------------|---------------------|
+        |Poor            |(1/0, 0/5)           |
+        |Average         |(0/0, 1/5, 0/10)     |
+        |Good            |(0/5, 1/10)          |
+
+    - food (0 to 10)
+
+        |Linguistic value|Fit vector           |
+        |----------------|---------------------|
+        |Poor            |(1/0, 0/5)           |
+        |Average         |(0/0, 1/5, 0/10)     |
+        |Good            |(0/5, 1/10)          |
+        
+    - tips (0 to 30%)
+
+        |Linguistic value|Fit vector           |
+        |----------------|---------------------|
+        |Low             |(1/0, 0/15)          |
+        |Medium          |(0/0, 1/15, 0/30)    |
+        |High            |(0/15, 1/30)         |
+
+4. The rules are displayed in the following fuzzy association memory (FAM) representaion table.
+
+    <div style='overflow: auto;'>
+    <table style='width: 850px;text-align:center'>
+    <tr>
+      <td colspan='2'></td>
+      <td colspan='3'>Food</td>
+    </tr>
+    <tr>
+      <td colspan='2'></td>
+      <td style='width: 200px'>Poor</td>
+      <td style='width: 200px'>Average</td>
+      <td style='width: 200px'>Good</td>
+    </tr>
+    <tr>
+      <td rowspan='3' style='width: 100px'>Service</td>
+      <td style='width: 150px'>Poor</td>
+      <td>low tips</td>
+      <td>low tips</td>
+      <td>medium tips</td>
+    </tr>
+    <tr>
+      <td>Average</td>
+      <td>low tips</td>
+      <td>medium tips</td>
+      <td>high tips</td>
+    </tr>
+    <tr>
+      <td>Good</td>
+      <td>medium tips</td>
+      <td>high tips</td>
+      <td>high tips</td>
+    </tr>
+    </table>
+    </div>
+
+**Task**: Construct the fuzzy inference system.
+
+**Task**: Modify the membership functions of the input 'service' to
+
+  |Linguistic value|Fit vector           |
+  |----------------|---------------------|
+  |Poor            |(1/0, 0/3)           |
+  |Average         |(0/2, 1/5, 0/8)      |
+  |Good            |(0/6, 1/10)          |
