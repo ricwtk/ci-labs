@@ -7,7 +7,19 @@
 - to evaluate the result of the constructed fuzzy system
 
 ### Note
-As of 3<sup>rd</sup> Nov 2019, the `scikit-fuzzy` Python library only work properly with `networkx` Python library of version 2.3. `networkx` version 2.4 is not supported yet.
+As of 3<sup>rd</sup> Nov 2019, the `scikit-fuzzy` Python library only work properly with Python 3.7 and `networkx` Python library of version 2.3. `networkx` version 2.4 is not supported yet.
+
+<div style='margin-top: 20px'></div>
+
+To create a separate environment in Anaconda for `scikit-fuzzy` library, run the following code in the Anaconda prompt.
+
+```python
+conda create -n fuzzy python=3.7 networkx=2.3 spyder
+conda activate fuzzy
+conda install -c conda-forge scikit-fuzzy
+```
+
+Launch Spyder IDE using the command `spyder`.
 
 ### Fuzzy control system for a train
 
@@ -44,6 +56,8 @@ As of 3<sup>rd</sup> Nov 2019, the `scikit-fuzzy` Python library only work prope
 4. The initialisation function for `skfuzzy.control.Antecedent` object takes 2 arguments, the first is the *universe* of the variable, i.e. the values the variables can take, the second is the label of the variable. The initialisation function for `skfuzzy.control.Consequent` is similar. 
 
 5. The label and the range of the variable can be accessed using `.label` and `.universe` respectively.
+
+<div style='margin-top: 20px'></div>
 
 **Task**: Initialise the variables `distance` as `Antecedent` object, and `brake` and `throttle` as `Consequent` objects. (Outputs of the system will be consequents of the rules)
 
@@ -355,7 +369,11 @@ As of 3<sup>rd</sup> Nov 2019, the `scikit-fuzzy` Python library only work prope
     </table>
     </div>
 
+<div style='margin-top: 20px'></div>
+
 **Task**: Construct the fuzzy inference system.
+
+<div style='margin-top: 20px'></div>
 
 **Task**: Modify the membership functions of the input 'service' to
 
