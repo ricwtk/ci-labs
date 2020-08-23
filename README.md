@@ -3,19 +3,19 @@ home: true
 tagline: Computational Intelligence
 timelineItem: [
   {
-    title: 'Lab 1', link: './lab1', date: 'Week 1'
+    title: 'Lab 1', link: './lab1', date: 'Week 2'
   }, { 
-    title: 'Lab 2', link: './lab2', date: 'Week 2' 
+    title: 'Lab 2', link: './lab2', date: 'Week 3' 
   }, { 
-    title: 'Lab 3', link: './lab3', date: 'Week 3' 
+    title: 'Lab 3', link: './lab3', date: 'Week 4' 
   }, { 
-    title: 'Lab 4', link: './lab4', date: 'Week 4' 
+    title: 'Lab 4', link: './lab4', date: 'Week 5' 
   }, { 
     title: 'Lab 5', link: './lab5', date: 'Week 6' 
   }, { 
-    title: 'Lab 6', link: './lab6', date: 'Week 7' 
+    title: 'Lab 6', link: './lab6', date: 'Week 8' 
   }, { 
-    title: 'Lab 7', link: './lab7', date: 'Week 11' 
+    title: 'Lab 7', link: './lab7', date: 'Week 10' 
   }]
 ---
 

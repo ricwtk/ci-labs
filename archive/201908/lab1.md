@@ -37,7 +37,3 @@ For this section. assume the `random.random()` function selects the random numbe
       ...
       return selectedOption
     ```
-
-## Submission
-
-Submit a Python file with the three functions: `fibonacci`, `tossCoin`, and `chooseFromThree`.

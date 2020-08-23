@@ -20,14 +20,33 @@ module.exports = {
         collapsable: false,
         children: [
           '/lab1',
-          '/lab2',
-          '/lab3',
-          '/lab4',
-          '/lab5',
-          '/lab6',
-          '/lab7'
+          // '/lab2',
+          // '/lab3',
+          // '/lab4',
+          // '/lab5',
+          // '/lab6',
+          // '/lab7'
         ]
-      }
+      },
+      {
+        title: 'Archive',
+        collapsible: true,
+        children: [
+          {
+            title: '2019 August',
+            collapsable: true,
+            children: [
+              '/archive/201908/lab1',
+              '/archive/201908/lab2',
+              '/archive/201908/lab3',
+              '/archive/201908/lab4',
+              '/archive/201908/lab5',
+              '/archive/201908/lab6',
+              '/archive/201908/lab7'
+            ]
+          },
+        ]
+      },
     ],
     lastUpdated: 'Last Updated'
   },
