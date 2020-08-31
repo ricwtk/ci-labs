@@ -16,11 +16,11 @@ module.exports = {
     sidebar: [
       '/',
       {
-        title: '2019 August',
+        title: '2020 August',
         collapsable: false,
         children: [
           '/lab1',
-          // '/lab2',
+          '/lab2',
           // '/lab3',
           // '/lab4',
           // '/lab5',
