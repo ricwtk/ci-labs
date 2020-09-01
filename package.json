@@ -1,0 +1,28 @@
+{
+  "name": "ci-labs",
+  "version": "1.0.0",
+  "description": "---\r home: true\r tagline: Computational Intelligence\r timelineItem: [\r   {\r     title: 'Lab 1', link: './lab1', date: 'Week 2'\r   }, { \r     title: 'Lab 2', link: './lab2', date: 'Week 3' \r   }, { \r     title: 'Lab 3', link: './lab3', date: 'Week 4' \r   }, { \r     title: 'Lab 4', link: './lab4', date: 'Week 5' \r   }, { \r     title: 'Lab 5', link: './lab5', date: 'Week 6' \r   }, { \r     title: 'Lab 6', link: './lab6', date: 'Week 8' \r   }, { \r     title: 'Lab 7', link: './lab7', date: 'Week 10' \r   }]\r ---",
+  "main": "index.js",
+  "dependencies": {
+    "vuepress-plugin-clean-urls": "^1.0.3",
+    "vuetify": "^2.0.5"
+  },
+  "devDependencies": {
+    "vuepress": "^1.5.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vuepress dev",
+    "docs:build": "vuepress build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricwtk/ci-labs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ricwtk/ci-labs/issues"
+  },
+  "homepage": "https://github.com/ricwtk/ci-labs#readme"
+}
