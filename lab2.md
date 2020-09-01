@@ -325,5 +325,5 @@ if __name__ == "__main__":
         ## perform mutation
         mutated = [mutate(offspring, p_mutation) for offspring in offsprings]
         ## update current population
-        population.append(offsprings)
+        population.append(mutated)
     ```
