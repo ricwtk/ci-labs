@@ -1,0 +1,20 @@
+<doc><circle cx="75" cy="125" r="10" fill="green"><text x="60" y="130" text-anchor="end">Arad</text></circle>
+<circle cx="100" cy="75" r="10" fill="gray"><text x="85" y="75" text-anchor="end">Zerind</text></circle>
+<circle cx="125" cy="25" r="10" fill="gray"><text x="110" y="20" text-anchor="end">Oradea</text></circle>
+<circle cx="265" cy="175" r="10" fill="gray"><text x="265" y="160" text-anchor="start">Sibiu</text></circle>
+<circle cx="425" cy="175" r="10" fill="gray"><text x="440" y="180" text-anchor="start">Fagaras</text></circle>
+<circle cx="320" cy="230" r="10" fill="gray"><text x="305" y="235" text-anchor="end">Rimnicu Vilcea</text></circle>
+<circle cx="475" cy="310" r="10" fill="gray"><text x="460" y="320" text-anchor="end">Pitesti</text></circle>
+<circle cx="350" cy="465" r="10" fill="gray"><text x="340" y="480" text-anchor="end">Craiova</text></circle>
+<circle cx="185" cy="450" r="10" fill="gray"><text x="170" y="455" text-anchor="end">Drobeta</text></circle>
+<circle cx="190" cy="390" r="10" fill="gray"><text x="175" y="395" text-anchor="end">Mehadia</text></circle>
+<circle cx="185" cy="335" r="10" fill="gray"><text x="170" y="345" text-anchor="end">Lugoj</text></circle>
+<circle cx="85" cy="280" r="10" fill="gray"><text x="70" y="285" text-anchor="end">Timisoara</text></circle>
+<circle cx="640" cy="390" r="10" fill="red"><text x="625" y="400" text-anchor="end">Bucharest</text></circle>
+<circle cx="575" cy="485" r="10" fill="gray"><text x="560" y="490" text-anchor="end">Giurgiu</text></circle>
+<circle cx="745" cy="340" r="10" fill="gray"><text x="730" y="335" text-anchor="end">Urziceni</text></circle>
+<circle cx="875" cy="340" r="10" fill="gray"><text x="875" y="325" text-anchor="end">Hirsova</text></circle>
+<circle cx="935" cy="440" r="10" fill="gray"><text x="920" y="445" text-anchor="end">Eforie</text></circle>
+<circle cx="850" cy="225" r="10" fill="gray"><text x="835" y="230" text-anchor="end">Vaslui</text></circle>
+<circle cx="760" cy="120" r="10" fill="gray"><text x="745" y="135" text-anchor="end">Iasi</text></circle>
+<circle cx="625" cy="60" r="10" fill="gray"><text x="610" y="65" text-anchor="end">Neamt</text></circle></doc>
