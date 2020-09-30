@@ -143,7 +143,7 @@ The parameters of the fitted model (`mlp`) can be access through its public attr
 Copy the following code for the function `visualise` to the beginning of the script.
 
 ```python
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 def visualise(mlp):
   # get number of neurons in each layer
