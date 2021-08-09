@@ -1,0 +1,7 @@
+name: labs
+channels:
+  - defaults
+dependencies:
+  - mkdocs-material
+  - mkdocs
+prefix: D:\applications\Anaconda3\envs\labs
