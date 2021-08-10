@@ -28,17 +28,15 @@ Consider the following problem:
 
 2. Let `x` denotes the length of the sides of a square. Design a fitness function such that higher fitness corresponds to larger number of squares and large area. If the number of squares (that can be cut out) is zero, or the area of the square is zero, the fitness will be zero.
 
-<v-app>
-<v-timeline class="my-2" reverse>
-<v-timeline-item right><v-flex slot="opposite">feature encoding</v-flex></v-timeline-item>
-<v-timeline-item right><v-flex slot="opposite">population initialisation</v-flex></v-timeline-item>
-<v-timeline-item right><v-flex slot="opposite">selection as parents</v-flex></v-timeline-item>
-<v-timeline-item right><v-flex slot="opposite">crossover</v-flex></v-timeline-item>
-<v-timeline-item right><v-flex slot="opposite">mutation</v-flex></v-timeline-item>
-<v-timeline-item right><v-flex slot="opposite">offspring (next generation population)</v-flex></v-timeline-item>
-<v-timeline-item right><v-flex slot="opposite">repeat from fitness calculation until termination</v-flex></v-timeline-item>
-</v-timeline>
-</v-app>
+<div class="timeline">
+<div class="container right"><div class="content"><a href='#feature-encoding'>feature encoding</a></div></div>
+<div class="container right"><div class="content"><a href='#population-initialisation'>population initialisation</a></div></div>
+<div class="container right"><div class="content"><a href="#selection-as-parents">selection as parents</a></div></div>
+<div class="container right"><div class="content"><a href="#crossover">crossover</a></div></div>
+<div class="container right"><div class="content"><a href="#mutation">mutation</a></div></div>
+<div class="container right"><div class="content"><a href="#">offspring (next generation population)</a></div></div>
+<div class="container right"><div class="content"><a href="#repeat-until-termination">repeat from fitnexx calculation until termination</a></div></div>
+</div>
 
 <!-- Use the following template for the code development of the rest of this lab.
 
