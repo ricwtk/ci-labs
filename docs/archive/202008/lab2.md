@@ -38,9 +38,9 @@ Consider the following problem:
 <div class="container right"><div class="content"><a href="#repeat-until-termination">repeat from fitnexx calculation until termination</a></div></div>
 </div>
 
-<!-- Use the following template for the code development of the rest of this lab.
+<!-- Use the following template for the code development of the rest of this lab. -->
 
-```python
+<!-- ```python
 def value2gray(value):
   # this function converts a decimal value to its gray code representation
   ...

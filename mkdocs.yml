@@ -34,14 +34,15 @@ nav:
       - archive/202008/lab7.md
 markdown_extensions:
   - meta
+  - pymdownx.tabbed
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.highlight
-  - pymdownx.superfences
-  - admonition
 extra_javascript:
   - javascripts/config.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
