@@ -1,26 +1,51 @@
 ---
 template: home.html
+title: Overview
 ---
 
-# Welcome to MkDocs
+<h1 style="text-align: center">CSC3034 Computational Intelligence</h1>
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+**This site hosts the lab sheets for the module of CSC3034 Computational Intelligence in the Department of Computing and Information Systems (DCIS) in Sunway University.**
 
-## Commands
+## Aim
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+The aim of these labs is to guide the students to implement the basic computational intelligence (CI) algorithms with and/or without Python libraries.
 
-## Project layout
+## Information
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+The labs are designed to follow the schedule of the lectures, therefore you will require the knowledge of the previous lectures to be able to conduct the lab.
 
+## Schedule 
 
-$$
-\frac{1}{2}
-$$
+*The schedule is subject to change.*
+
+<div class="timeline">
+    <div class="container right">
+        <div class="date">Week 2</div>
+        <div class="content"><a href="./lab1">Lab 1</a></div>
+    </div>
+    <div class="container right">
+        <div class="date">Week 3</div>
+        <div class="content"><a href="./lab2">Lab 2</a></div>
+    </div>
+    <div class="container right">
+        <div class="date">Week 4</div>
+        <div class="content"><a href="./lab3">Lab 3</a></div>
+    </div>
+    <div class="container right">
+        <div class="date">Week 5</div>
+        <div class="content"><a href="./lab4">Lab 4</a></div>
+    </div>
+    <div class="container right">
+        <div class="date">Week 6</div>
+        <div class="content"><a href="./lab5">Lab 5</a></div>
+    </div>
+    <div class="container right">
+        <div class="date">Week 8</div>
+        <div class="content"><a href="./lab6">Lab 6</a></div>
+    </div>
+    <div class="container right">
+        <div class="date">Week 10</div>
+        <div class="content"><a href="./lab7">Lab 7</a></div>
+    </div>
+</div>
