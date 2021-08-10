@@ -20,16 +20,14 @@ Solve the following problem using global best particle swarm optimisation:
 
 ### Particle swarm optimisation
 
-<v-app>
-<v-timeline class="my-2" reverse>
-<v-timeline-item right><v-flex slot="opposite"><a href='#initialise-particles'>particles initialisation</a></v-flex></v-timeline-item>
-<v-timeline-item right><v-flex slot="opposite"><a href='#update-personal-best'>personal best identification</a></v-flex></v-timeline-item>
-<v-timeline-item right><v-flex slot="opposite"><a href="#update-global-best">global best identification</a></v-flex></v-timeline-item>
-<v-timeline-item right><v-flex slot="opposite"><a href="#update-velocity">velocity calculation</a></v-flex></v-timeline-item>
-<v-timeline-item right><v-flex slot="opposite"><a href="#update-particle-position">position update</a></v-flex></v-timeline-item>
-<v-timeline-item right><v-flex slot="opposite"><a href="#create-a-loop-until-termination">repeat from personal best identification until termination</a></v-flex></v-timeline-item>
-</v-timeline>
-</v-app>
+<div class="timeline">
+<div class="container right"><div class="content"><a href='#initialise-particles'>particles initialisation</a></div></div>
+<div class="container right"><div class="content"><a href='#update-personal-best'>personal best identification</a></div></div>
+<div class="container right"><div class="content"><a href="#update-global-best">global best identification</a></div></div>
+<div class="container right"><div class="content"><a href="#update-velocity">velocity calculation</a></div></div>
+<div class="container right"><div class="content"><a href="#update-particle-position">position update</a></div></div>
+<div class="container right"><div class="content"><a href="#create-a-loop-until-termination">repeat from personal best identification until termination</a></div></div>
+</div>
 
 ### Parameter definition
 
