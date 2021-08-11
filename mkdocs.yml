@@ -1,4 +1,6 @@
 site_name: CSC3034 CI Labs
+docs_dir: src
+site_dir: docs
 theme:
   name: material
   custom_dir: "custom"
