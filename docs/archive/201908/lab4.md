@@ -16,6 +16,8 @@ We will use ant colony optimisation to solve the Nick's route-finding problem in
 
 The road map of Romania is provided as follows:
 
+<div>
+<div id="romania">
 <svg viewBox="0 0 950 500">
 
 <path d="M 75 125 L 100 75" stroke="black" />
@@ -105,8 +107,12 @@ The road map of Romania is provided as follows:
 <text x="745" y="135" text-anchor="end">Iasi</text>
 <circle cx="625" cy="60" r="10" fill="gray" />
 <text x="610" y="65" text-anchor="end">Neamt</text>
-
 </svg>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>new Vue({ el: "#romania" });</script>
+</div>
+
 
 ### Problem formulation
 1. The coordinates of each town are provided as follows. This will be used later for the purpose of visualisation.
