@@ -1,7 +1,3 @@
----
-circleradius: 10
----
-
 # Lab 4: EC (ACO)
 
 ## Ant colony optimisation

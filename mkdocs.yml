@@ -1,4 +1,5 @@
 site_name: CSC3034 CI Labs
+site_url: https://ricwtk.github.io/ci-labs
 docs_dir: src
 site_dir: docs
 theme:
