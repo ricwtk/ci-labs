@@ -183,3 +183,41 @@
     border-radius: 500px 500px 500px 500px;
   }
 }
+
+.fam-table {
+  margin-bottom: .5em;
+  box-shadow: 0 .2rem .5rem rgba(0,0,0,.05),0 0 .05rem rgba(0,0,0,.1);
+  border-radius: .1rem;
+}
+
+.fam-table td {
+  font-size: .64rem;
+  text-align: center;
+  vertical-align: middle;
+  padding: .9375em 1.25em;
+}
+
+.fam-table tr:nth-of-type(3) td:nth-of-type(n+3),
+.fam-table tr:nth-of-type(n+4) td:nth-of-type(n+2) {
+  border-top: .05rem solid var(--md-default-fg-color--lightest);
+  transition: background-color 125ms;
+}
+
+.fam-table tr:nth-of-type(3) td:nth-of-type(n+3):hover,
+.fam-table tr:nth-of-type(n+4) td:nth-of-type(n+2):hover {
+  background-color: rgba(0,0,0,.035);
+  box-shadow: 0 .05rem 0 var(--md-default-bg-color) inset;
+}
+
+.fam-table tr:first-of-type td:nth-of-type(n+2),
+.fam-table tr:nth-of-type(3) td:first-of-type {
+  background-color: var(--md-default-fg-color--light);
+  color: var(--md-default-bg-color);
+}
+
+.fam-table tr:nth-of-type(2) td:nth-of-type(n+2),
+.fam-table tr:nth-of-type(3) td:nth-of-type(2),
+.fam-table tr:nth-of-type(n+4) td:nth-of-type(1) {
+  background-color: var(--md-default-fg-color--lighter);
+  color: var(--md-default-bg-color);
+}
