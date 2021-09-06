@@ -30,22 +30,22 @@ The labs are designed to follow the schedule of the lectures, therefore you will
     </div>
     <div class="container right">
         <div class="date">Week 4</div>
-        <div class="content"><a href="./lab3">Lab 3</a></div>
+        <div class="content"><a href="">Lab 3</a></div>
     </div>
     <div class="container right">
         <div class="date">Week 5</div>
-        <div class="content"><a href="./lab4">Lab 4</a></div>
+        <div class="content"><a href="">Lab 4</a></div>
     </div>
     <div class="container right">
         <div class="date">Week 6</div>
-        <div class="content"><a href="./lab5">Lab 5</a></div>
+        <div class="content"><a href="">Lab 5</a></div>
     </div>
     <div class="container right">
         <div class="date">Week 8</div>
-        <div class="content"><a href="./lab6">Lab 6</a></div>
+        <div class="content"><a href="">Lab 6</a></div>
     </div>
     <div class="container right">
         <div class="date">Week 10</div>
-        <div class="content"><a href="./lab7">Lab 7</a></div>
+        <div class="content"><a href="">Lab 7</a></div>
     </div>
 </div>
