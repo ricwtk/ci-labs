@@ -115,6 +115,7 @@
   background: var(--md-primary-fg-color);
   position: relative;
   border-radius: 500px 500px 500px 500px;
+  color: #ffffff;
 }
 
 .container.right .content {
