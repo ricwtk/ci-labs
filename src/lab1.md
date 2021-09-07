@@ -30,7 +30,7 @@ For this section. assume the `random.random()` function selects the random numbe
 
 2. If the probabilities of getting a head or a tail are not even, with head as 20% and tail as 80%, how would you change the Python function you created previously to adapt to this coin?
 
-3. Consider the event of selecting one option out of three options randomly. The probability of choosing option `A` is 20%, `B` is 50%, and  `C` is 30%. Create a Python funciton to simulate the random selection of the options.
+3. Consider the event of selecting one option out of three options randomly. The probability of choosing option `A` is 20%, `B` is 50%, and  `C` is 30%. Create a Python function to simulate the random selection of the options.
 
     ```python
     def chooseFromThree():
