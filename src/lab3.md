@@ -172,7 +172,7 @@ Solve the following problem using global best particle swarm optimisation:
       def update_personal_best(...):
         ...
 
-      def calc_velocity(...):
+      def update_velocity(...):
         ...
 
       def update_position(self, position_limits):
