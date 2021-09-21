@@ -350,7 +350,7 @@ Solve the following problem using global best particle swarm optimisation:
     personal_best_axes[3].set_xlabel("Iteration")
     [g_best_fig, global_best_axes] = plt.subplots(2,1,sharex=True)
     global_best_axes[0].set_title("Global best position")
-    global_best_axes[1].set_title("Boxplot for global best position")
+    global_best_axes[1].set_title("Fitness for global best position")
     global_best_axes[1].set_xlabel("Iteration")
     for particle in particles:
       iteration_list = list(range(len(particle.position_list)))
