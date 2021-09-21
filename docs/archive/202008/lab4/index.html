@@ -12,7 +12,7 @@
         <link rel="canonical" href="https://ricwtk.github.io/ci-labs/archive/202008/lab4/">
       
       <link rel="icon" href="../../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
     
     
       
@@ -20,10 +20,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.be71726b.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1118c9be.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ba0d045b.min.css">
         
           
           
@@ -819,7 +819,28 @@
 <ol>
 <li>
 <p>The coordinates of each town are provided as follows. This will be used later for the purpose of visualisation.</p>
-<div class="highlight"><pre><span></span><code><span class="n">location_list</span> <span class="o">=</span> <span class="p">[</span> <span class="c1"># [x,y,name]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">location_list</span> <span class="o">=</span> <span class="p">[</span> <span class="c1"># [x,y,name]</span>
   <span class="p">[</span><span class="mi">75</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="s1">&#39;Arad&#39;</span><span class="p">],</span>
   <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="s1">&#39;Zerind&#39;</span><span class="p">],</span>
   <span class="p">[</span><span class="mi">125</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;Oradea&#39;</span><span class="p">],</span>
@@ -842,10 +863,35 @@
   <span class="p">[</span><span class="mi">625</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="s1">&#39;Neamt&#39;</span><span class="p">]</span>
 <span class="p">]</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>Then define the travel cost between connected cities. </p>
-<div class="highlight"><pre><span></span><code><span class="n">step_cost</span> <span class="o">=</span> <span class="p">[</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">step_cost</span> <span class="o">=</span> <span class="p">[</span>
   <span class="p">[</span><span class="s1">&#39;Arad&#39;</span><span class="p">,</span> <span class="s1">&#39;Zerind&#39;</span><span class="p">,</span> <span class="mi">75</span><span class="p">],</span>
   <span class="p">[</span><span class="s1">&#39;Zerind&#39;</span><span class="p">,</span> <span class="s1">&#39;Oradea&#39;</span><span class="p">,</span> <span class="mi">71</span><span class="p">],</span>
   <span class="p">[</span><span class="s1">&#39;Oradea&#39;</span><span class="p">,</span> <span class="s1">&#39;Sibiu&#39;</span><span class="p">,</span> <span class="mi">151</span><span class="p">],</span>
@@ -871,13 +917,25 @@
   <span class="p">[</span><span class="s1">&#39;Hirsova&#39;</span><span class="p">,</span> <span class="s1">&#39;Eforie&#39;</span><span class="p">,</span> <span class="mi">86</span><span class="p">]</span>
 <span class="p">]</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>We will define two class, <code>City</code> and <code>Road</code>.</p>
 </li>
 <li>
 <p>An object of class <code>City</code> has the attributes of <code>name</code> (the name of the city), <code>roads</code> (an array of references to the roads connected to the current city), and <code>coordinates</code> (coordinates of the cities).</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">City</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">City</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">roads</span> <span class="o">=</span> <span class="p">[]</span>
@@ -890,19 +948,34 @@
     <span class="k">if</span> <span class="n">road</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">roads</span><span class="p">:</span>
       <span class="bp">self</span><span class="o">.</span><span class="n">roads</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">road</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>An object of class <code>Road</code> has the attributes of <code>connected_cities</code> (an array of references to the cities connected through this road), <code>cost</code> (the step cost of this road), and <code>pheromone</code> (the pheromone on this road).</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Road</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Road</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connected_cities</span><span class="p">,</span> <span class="n">cost</span><span class="p">,</span> <span class="n">pheromone</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">connected_cities</span> <span class="o">=</span> <span class="n">connected_cities</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">cost</span> <span class="o">=</span> <span class="n">cost</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">pheromone</span> <span class="o">=</span> <span class="n">pheromone</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>We will construct the list of <code>City</code> objects and <code>Road</code> objects from the information provided by the question, i.e. information in <code>location_list</code> and <code>step_cost</code>. The following code block should be in the <code>main</code> code block.</p>
-<div class="highlight"><pre><span></span><code><span class="n">cities</span> <span class="o">=</span> <span class="p">{}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">cities</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="n">coord1</span><span class="p">,</span> <span class="n">coord2</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">location_list</span><span class="p">:</span>
   <span class="n">cities</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">City</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   <span class="n">cities</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">set_coordinates</span><span class="p">([</span><span class="n">coord1</span><span class="p">,</span> <span class="n">coord2</span><span class="p">])</span>
@@ -913,60 +986,88 @@
   <span class="n">cities</span><span class="p">[</span><span class="n">city2</span><span class="p">]</span><span class="o">.</span><span class="n">add_road</span><span class="p">(</span><span class="n">road</span><span class="p">)</span>
   <span class="n">roads</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">road</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>In the <code>main</code> code block, define the <code>origin</code> and <code>destination</code> cities.</p>
-<div class="highlight"><pre><span></span><code><span class="n">origin</span> <span class="o">=</span> <span class="n">cities</span><span class="p">[</span><span class="s1">&#39;Arad&#39;</span><span class="p">]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">origin</span> <span class="o">=</span> <span class="n">cities</span><span class="p">[</span><span class="s1">&#39;Arad&#39;</span><span class="p">]</span>
 <span class="n">destination</span> <span class="o">=</span> <span class="n">cities</span><span class="p">[</span><span class="s1">&#39;Bucharest&#39;</span><span class="p">]</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 </ol>
 <h3 id="initiating-aco-algorithm">Initiating ACO algorithm</h3>
 <ol>
 <li>
 <p>We then define the parameters for ACO, i.e. number of ants, <code>n_ant</code>, pheromone influence constant, <code>alpha</code>, and evaporation rate, <code>rho</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">n_ant</span> <span class="o">=</span> <span class="mi">10</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">n_ant</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">rho</span> <span class="o">=</span> <span class="mf">0.1</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>Add the method <code>set_pheromone</code> to the class <code>Road</code>. 
-    <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Road</span><span class="p">:</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Road</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
     <span class="o">...</span>
 
   <span class="k">def</span> <span class="nf">set_pheromone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pheromone</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">pheromone</span> <span class="o">=</span> <span class="n">pheromone</span>
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 </li>
 <li>
 <p>Set the initial pheromone of each road to 0.01.
-    <div class="highlight"><pre><span></span><code><span class="c1"># in main block</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># in main block</span>
 <span class="n">initial_pheromone</span> <span class="o">=</span> <span class="mf">0.01</span>
 <span class="k">for</span> <span class="n">road</span> <span class="ow">in</span> <span class="n">roads</span><span class="p">:</span>
   <span class="n">road</span><span class="o">.</span><span class="n">set_pheromone</span><span class="p">(</span><span class="n">initial_pheromone</span><span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 </li>
 <li>
 <p>Define the class <code>Ant</code>. 
-    <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Ant</span><span class="p">:</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Ant</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">cities</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># cities the ant passes through, in sequence</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># roads the ant uses, in sequence</span>
-</code></pre></div></p>
+</code></pre></div>
+</td></tr></table></p>
 </li>
 <li>
 <p>Initiate <code>n_ants</code> ants.
-    <div class="highlight"><pre><span></span><code><span class="n">ants</span> <span class="o">=</span> <span class="p">[</span><span class="n">Ant</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_ant</span><span class="p">)]</span>
-</code></pre></div></p>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">ants</span> <span class="o">=</span> <span class="p">[</span><span class="n">Ant</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_ant</span><span class="p">)]</span>
+</code></pre></div>
+</td></tr></table></p>
 </li>
 </ol>
 <h3 id="identify-path-of-each-ant">Identify path of each ant</h3>
 <ol>
 <li>
 <p>In the <code>Ant</code> class, define a method to identify the path by taking the inputs of the available roads, the origin, the destination, and the pheromone influence constant &alpha;.</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Ant</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Ant</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
     <span class="o">...</span>
 
@@ -975,10 +1076,20 @@
     <span class="c1"># 2. if the last city is not destination, search for the next city to go</span>
     <span class="c1"># 3. after getting to the destination, remove the loop within the path, i.e. if there are repeated cities in self.cities, remove the cities and the roads in between the repetition</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>Define a method to calculate the path length.</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Ant</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Ant</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
     <span class="o">...</span>
 
@@ -989,10 +1100,23 @@
     <span class="c1"># calculate path length based on self.path</span>
     <span class="k">return</span> <span class="n">path_length</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>As the path of each ant will be reset every iteration, define a method that reset the <code>path</code> and <code>cities</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Ant</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Ant</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
     <span class="o">...</span>
 
@@ -1006,13 +1130,22 @@
     <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">cities</span> <span class="o">=</span> <span class="p">[]</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 </ol>
 <h3 id="evaporation">Evaporation</h3>
 <ol>
 <li>
 <p>In the <code>Road</code> class, define a method to evaporate the pheromone by taking the input of evaporation rate &rho;.</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Road</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Road</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
     <span class="o">...</span>
 
@@ -1022,6 +1155,7 @@
   <span class="k">def</span> <span class="nf">evaporate_pheromone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rho</span><span class="p">):</span>
     <span class="c1"># update the pheromone of the road</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 </ol>
 <h3 id="deposition">Deposition</h3>
@@ -1029,7 +1163,19 @@
 <li>
 <p>In the <code>Road</code> class, define a method to calculate the updated pheromone after pheromone deposition by taking the input of all the ants. We will use the following pheromone deposition formula for ant k on road i:</p>
 <p><div style="text-align: center">&Delta;&tau;<sub>i,k</sub> = 1/L<sub>k</sub></div></p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Road</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Road</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
     <span class="o">...</span>
 
@@ -1043,6 +1189,7 @@
     <span class="c1"># 1. search for ants that uses the raod</span>
     <span class="c1"># 2. deposit pheromone using the inversely proportionate relationship between path length and deposited pheromone</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 </ol>
 <h3 id="termination-conditions">Termination conditions</h3>
@@ -1056,17 +1203,41 @@
 </li>
 <li>
 <p>Define a function to calculate the percentage of the most dominant path.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_percentage_of_dominant_path</span><span class="p">(</span><span class="n">ants</span><span class="p">):</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_percentage_of_dominant_path</span><span class="p">(</span><span class="n">ants</span><span class="p">):</span>
   <span class="o">...</span>
   <span class="k">return</span> <span class="n">percentage</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 </ol>
 <h3 id="loop-until-termination">Loop until termination</h3>
 <ol>
 <li>
 <p>Create a loop to iterate until termination.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># termination threshold</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># termination threshold</span>
 <span class="n">max_iteration</span> <span class="o">=</span> <span class="mi">200</span>
 <span class="n">percentage_of_dominant_path</span> <span class="o">=</span> <span class="mf">0.9</span>
 
@@ -1089,13 +1260,23 @@
 <span class="c1"># after exiting the loop, return the most occurred path as the solution</span>
 <span class="o">...</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 </ol>
 <h3 id="visualisation">Visualisation</h3>
 <ol>
 <li>
 <p>Define the following functions:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="o">...</span>
 <span class="k">def</span> <span class="nf">create_graph</span><span class="p">(</span><span class="n">cities</span><span class="p">):</span>
   <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
@@ -1106,7 +1287,16 @@
   <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="n">aspect</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
   <span class="k">return</span> <span class="n">ax</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">draw_pheromone</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">roads</span><span class="p">):</span>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">draw_pheromone</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">roads</span><span class="p">):</span>
   <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
   <span class="k">for</span> <span class="n">road</span> <span class="ow">in</span> <span class="n">roads</span><span class="p">:</span>
     <span class="n">from_coord</span> <span class="o">=</span> <span class="n">road</span><span class="o">.</span><span class="n">connected_cities</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">coordinates</span>
@@ -1116,21 +1306,29 @@
     <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">coord_x</span><span class="p">,</span> <span class="n">coord_y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="n">road</span><span class="o">.</span><span class="n">pheromone</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
   <span class="k">return</span> <span class="n">lines</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>Add the following lines to the <code>main</code> code block just before the <code>while</code> loop (loop until termination).</p>
-<div class="highlight"><pre><span></span><code><span class="n">ax</span> <span class="o">=</span> <span class="n">create_graph</span><span class="p">(</span><span class="n">cities</span><span class="p">)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">ax</span> <span class="o">=</span> <span class="n">create_graph</span><span class="p">(</span><span class="n">cities</span><span class="p">)</span>
 <span class="n">lines</span> <span class="o">=</span> <span class="n">draw_pheromone</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">roads</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>Add the following lines to after <code>iteration += 1</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># visualise</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># visualise</span>
 <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
   <span class="k">del</span> <span class="n">l</span>
 <span class="n">lines</span> <span class="o">=</span> <span class="n">draw_pheromone</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">roads</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 </ol>
 <h3 id="evaluate-effect-of-parameters">Evaluate effect of parameters</h3>
@@ -1225,10 +1423,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.56a63758.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.2b46852b.min.js"></script>
       
         <script src="../../../javascripts/config.js"></script>
       

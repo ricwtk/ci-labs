@@ -12,7 +12,7 @@
         <link rel="canonical" href="https://ricwtk.github.io/ci-labs/lab2/">
       
       <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
     
     
       
@@ -20,10 +20,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.be71726b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.1118c9be.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ba0d045b.min.css">
         
           
           
@@ -805,7 +805,15 @@ if __name__ == "__main__":
 </li>
 <li>
 <p>Create two functions <code>value2gray</code> and <code>gray2value</code> to convert a decimal value to its Gray code and vice versa.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">value2gray</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">value2gray</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
   <span class="c1"># this function converts a decimal value to its gray code representation</span>
   <span class="o">...</span>
   <span class="k">return</span> <span class="n">gray</span>
@@ -815,17 +823,23 @@ if __name__ == "__main__":
   <span class="o">...</span>
   <span class="k">return</span> <span class="n">value</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>Add the following code snippet to the end of the code to test your functions.</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">value2gray</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">gray2value</span><span class="p">(</span><span class="s2">&quot;1001&quot;</span><span class="p">))</span>
 </code></pre></div>
+</td></tr></table>
 <p>After running the file as a script, you should see the following output.</p>
-<div class="highlight"><pre><span></span><code>1111
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>1111
 14
 </code></pre></div>
+</td></tr></table>
 </li>
 </ol>
 <h3 id="population-initialisation">Population initialisation</h3>
@@ -835,18 +849,24 @@ if __name__ == "__main__":
 </li>
 <li>
 <p>Create a function to generate randomly a population of size <code>pop_size</code> with each value lies between the range of <code>pop_min</code> to <code>pop_max</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generatePopulation</span><span class="p">(</span><span class="n">pop_size</span><span class="p">,</span> <span class="n">pop_min</span><span class="p">,</span> <span class="n">pop_max</span><span class="p">):</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generatePopulation</span><span class="p">(</span><span class="n">pop_size</span><span class="p">,</span> <span class="n">pop_min</span><span class="p">,</span> <span class="n">pop_max</span><span class="p">):</span>
   <span class="c1"># this function generate the first generation randomly based on the population size and the range of the value of each chromosome</span>
   <span class="o">...</span>
   <span class="k">return</span> <span class="n">population</span>
 </code></pre></div>
+</td></tr></table>
 <p>This function and all the functions created after this should be placed before the <code>if __name__ == "__main__":</code> code block.</p>
 </li>
 <li>
 <p>[Optional testing] You can test the function by changing the <code>__main__</code> code block to </p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">generatePopulation</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 </code></pre></div>
+</td></tr></table>
 <p>The printed output should be a series of 8 chromosomes displayed as decimal values.</p>
 </li>
 </ol>
@@ -854,15 +874,21 @@ if __name__ == "__main__":
 <ol>
 <li>
 <p>The fitness function was designed at the beginning of <a href="#genetic-algorithm">this section</a>. Define a function that takes the input of a chromosome (as decimal value) and returns the fitness of the chromosome.</p>
-<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">calculateFitness</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">calculateFitness</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
   <span class="c1"># this function calculates the fitness of a chromosome from the decimal value of the chromosome</span>
   <span class="o">...</span>
   <span class="k">return</span> <span class="n">fitness</span>
 </code></pre></div>
+</td></tr></table>
 2. [Optional] Test the function with</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">calculateFitness</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 </code></pre></div>
+</td></tr></table>
 <p>The printed output should be the fitness of a chromosome of value 5, which would be a decimal value larger than zero.</p>
 </li>
 </ol>
@@ -874,17 +900,23 @@ if __name__ == "__main__":
 
 3. Define a function that takes a list of chromosomes and the crossover probability `p_crossover` (in the range of 0 and 1) as inputs and returns a list of boolean values of which `0` represents unable to crossover and `1` as able to crossover.
 
-    <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">canItCrossover</span><span class="p">(</span><span class="n">chromosomes</span><span class="p">,</span> <span class="n">p_crossover</span><span class="p">):</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">canItCrossover</span><span class="p">(</span><span class="n">chromosomes</span><span class="p">,</span> <span class="n">p_crossover</span><span class="p">):</span>
   <span class="c1"># this function takes the inputs of a list of chromosomes and crossover probability and returns a list of boolean values to represent the ability to crossover</span>
   <span class="o">...</span>
   <span class="k">return</span> <span class="n">can_crossover</span>
 </code></pre></div>
+</td></tr></table>
 
 4. [Optional] Test the function with
 
-    <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">canItCrossover</span><span class="p">([</span><span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span> <span class="mf">0.78</span><span class="p">))</span>
 </code></pre></div>
+</td></tr></table>
 
     The printed output should be a series of `0` and/or `1` which denotes the ability of each chromosome to crossover, for example, `[0, 1, 1, 1]`. -->
 
@@ -895,39 +927,52 @@ if __name__ == "__main__":
 </li>
 <li>
 <p>Define a function that takes the inputs of the current population and the total number of chromosomes in current population, and returns the chromosome pairs which will act as parents. The selection process is performed with the roulette wheel selection. The same chromosome can be selected more than once.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">selectParents</span><span class="p">(</span><span class="n">chromosomes</span><span class="p">,</span> <span class="n">pop_size</span><span class="p">):</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">selectParents</span><span class="p">(</span><span class="n">chromosomes</span><span class="p">,</span> <span class="n">pop_size</span><span class="p">):</span>
   <span class="o">...</span>
   <span class="k">return</span> <span class="n">parent_pairs</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>[Optional] Test the function with</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">selectParents</span><span class="p">([</span><span class="mi">13</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">6</span><span class="p">))</span>
 </code></pre></div>
+</td></tr></table>
 <p>The printed output should be 3 parent pairs, for example, </p>
-<div class="highlight"><pre><span></span><code>[[13, 8], [8, 14], [13, 7]]
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[[13, 8], [8, 14], [13, 7]]
 </code></pre></div>
+</td></tr></table>
 </li>
 </ol>
 <h3 id="crossover">Crossover</h3>
 <ol>
 <li>
 <p>Define a function that takes a parent pair and returns a pair of offspring after performing one-point crossover.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">crossover</span><span class="p">(</span><span class="n">parents</span><span class="p">):</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">crossover</span><span class="p">(</span><span class="n">parents</span><span class="p">):</span>
   <span class="c1"># this function takes a parent pair and perform one-point crossover to produce a pair of offspring</span>
   <span class="o">...</span>
   <span class="k">return</span> <span class="n">offsprings</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>[Optional] Test the function with</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">crossover</span><span class="p">([</span><span class="mi">13</span><span class="p">,</span> <span class="mi">9</span><span class="p">]))</span>
 </code></pre></div>
+</td></tr></table>
 <p>The printed output should be a pair of offsprings, for example,</p>
-<div class="highlight"><pre><span></span><code>[10, 14]
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[10, 14]
 </code></pre></div>
+</td></tr></table>
 <p><em><code>13</code> is <code>1011</code> and <code>9</code> is <code>1101</code> in Gray code, the offsprings <code>10</code> is <code>1111</code> and <code>14</code> is <code>1001</code> in Gray code.</em></p>
 </li>
 </ol>
@@ -938,15 +983,21 @@ if __name__ == "__main__":
 </li>
 <li>
 <p>Define a function that takes a chromosome and the mutation probability <code>p_mutation</code> as the inputs, and returns the mutated chromosome. </p>
-<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">chromosome</span><span class="p">,</span> <span class="n">p_mutation</span><span class="p">):</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">chromosome</span><span class="p">,</span> <span class="n">p_mutation</span><span class="p">):</span>
   <span class="c1"># this function mutates each gene of a chromosome based on the mutation probability</span>
   <span class="o">...</span>
   <span class="k">return</span> <span class="n">mutated</span>
 </code></pre></div>
+</td></tr></table>
 3. [Optional] Test the function with</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">mutate</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">))</span>
 </code></pre></div>
+</td></tr></table>
 <p>The printed output should be the mutated or unmutated chromosome, for example, <code>14</code>.</p>
 <p><em><code>15</code> is <code>1000</code> and <code>14</code> is <code>1001</code> in Gray code. In the example output, the last bit is mutated.</em></p>
 </li>
@@ -958,17 +1009,23 @@ if __name__ == "__main__":
 </li>
 <li>
 <p>Define a function that calculates one metric to measure the distance among the fitnesses of the chromosomes, i.e. how far the fitnesses of all the chromosomes are from each other.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">findOverallDistance</span><span class="p">(</span><span class="n">chromosomes</span><span class="p">):</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">findOverallDistance</span><span class="p">(</span><span class="n">chromosomes</span><span class="p">):</span>
   <span class="c1"># this function takes the input of the current population and returns the overall distance among fitnesses of all chromosomes</span>
   <span class="o">...</span>
   <span class="k">return</span> <span class="n">overall_distance</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 <li>
 <p>[Optional] Test the function with</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">findOverallDistance</span><span class="p">([</span><span class="mi">13</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">7</span><span class="p">]))</span>
 </code></pre></div>
+</td></tr></table>
 <p>The printed output should be a decimal value that represents the overall distance of fitnesses.</p>
 </li>
 </ol>
@@ -976,7 +1033,33 @@ if __name__ == "__main__":
 <ol>
 <li>
 <p>The functions we have created can be combined with the following code snippet to execute the genetic algorithm to solve the problem defined at the beginning of <a href="#genetic-algorithm">this section</a>. Consider the width and the height of the sheet of paper to be <code>20cm</code> and <code>15cm</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
   <span class="c1"># main function</span>
   <span class="c1">## parameter definition</span>
   <span class="n">pop_size</span> <span class="o">=</span> <span class="mi">10</span>
@@ -1004,6 +1087,7 @@ if __name__ == "__main__":
     <span class="c1">## update current population</span>
     <span class="n">population</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mutated</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 </li>
 </ol>
                 
@@ -1076,10 +1160,10 @@ if __name__ == "__main__":
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["toc.integrate", "navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["toc.integrate", "navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.56a63758.min.js"></script>
+      <script src="../assets/javascripts/bundle.2b46852b.min.js"></script>
       
         <script src="../javascripts/config.js"></script>
       

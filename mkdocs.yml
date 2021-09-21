@@ -45,7 +45,8 @@ markdown_extensions:
   - meta
   - pymdownx.tabbed
   - admonition
-  - pymdownx.highlight
+  - pymdownx.highlight:
+      linenums: true
   - pymdownx.superfences
   - pymdownx.arithmatex:
       generic: true
