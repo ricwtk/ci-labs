@@ -157,13 +157,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href=".." class="md-tabs__link md-tabs__link--active">
         Current
       </a>
     </li>
@@ -231,12 +233,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       <label class="md-nav__link" for="__nav_1">
         Current
@@ -317,6 +321,174 @@
       <a href="../lab5/" class="md-nav__link">
         Lab 5: ANN (Supervised learning)
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Lab 6: ANN (Hyperplane)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Lab 6: ANN (Hyperplane)
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#artificial-neural-networks" class="md-nav__link">
+    Artificial neural networks
+  </a>
+  
+    <nav class="md-nav" aria-label="Artificial neural networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    Objective
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-preparation" class="md-nav__link">
+    Data preparation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-the-first-configuration-for-neural-network" class="md-nav__link">
+    Setup the first configuration for neural network
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup the first configuration for neural network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-preprocessing" class="md-nav__link">
+    Data preprocessing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#construct-and-train-the-ann-model" class="md-nav__link">
+    Construct and train the ANN model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualise-the-classification-of-a-fitted-model" class="md-nav__link">
+    Visualise the classification of a fitted model
+  </a>
+  
+    <nav class="md-nav" aria-label="Visualise the classification of a fitted model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-the-figure-and-axis" class="md-nav__link">
+    Prepare the figure and axis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualisation-function" class="md-nav__link">
+    Visualisation function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualise-the-result" class="md-nav__link">
+    Visualise the result
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-the-second-third-and-more-neural-network-configurations" class="md-nav__link">
+    Setup the second, third, and more neural network configurations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consider-more-input-features" class="md-nav__link">
+    Consider more input features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#construct-and-train-the-model" class="md-nav__link">
+    Construct and train the model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualise-decision-area-with-more-input-features" class="md-nav__link">
+    Visualise decision area with more input features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional" class="md-nav__link">
+    Additional
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -782,6 +954,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../lab5/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lab 5: ANN (Supervised learning)" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Lab 5: ANN (Supervised learning)
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../archive/201908/lab1/" class="md-footer__link md-footer__link--next" aria-label="Next: Lab 1: Pre-lab" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Lab 1: Pre-lab
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
