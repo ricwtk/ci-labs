@@ -46,6 +46,6 @@ The labs are designed to follow the schedule of the lectures, therefore you will
     </div>
     <div class="container right">
         <div class="date">Week 9</div>
-        <div class="content"><a href="">Lab 7</a></div>
+        <div class="content"><a href="./lab7">Lab 7</a></div>
     </div>
 </div>
