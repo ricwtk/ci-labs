@@ -18,21 +18,15 @@ nav:
   - Current:
     - Overview: index.md
     - lab1.md
-    - lab2.md
-    - lab3.md
-    - lab4.md
-    - lab5.md
-    - lab6.md
-    - lab7.md
   - Archive:
-    - 201908:
-      - archive/201908/lab1.md
-      - archive/201908/lab2.md
-      - archive/201908/lab3.md
-      - archive/201908/lab4.md
-      - archive/201908/lab5.md
-      - archive/201908/lab6.md
-      - archive/201908/lab7.md
+    - 202108:
+      - archive/202108/lab1.md
+      - archive/202108/lab2.md
+      - archive/202108/lab3.md
+      - archive/202108/lab4.md
+      - archive/202108/lab5.md
+      - archive/202108/lab6.md
+      - archive/202108/lab7.md
     - 202008:
       - archive/202008/lab1.md
       - archive/202008/lab2.md
@@ -41,6 +35,14 @@ nav:
       - archive/202008/lab5.md
       - archive/202008/lab6.md
       - archive/202008/lab7.md
+    - 201908:
+      - archive/201908/lab1.md
+      - archive/201908/lab2.md
+      - archive/201908/lab3.md
+      - archive/201908/lab4.md
+      - archive/201908/lab5.md
+      - archive/201908/lab6.md
+      - archive/201908/lab7.md
 markdown_extensions:
   - meta
   - pymdownx.tabbed
