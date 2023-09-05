@@ -1,0 +1,1669 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://ricwtk.github.io/ci-labs/archive/202208/lab2/">
+      
+      
+        <link rel="prev" href="../lab1/">
+      
+      
+        <link rel="next" href="../lab3/">
+      
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.8">
+    
+    
+      
+        <title>Lab 2: EC (GA) - CSC3034 CI Labs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-2-ec-ga" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="CSC3034 CI Labs" class="md-header__button md-logo" aria-label="CSC3034 CI Labs" data-md-component="logo">
+      
+  <img src="../../../img/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CSC3034 CI Labs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab 2: EC (GA)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  Current
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../lab1/" class="md-tabs__link">
+          
+  
+  Archive
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="CSC3034 CI Labs" class="md-nav__button md-logo" aria-label="CSC3034 CI Labs" data-md-component="logo">
+      
+  <img src="../../../img/favicon.ico" alt="logo">
+
+    </a>
+    CSC3034 CI Labs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Current
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Current
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 1: Refresh on Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    202208
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            202208
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 1: Pre-lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lab 2: EC (GA)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Lab 2: EC (GA)
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#binary-to-gray-code-conversion" class="md-nav__link">
+    Binary-to-gray code conversion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#genetic-algorithm" class="md-nav__link">
+    Genetic algorithm
+  </a>
+  
+    <nav class="md-nav" aria-label="Genetic algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feature-encoding" class="md-nav__link">
+    Feature encoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#population-initialisation" class="md-nav__link">
+    Population initialisation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fitness-calculation" class="md-nav__link">
+    Fitness calculation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selection-as-parents" class="md-nav__link">
+    Selection as parents
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crossover" class="md-nav__link">
+    Crossover
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutation" class="md-nav__link">
+    Mutation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repeat-until-termination" class="md-nav__link">
+    Repeat until termination
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-all-functions" class="md-nav__link">
+    Combining all functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 3: EC (PSO)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 4: EC (ACO)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 5: ANN (Supervised learning)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 6: ANN (Hyperplane)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 7: Fuzzy Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    202108
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            202108
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202108/lab1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 1: Pre-lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202108/lab2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 2: EC (GA)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202108/lab3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 3: EC (PSO)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202108/lab4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 4: EC (ACO)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202108/lab5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 5: ANN (Supervised learning)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202108/lab6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 6: ANN (Hyperplane)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202108/lab7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 7: Fuzzy Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    202008
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            202008
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202008/lab1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 1: Pre-lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202008/lab2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 2: EC (GA)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202008/lab3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 3: EC (PSO)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202008/lab4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 4: EC (ACO)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202008/lab5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 5: ANN (Supervised learning)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202008/lab6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 6: ANN (Hyperplane)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202008/lab7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 7: Fuzzy Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    201908
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            201908
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../201908/lab1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 1: Pre-lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../201908/lab2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 2: EC (GA)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../201908/lab3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 3: EC (PSO)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../201908/lab4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 4: EC (ACO)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../201908/lab5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 5: ANN (Supervised learning)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../201908/lab6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 6: ANN (Hyperplane)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../201908/lab7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 7: Fuzzy Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="lab-2-ec-ga">Lab 2: EC (GA)</h1>
+<h2 id="binary-to-gray-code-conversion">Binary-to-gray code conversion</h2>
+<p>Binary string is often used in the implementation of genetic algorithm. However, the downside of using a binary code is that the Hamming distance between two adjacent values is not consistent. This situation is solved by using a Gray code in place of a binary code.</p>
+<ol>
+<li>
+<p><code>numpy</code> provides the function of <a href="https://het.as.utexas.edu/HET/Software/Numpy/reference/generated/numpy.binary_repr.html"><code>binary_repr</code></a> to convert a decimal value to its corresponding binary code.</p>
+</li>
+<li>
+<p>Create a function to take the input of a binary code and return the correponding Gray code of the binary code. </p>
+</li>
+<li>
+<p>Create a function to calculate the Hamming distance between two binary strings (two binary codes or two Gray codes).</p>
+</li>
+<li>
+<p>Consider a sequence of decimal values of <code>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</code>. Convert the sequence to a series of binary codes. Identify and plot (<a href="https://matplotlib.org/3.1.1/gallery/lines_bars_and_markers/simple_plot.html#sphx-glr-gallery-lines-bars-and-markers-simple-plot-py">example of a line plot</a>) the Hamming distances between the adjacent values.</p>
+</li>
+<li>
+<p>Repeat the previous step with Gray codes instead of binary codes.</p>
+</li>
+</ol>
+<h2 id="genetic-algorithm">Genetic algorithm</h2>
+<p>Consider the following problem: </p>
+<div class="admonition abstract">
+<p class="admonition-title">Problem</p>
+<p>You are given a sheet of paper with width <code>w</code> and height <code>h</code>. Your task is to cut the paper into squares of equal size. The aim of the task is to have as many squares as possible, and to have the area of each square as large as possible.</p>
+</div>
+<ol>
+<li>
+<p>An optimisation problem can always be phrased in the form of</p>
+<div class="admonition note">
+<p>to optimise ... such that it maximises/minimises ...</p>
+</div>
+<p>In this problem, what is the parameter to be optimised and what are the parameters to be maximised or minimised?</p>
+</li>
+<li>
+<p>Let <code>x</code> denotes the length of the sides of a square. Design a fitness function such that higher fitness corresponds to larger number of squares and large area. If the number of squares (that can be cut out) is zero, or the area of the square is zero, the fitness will be zero.</p>
+</li>
+</ol>
+<div class="timeline">
+<div class="container right"><div class="content"><a href='#feature-encoding'>feature encoding</a></div></div>
+<div class="container right"><div class="content"><a href='#population-initialisation'>population initialisation</a></div></div>
+<div class="container right"><div class="content"><a href="#selection-as-parents">selection as parents</a></div></div>
+<div class="container right"><div class="content"><a href="#crossover">crossover</a></div></div>
+<div class="container right"><div class="content"><a href="#mutation">mutation</a></div></div>
+<div class="container right"><div class="content"><a href="#">offspring (next generation population)</a></div></div>
+<div class="container right"><div class="content"><a href="#repeat-until-termination">repeat from fitnexx calculation until termination</a></div></div>
+</div>
+
+<!-- Use the following template for the code development of the rest of this lab. -->
+
+<!-- ```python
+def value2gray(value):
+  # this function converts a decimal value to its gray code representation
+  ...
+  return gray
+
+def gray2value(gray):
+  # this function converts a gray code representation to its decimal value
+  ...
+  return value
+
+def generatePopulation(population_size, population_min, population_max):
+  # this function generate the first generation randomly based on the population size and the range of the value of each chromosome
+  ...
+  return population
+
+def calculateFitness(value):
+  # this function calculates the fitness of a chromosome from the decimal value of the chromosome
+  ...
+  return fitness
+
+def roulettewheelSelection(chromosomes, n):
+  # this function takes a list of chromosomes and select n number of chromosomes using roulette wheel selection
+  ...
+  return selected_chromosomes
+
+def onepointCrossover(parents):
+  # this function takes two parents and perform one-point crossover to produce two offsprings
+  ...
+  return offsprings
+
+def mutation(chromosome, p_m):
+  # this function takes a chromosome and perform uniform mutation using the mutation probability of p_m
+  ...
+  return mutated
+
+if __name__ == "__main__":
+  # main function
+  ## initialise population
+  ...
+  while (<termination conditions>):
+    ## calculate fitness
+    ...
+    ## select for mating
+    ...
+    ## select parent pairs
+    ...
+    ## perform crossover
+    ...
+    ## perform mutation
+    ...
+    ## update current population
+    ...
+``` -->
+
+<h3 id="feature-encoding">Feature encoding</h3>
+<ol>
+<li>
+<p>In this problem as we only have one feature, i.e. the side length of the square, each chromosome consists of the value of the side length of the square. We will encode the chromosome in the form of Gray code. </p>
+</li>
+<li>
+<p>Create two functions <code>value2gray</code> and <code>gray2value</code> to convert a decimal value to its Gray code and vice versa.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">value2gray</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+  <span class="c1"># this function converts a decimal value to its gray code representation</span>
+  <span class="o">...</span>
+  <span class="k">return</span> <span class="n">gray</span>
+
+<span class="k">def</span> <span class="nf">gray2value</span><span class="p">(</span><span class="n">gray</span><span class="p">):</span>
+  <span class="c1"># this function converts a gray code representation to its decimal value</span>
+  <span class="o">...</span>
+  <span class="k">return</span> <span class="n">value</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>Add the following code snippet to the end of the code to test your functions.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">value2gray</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">gray2value</span><span class="p">(</span><span class="s2">&quot;1001&quot;</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+<p>After running the file as a script, you should see the following output.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>1111
+14
+</code></pre></div></td></tr></table></div>
+</li>
+</ol>
+<h3 id="population-initialisation">Population initialisation</h3>
+<ol>
+<li>
+<p>A population is randomly generated according to the defined population size. </p>
+</li>
+<li>
+<p>Create a function to generate randomly a population of size <code>pop_size</code> with each value lies between the range of <code>pop_min</code> to <code>pop_max</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">generatePopulation</span><span class="p">(</span><span class="n">pop_size</span><span class="p">,</span> <span class="n">pop_min</span><span class="p">,</span> <span class="n">pop_max</span><span class="p">):</span>
+  <span class="c1"># this function generate the first generation randomly based on the population size and the range of the value of each chromosome</span>
+  <span class="o">...</span>
+  <span class="k">return</span> <span class="n">population</span>
+</code></pre></div></td></tr></table></div>
+<p>This function and all the functions created after this should be placed before the <code>if __name__ == "__main__":</code> code block.</p>
+</li>
+<li>
+<p>[Optional testing] You can test the function by changing the <code>__main__</code> code block to </p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">generatePopulation</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+<p>The printed output should be a series of 8 chromosomes displayed as decimal values.</p>
+</li>
+</ol>
+<h3 id="fitness-calculation">Fitness calculation</h3>
+<ol>
+<li>
+<p>The fitness function was designed at the beginning of <a href="#genetic-algorithm">this section</a>. Define a function that takes the input of a chromosome (as decimal value) and returns the fitness of the chromosome.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">calculateFitness</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+  <span class="c1"># this function calculates the fitness of a chromosome from the decimal value of the chromosome</span>
+  <span class="o">...</span>
+  <span class="k">return</span> <span class="n">fitness</span>
+</code></pre></div></td></tr></table></div>
+2. [Optional] Test the function with</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">calculateFitness</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+<p>The printed output should be the fitness of a chromosome of value 5, which would be a decimal value larger than zero.</p>
+</li>
+</ol>
+<!-- ### Selection for mating
+
+1. In genetic algorithm, the common practice is to generate the same number of offspring as the number of parents. 
+
+2. We will first identify if a chromosome is able to mate/crossover with other chromosomes. This is determined by the crossover probability `p_crossover`.
+
+3. Define a function that takes a list of chromosomes and the crossover probability `p_crossover` (in the range of 0 and 1) as inputs and returns a list of boolean values of which `0` represents unable to crossover and `1` as able to crossover.
+
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">canItCrossover</span><span class="p">(</span><span class="n">chromosomes</span><span class="p">,</span> <span class="n">p_crossover</span><span class="p">):</span>
+  <span class="c1"># this function takes the inputs of a list of chromosomes and crossover probability and returns a list of boolean values to represent the ability to crossover</span>
+  <span class="o">...</span>
+  <span class="k">return</span> <span class="n">can_crossover</span>
+</code></pre></div></td></tr></table></div>
+
+4. [Optional] Test the function with
+
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">canItCrossover</span><span class="p">([</span><span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span> <span class="mf">0.78</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+
+    The printed output should be a series of `0` and/or `1` which denotes the ability of each chromosome to crossover, for example, `[0, 1, 1, 1]`. -->
+
+<h3 id="selection-as-parents">Selection as parents</h3>
+<ol>
+<li>
+<p>From the list of the chromosomes, we will select the chromosome pairs as parents. As we will be using one-point crossover, each pair of parents will produce exactly two offsprings. Therefore for population size of <code>pop_size</code>, we need <code>pop_size/2</code> pairs of parents.</p>
+</li>
+<li>
+<p>Define a function that takes the inputs of the current population and the total number of chromosomes in current population, and returns the chromosome pairs which will act as parents. The selection process is performed with the roulette wheel selection. The same chromosome can be selected more than once.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">selectParents</span><span class="p">(</span><span class="n">chromosomes</span><span class="p">,</span> <span class="n">pop_size</span><span class="p">):</span>
+  <span class="o">...</span>
+  <span class="k">return</span> <span class="n">parent_pairs</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>[Optional] Test the function with</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">selectParents</span><span class="p">([</span><span class="mi">13</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">6</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+<p>The printed output should be 3 parent pairs, for example, </p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>[[13, 8], [8, 14], [13, 7]]
+</code></pre></div></td></tr></table></div>
+</li>
+</ol>
+<h3 id="crossover">Crossover</h3>
+<ol>
+<li>
+<p>Define a function that takes a parent pair and returns a pair of offspring after performing one-point crossover.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">crossover</span><span class="p">(</span><span class="n">parents</span><span class="p">):</span>
+  <span class="c1"># this function takes a parent pair and perform one-point crossover to produce a pair of offspring</span>
+  <span class="o">...</span>
+  <span class="k">return</span> <span class="n">offsprings</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>[Optional] Test the function with</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">crossover</span><span class="p">([</span><span class="mi">13</span><span class="p">,</span> <span class="mi">9</span><span class="p">]))</span>
+</code></pre></div></td></tr></table></div>
+<p>The printed output should be a pair of offsprings, for example,</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>[10, 14]
+</code></pre></div></td></tr></table></div>
+<p><em><code>13</code> is <code>1011</code> and <code>9</code> is <code>1101</code> in Gray code, the offsprings <code>10</code> is <code>1111</code> and <code>14</code> is <code>1001</code> in Gray code.</em></p>
+</li>
+</ol>
+<h3 id="mutation">Mutation</h3>
+<ol>
+<li>
+<p>Each gene in all chromosomes has the same mutation probability <code>p_mutation</code>. </p>
+</li>
+<li>
+<p>Define a function that takes a chromosome and the mutation probability <code>p_mutation</code> as the inputs, and returns the mutated chromosome. </p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">chromosome</span><span class="p">,</span> <span class="n">p_mutation</span><span class="p">):</span>
+  <span class="c1"># this function mutates each gene of a chromosome based on the mutation probability</span>
+  <span class="o">...</span>
+  <span class="k">return</span> <span class="n">mutated</span>
+</code></pre></div></td></tr></table></div>
+3. [Optional] Test the function with</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">mutate</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+<p>The printed output should be the mutated or unmutated chromosome, for example, <code>14</code>.</p>
+<p><em><code>15</code> is <code>1000</code> and <code>14</code> is <code>1001</code> in Gray code. In the example output, the last bit is mutated.</em></p>
+</li>
+</ol>
+<h3 id="repeat-until-termination">Repeat until termination</h3>
+<ol>
+<li>
+<p>The common termination criteria are the maximum number of iterations and the distance among the fitnesses of the chromosomes of the latest population.</p>
+</li>
+<li>
+<p>Define a function that calculates one metric to measure the distance among the fitnesses of the chromosomes, i.e. how far the fitnesses of all the chromosomes are from each other.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">findOverallDistance</span><span class="p">(</span><span class="n">chromosomes</span><span class="p">):</span>
+  <span class="c1"># this function takes the input of the current population and returns the overall distance among fitnesses of all chromosomes</span>
+  <span class="o">...</span>
+  <span class="k">return</span> <span class="n">overall_distance</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>[Optional] Test the function with</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">findOverallDistance</span><span class="p">([</span><span class="mi">13</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">7</span><span class="p">]))</span>
+</code></pre></div></td></tr></table></div>
+<p>The printed output should be a decimal value that represents the overall distance of fitnesses.</p>
+</li>
+</ol>
+<h3 id="combining-all-functions">Combining all functions</h3>
+<ol>
+<li>
+<p>The functions we have created can be combined with the following code snippet to execute the genetic algorithm to solve the problem defined at the beginning of <a href="#genetic-algorithm">this section</a>. Consider the width and the height of the sheet of paper to be <code>20cm</code> and <code>15cm</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+  <span class="c1"># main function</span>
+  <span class="c1">## parameter definition</span>
+  <span class="n">pop_size</span> <span class="o">=</span> <span class="mi">10</span>
+  <span class="n">pop_min</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#1cm</span>
+  <span class="n">pop_max</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">#10cm</span>
+  <span class="n">curr_iter</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">max_iter</span> <span class="o">=</span> <span class="mi">100</span>
+  <span class="n">min_overalldistance</span> <span class="o">=</span> <span class="mf">0.5</span>
+  <span class="n">p_mutation</span> <span class="o">=</span> <span class="mf">0.05</span>
+  <span class="c1">## initialise population</span>
+  <span class="n">population</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">population</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">generatePopulation</span><span class="p">(</span><span class="n">pop_size</span><span class="p">,</span> <span class="n">pop_min</span><span class="p">,</span> <span class="n">pop_max</span><span class="p">))</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">curr_iter</span> <span class="o">&lt;</span> <span class="n">max_iter</span> <span class="ow">and</span> <span class="n">findOverallDistance</span><span class="p">(</span><span class="n">population</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">&gt;</span> <span class="n">min_overalldistance</span><span class="p">):</span>
+    <span class="n">curr_iter</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="c1">## select parent pairs</span>
+    <span class="n">parents</span> <span class="o">=</span> <span class="n">selectParents</span><span class="p">(</span><span class="n">population</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="nb">len</span><span class="p">(</span><span class="n">population</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="c1">## perform crossover</span>
+    <span class="n">offsprings</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">parents</span><span class="p">:</span>
+      <span class="n">new_offsprings</span> <span class="o">=</span> <span class="n">crossover</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+      <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">new_offsprings</span><span class="p">:</span>
+        <span class="n">offsprings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+    <span class="c1">## perform mutation</span>
+    <span class="n">mutated</span> <span class="o">=</span> <span class="p">[</span><span class="n">mutate</span><span class="p">(</span><span class="n">offspring</span><span class="p">,</span> <span class="n">p_mutation</span><span class="p">)</span> <span class="k">for</span> <span class="n">offspring</span> <span class="ow">in</span> <span class="n">offsprings</span><span class="p">]</span>
+    <span class="c1">## update current population</span>
+    <span class="n">population</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mutated</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
