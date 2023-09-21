@@ -66,7 +66,7 @@
 
     The process will create a spiral in the following manner. The sequence of the signs produce the change in directions, and the fibonacci number provides the distance.
     <div style="text-align:center">
-    <svg viewBox="-300 -200 500 400" style="width:50%;max-width:500px">
+    <svg viewBox="-350 -250 600 500" style="width:50%;max-width:500px">
     <defs>
     <marker
     id="triangle"
@@ -80,19 +80,26 @@
     <path d="M 0 0 L 10 5 L 0 10 z" fill="#000" />
     </marker>
     </defs>
-    <text x="0" y="10" text-anchor="middle" dominant-baseline="hanging">(0,0)</text>
+    <text x="-10" y="00" text-anchor="end" dominant-baseline="hanging">(0,0)</text>
     <circle cx="0" cy="0" r="5" fill="black" />
-    <path d="M 0 0 l 90 -90" stroke="black" marker-end="url(#triangle)" />
-    <path d="M 0 0 m 100 -100 l 90 90" stroke="black" marker-end="url(#triangle)" />
-    <path d="M 0 0 m 100 -100 m 100 100 l -190 190" stroke="black" marker-end="url(#triangle)" />
-    <path d="M 0 0 m 100 -100 m 100 100 m -200 200 l -290 -290" stroke="black" marker-end="url(#triangle)" />
-    <path d="M 0 0 m 100 -100 m 100 100 m -200 200 m -300 -300 l 50 -50" stroke="black" stroke-dasharray="4" marker-end="url(#triangle)" />
+    <path d="M 0 0 m 5 -5 l 85 -85" stroke="black" marker-end="url(#triangle)" />
+    <text x="100" y="-110" text-anchor="middle" dominant-baseline="auto">(1,1)</text>
+    <path d="M 0 0 m 100 -100 m 5 5 l 85 85" stroke="black" marker-end="url(#triangle)" />
+    <text x="210" y="0" text-anchor="start" dominant-baseline="middle">(2,0)</text>
+    <path d="M 0 0 m 100 -100 m 100 100 m -5 5 l -185 185" stroke="black" marker-end="url(#triangle)" />
+    <text x="0" y="210" text-anchor="middle" dominant-baseline="hanging">(0,-2)</text>
+    <path d="M 0 0 m 100 -100 m 100 100 m -200 200 m -5 -5 l -285 -285" stroke="black" marker-end="url(#triangle)" />
+    <text x="-310" y="-100" text-anchor="end" dominant-baseline="middle">(-3,1)</text>
+    <path d="M 0 0 m 100 -100 m 100 100 m -200 200 m -300 -300 m 5 -5 l 45 -45" stroke="black" stroke-dasharray="4" marker-end="url(#triangle)" />
     <!-- <path d="M 0 0 l 100 -100 l 100 100 l -200 200 l -300 -300" stroke="black" fill="transparent" /> -->
     </svg>
     </div>
 
 
 4. Create a line plot of the series of coordinates. If the lines are smoothen, it would form the golden spiral which can be found in pinecorns, seashells, and hurricanes.
+
+    !!! note "Additional"
+        If you are interested in how we may plot arc to connect the points instead of using straight lines, you can refer to [Additional: plot arc to form golden spiral](./#additional-plot-arc-to-form-the-golden-spiral).
 
 ## Random selection based on probability
 
@@ -116,6 +123,103 @@ For this section. assume the `random.random()` function selects the random numbe
       return selectedOption
     ```
 
-<!-- ## Submission
+## Additional: plot arc to form golden spiral
 
-Submit a Python file with the three functions: `fibonacci`, `tossCoin`, and `chooseFromThree`. -->
+1. The golden spiral can be produced by drawing the arc connecting every consecutive coordinates.
+    <div style="text-align:center">
+    <svg viewBox="-350 -250 600 500" style="width:50%;max-width:500px">
+    <defs>
+    <marker
+    id="triangle"
+    viewBox="0 0 10 10"
+    refX="1"
+    refY="5"
+    markerUnits="strokeWidth"
+    markerWidth="10"
+    markerHeight="10"
+    orient="auto">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#000" />
+    </marker>
+    </defs>
+    <text x="-10" y="00" text-anchor="end" dominant-baseline="hanging">(0,0)</text>
+    <circle cx="0" cy="0" r="5" fill="black" />
+    <path d="M 0 0 m 5 -5 l 85 -85" stroke="black" marker-end="url(#triangle)" />
+    <text x="100" y="-110" text-anchor="middle" dominant-baseline="auto">(1,1)</text>
+    <path d="M 0 0 m 100 -100 m 5 5 l 85 85" stroke="black" marker-end="url(#triangle)" />
+    <text x="210" y="0" text-anchor="start" dominant-baseline="middle">(2,0)</text>
+    <path d="M 0 0 m 100 -100 m 100 100 m -5 5 l -185 185" stroke="black" marker-end="url(#triangle)" />
+    <text x="0" y="210" text-anchor="middle" dominant-baseline="hanging">(0,-2)</text>
+    <path d="M 0 0 m 100 -100 m 100 100 m -200 200 m -5 -5 l -285 -285" stroke="black" marker-end="url(#triangle)" />
+    <text x="-310" y="-100" text-anchor="end" dominant-baseline="middle">(-3,1)</text>
+    <path d="M 0 0 m 100 -100 m 100 100 m -200 200 m -300 -300 m 5 -5 l 45 -45" stroke="black" stroke-dasharray="4" marker-end="url(#triangle)" />
+    <path d="M 0 0 A 100 100 0 0 1 100 -100" stroke="#B71C1C" fill="transparent"/>
+    <path d="M 0 0 m 100 -100 A 100 100 0 0 1 200 0" stroke="#B71C1C" fill="transparent"/>
+    <circle cx="100" cy="0" r="5" fill="#B71C1C" />
+    <text x="100" y="10" text-anchor="middle" dominant-baseline="hanging">(1,0)</text>
+    <path d="M 0 0 m 100 -100 m 100 100 A 200 200 0 0 1 0 200" stroke="#007517" fill="transparent"/>
+    <circle cx="0" cy="0" r="5" fill="#007517" />
+    <path d="M 0 0 m 100 -100 m 100 100 m -200 200 A 300 300 0 0 1 -300 -100" stroke="#0064eb" fill="transparent"/>
+    <circle cx="0" cy="-100" r="5" fill="#0064eb" />
+    <text x="0" y="-110" text-anchor="middle" dominant-baseline="auto">(1,0)</text>
+    </svg>
+    </div>
+
+2. To draw the arc using `matplotlib` library, we need to identify the center of each arc. The arc and its corresponding center are colored with the same color in the previous figure. 
+    ```python linenums="0"
+    matplotlib.patches.Arc(
+        xy, # center of the arc
+        width, # length of horizontal axis, 
+        height, # length of vertical axis, 
+        angle, # rotation of the ellipse in degrees (counterclockwise)
+        theta1, # starting angle of the arc in degrees
+        theta2 # end angle of the arc in degrees
+    )
+    ```
+
+3. The centers of every arc can be genrated from the sequence of coordinates using the following function:
+    ```python title="function generatecenters"
+    def generatecenters(coordinates):
+        centers = []
+        for i, coord in enumerate(coordinates):
+            if i == 0: # add coordinate to list of center
+            centers.append([coord[0], coord[1]])
+            elif i == 1: # change x-coordinate of the first center
+            centers[-1][0] = coord[0]
+            else:
+            centers.append([centers[-1][0], centers[-1][1]])
+            if i % 2 == 0: # use y-coordinate as y for new center
+                centers[-1][1] = coord[1]
+            else: # use x-coordinate as x for new center
+                centers[-1][0] = coord[0]
+        return centers
+    ```
+    The `coordinates` is the list of coordinates generated from [Fibonacci and Golden Ratio](./#fibonacci-and-golden-ratio) step 3.
+
+4. The following function will then use the generated centers of the arc, and the Fibonacci sequence generated from `numberofamoebaseq` to draw the arc. The handler of the axis needs to be passed into the function as well.
+    ```python title="function plotspiral"
+    def plotspiral(axis, series, centers):
+        angle = 90
+        for number,center in zip(series,centers):
+            arc = Arc(
+                xy=center, 
+                width=2*number, 
+                height=2*number, 
+                angle=angle,
+                theta1=0, 
+                theta2=90
+            )
+            axis.add_patch(arc)
+            angle -= 90
+    ```
+
+    In your script, you will first generate the Fibonacci sequence, use the sequence to generate coordinates, generate centers of arcs, and plot the arcs to form the spiral.
+
+    ```python
+    n = 80
+    number_seq = numberofamoebaseq(n)
+    coordinates = generatecoordinatesfromseries(number_seq)
+    centers = generatecenters(coordinates)
+    plt.figure()
+    plt.scatter(...) # or plt.plot(...) to plot the coordinates as in Fibonacci and Golden Ratio step 4
+    plotspiral(plt.gca(), number_seq, centers) # plt.gca() returns handle of the current axis
+    ```
