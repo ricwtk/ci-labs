@@ -64,8 +64,35 @@
     9. Add `(-3,+3)` to the previous point `(0,-2)` to get `(-3,1)`.
     10. Continue with the next Fibonacci number and update the coordinates with the sequence of the signs `(+,+), (+,-), (-,-), (-,+)`.
 
+    The process will create a spiral in the following manner. The sequence of the signs produce the change in directions, and the fibonacci number provides the distance.
+    <div style="text-align:center">
+    <svg viewBox="-300 -200 500 400" style="width:50%;max-width:500px">
+    <defs>
+    <marker
+    id="triangle"
+    viewBox="0 0 10 10"
+    refX="1"
+    refY="5"
+    markerUnits="strokeWidth"
+    markerWidth="10"
+    markerHeight="10"
+    orient="auto">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#000" />
+    </marker>
+    </defs>
+    <text x="0" y="10" text-anchor="middle" dominant-baseline="hanging">(0,0)</text>
+    <circle cx="0" cy="0" r="5" fill="black" />
+    <path d="M 0 0 l 90 -90" stroke="black" marker-end="url(#triangle)" />
+    <path d="M 0 0 m 100 -100 l 90 90" stroke="black" marker-end="url(#triangle)" />
+    <path d="M 0 0 m 100 -100 m 100 100 l -190 190" stroke="black" marker-end="url(#triangle)" />
+    <path d="M 0 0 m 100 -100 m 100 100 m -200 200 l -290 -290" stroke="black" marker-end="url(#triangle)" />
+    <path d="M 0 0 m 100 -100 m 100 100 m -200 200 m -300 -300 l 50 -50" stroke="black" stroke-dasharray="4" marker-end="url(#triangle)" />
+    <!-- <path d="M 0 0 l 100 -100 l 100 100 l -200 200 l -300 -300" stroke="black" fill="transparent" /> -->
+    </svg>
+    </div>
 
-4. Create a line plot of the series of coordinates. If the lines are smoothen, it forms the golden spiral which can be found in pinecorns, seashells, and hurricanes.
+
+4. Create a line plot of the series of coordinates. If the lines are smoothen, it would form the golden spiral which can be found in pinecorns, seashells, and hurricanes.
 
 ## Random selection based on probability
 
