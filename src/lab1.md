@@ -223,3 +223,6 @@ For this section. assume the `random.random()` function selects the random numbe
     plt.scatter(...) # or plt.plot(...) to plot the coordinates as in Fibonacci and Golden Ratio step 4
     plotspiral(plt.gca(), number_seq, centers) # plt.gca() returns handle of the current axis
     ```
+
+    !!! note "Limitation"
+        Due to the limitation of matplotlib, the spiral plotting only works for the Fibonacci sequence with length less than 93.
