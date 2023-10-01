@@ -99,7 +99,7 @@
 4. Create a line plot of the series of coordinates. If the lines are smoothen, it would form the golden spiral which can be found in pinecorns, seashells, and hurricanes.
 
     !!! note "Additional"
-        If you are interested in how we may plot arc to connect the points instead of using straight lines, you can refer to [Additional: plot arc to form golden spiral](./#additional-plot-arc-to-form-the-golden-spiral).
+        If you are interested in how we may plot arc to connect the points instead of using straight lines, you can refer to [Additional: plot arc to form golden spiral](#additional-plot-arc-to-form-the-golden-spiral).
 
 ## Random selection based on probability
 
@@ -193,7 +193,7 @@ For this section. assume the `random.random()` function selects the random numbe
                 centers[-1][0] = coord[0]
         return centers
     ```
-    The `coordinates` is the list of coordinates generated from [Fibonacci and Golden Ratio](./#fibonacci-and-golden-ratio) step 3.
+    The `coordinates` is the list of coordinates generated from [Fibonacci and Golden Ratio](#fibonacci-and-golden-ratio) step 3.
 
 4. The following function will then use the generated centers of the arc, and the Fibonacci sequence generated from `numberofamoebaseq` to draw the arc. The handler of the axis needs to be passed into the function as well.
     ```python title="function plotspiral"
