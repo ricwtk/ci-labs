@@ -1,4 +1,4 @@
-# Lab 2: EC (GA)
+# Lab 3: EC (GA)
 
 ## Binary-to-gray code conversion
 
