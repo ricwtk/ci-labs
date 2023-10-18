@@ -266,7 +266,7 @@ Solve the following problem using global best particle swarm optimisation:
     - add the following lines between line 14 and line 15 in the [last code block in the previous section](#code-block-to-update), as well as after line 33.
       ```python
       if len(space_ax.lines) > 1:
-        del space_ax.lines[1]
+        space_ax.lines[1].remove()
       space_ax.plot([x.position for x in particles], [fit_fcn(x.position) for x in particles], 'go')
       space_ax.set_title("Position of particles in iteration {}".format(iteration))
       plt.pause(0.5) # pause the program for 0.5 second; if graph changes too quickly, increase this value; you can also speed up the process by decreasing this value
