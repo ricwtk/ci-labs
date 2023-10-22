@@ -1,4 +1,4 @@
-# Lab 4: EC (ACO)
+# Lab 5: EC (ACO)
 
 ## Ant colony optimisation
 
