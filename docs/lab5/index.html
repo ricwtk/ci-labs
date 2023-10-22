@@ -22,7 +22,7 @@
     
     
       
-        <title>Lab 5: ANN (Supervised learning) - CSC3034 CI Labs</title>
+        <title>Lab 4: EC (ACO) - CSC3034 CI Labs</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-5-ann-supervised-learning" class="md-skip">
+        <a href="#lab-4-ec-aco" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab 5: ANN (Supervised learning)
+              Lab 4: EC (ACO)
             
           </span>
         </div>
@@ -407,7 +407,7 @@
           
   
   <span class="md-ellipsis">
-    Lab 5: ANN (Supervised learning)
+    Lab 4: EC (ACO)
   </span>
   
 
@@ -418,7 +418,7 @@
         
   
   <span class="md-ellipsis">
-    Lab 5: ANN (Supervised learning)
+    Lab 4: EC (ACO)
   </span>
   
 
@@ -440,11 +440,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#artificial-neural-networks" class="md-nav__link">
-    Artificial neural networks
+  <a href="#ant-colony-optimisation" class="md-nav__link">
+    Ant colony optimisation
   </a>
   
-    <nav class="md-nav" aria-label="Artificial neural networks">
+    <nav class="md-nav" aria-label="Ant colony optimisation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -455,85 +455,71 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#load-data-to-be-learned" class="md-nav__link">
-    Load data to be learned
+  <a href="#problem-to-solve" class="md-nav__link">
+    Problem to solve
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#examine-the-dataset" class="md-nav__link">
-    Examine the dataset
+  <a href="#problem-formulation" class="md-nav__link">
+    Problem formulation
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#split-data-into-training-and-testing-sets" class="md-nav__link">
-    Split data into training and testing sets
+  <a href="#initiating-aco-algorithm" class="md-nav__link">
+    Initiating ACO algorithm
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#data-preprocessing" class="md-nav__link">
-    Data preprocessing
+  <a href="#identify-path-of-each-ant" class="md-nav__link">
+    Identify path of each ant
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#construct-the-ann-model" class="md-nav__link">
-    Construct the ANN model
+  <a href="#evaporation" class="md-nav__link">
+    Evaporation
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#train-the-model" class="md-nav__link">
-    Train the model
+  <a href="#deposition" class="md-nav__link">
+    Deposition
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#predictions" class="md-nav__link">
-    Predictions
+  <a href="#termination-conditions" class="md-nav__link">
+    Termination conditions
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#evaluation" class="md-nav__link">
-    Evaluation
+  <a href="#loop-until-termination" class="md-nav__link">
+    Loop until termination
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#parameters-of-the-fitted-model" class="md-nav__link">
-    Parameters of the fitted model
+  <a href="#visualisation" class="md-nav__link">
+    Visualisation
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#visualisation-the-neural-network" class="md-nav__link">
-    Visualisation the neural network
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#compare-the-weights-before-and-after-the-training" class="md-nav__link">
-    Compare the weights before and after the training
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#effect-of-parameters" class="md-nav__link">
-    Effect of parameters
+  <a href="#evaluate-effect-of-parameters" class="md-nav__link">
+    Evaluate effect of parameters
   </a>
   
 </li>
@@ -1343,117 +1329,163 @@
                   
 
 
-<h1 id="lab-5-ann-supervised-learning">Lab 5: ANN (Supervised learning)</h1>
-<h2 id="artificial-neural-networks">Artificial neural networks</h2>
+<h1 id="lab-4-ec-aco">Lab 4: EC (ACO)</h1>
+<h2 id="ant-colony-optimisation">Ant colony optimisation</h2>
 <h3 id="objective">Objective</h3>
 <ul>
-<li>to construct an multi-layer perceptron classifier using the scikit-learn Python library</li>
+<li>to develop a Python function to perform ant colony optimisation on a problem</li>
 </ul>
-<h3 id="load-data-to-be-learned">Load data to be learned</h3>
-<p>We will be constructing an artificial neural network and use it to perform prediction.</p>
-<p>The data we will be using today is the results of a chemical analysis of wines grown in the same region in Italy but derived from three different cultivars.</p>
-<p>The dataset is available from the scikit-learn library. Therefore we will first import the module.
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
-</code></pre></div></td></tr></table></div></p>
-<p>To load the data, 
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_wine</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div></p>
-<h3 id="examine-the-dataset">Examine the dataset</h3>
-<p>We will use pandas to get more insight into the dataset. Import <code>pandas</code> and construct a data frame from the input and target values.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">wine</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
-<span class="n">wine</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">target</span>
+<h3 id="problem-to-solve">Problem to solve</h3>
+<p>We will use ant colony optimisation to solve the Nick's route-finding problem in Romania. The problem is a route finding problem to identify the best (cheapest) route to travel from Arad to Bucharest.</p>
+<p>The road map of Romania is provided as follows:</p>
+<div>
+<div id="romania">
+<svg viewBox="0 0 950 500">
+
+<path d="M 75 125 L 100 75" stroke="black" />
+<text :x="(75+100)/2" :y="(125+75)/2" text-anchor="end">75</text>
+<path d="M 100 75 L 125 25" stroke="black" />
+<text :x="(100+125)/2" :y="(75+25)/2" text-anchor="end">71</text>
+<path d="M 125 25 L 265 175" stroke="black" />
+<text :x="(125+265)/2" :y="(25+175)/2-10" text-anchor="start">151</text>
+<path d="M 265 175 L 75 125" stroke="black" />
+<text :x="(265+75)/2" :y="(175+125)/2+15" text-anchor="end">140</text>
+<path d="M 75 125 L 85 280" stroke="black" />
+<text :x="(75+85)/2-5" :y="(125+280)/2" text-anchor="end">118</text>
+<path d="M 85 280 L 185 335" stroke="black" />
+<text :x="(85+185)/2+5" :y="(280+335)/2-5" text-anchor="start">111</text>
+<path d="M 185 335 L 190 390" stroke="black" />
+<text :x="(185+190)/2+10" :y="(335+390)/2" text-anchor="start">70</text>
+<path d="M 190 390 L 185 450" stroke="black" />
+<text :x="(190+185)/2+10" :y="(390+450)/2" text-anchor="start">75</text>
+<path d="M 185 450 L 350 465" stroke="black" />
+<text :x="(185+350)/2" :y="(450+465)/2-10" text-anchor="end">120</text>
+<path d="M 350 465 L 320 230" stroke="black" />
+<text :x="(350+320)/2-10" :y="(465+230)/2" text-anchor="end">146</text>
+<path d="M 320 230 L 265 175" stroke="black" />
+<text :x="(320+265)/2+5" :y="(230+175)/2" text-anchor="start">80</text>
+<path d="M 265 175 L 425 175" stroke="black" />
+<text :x="(265+425)/2" :y="(175+175)/2-5" text-anchor="middle">99</text>
+<path d="M 320 230 L 475 310" stroke="black" />
+<text :x="(320+475)/2" :y="(230+310)/2-5" text-anchor="start">97</text>
+<path d="M 475 310 L 350 465" stroke="black" />
+<text :x="(475+350)/2-5" :y="(310+465)/2-5" text-anchor="end">138</text>
+<path d="M 475 310 L 640 390" stroke="black" />
+<text :x="(475+640)/2-10" :y="(310+390)/2+10" text-anchor="end">101</text>
+<path d="M 425 175 L 640 390" stroke="black" />
+<text :x="(425+640)/2+5" :y="(175+390)/2-5" text-anchor="start">211</text>
+<path d="M 640 390 L 575 485" stroke="black" />
+<text :x="(640+575)/2-5" :y="(390+485)/2" text-anchor="end">90</text>
+<path d="M 640 390 L 745 340 " stroke="black" />
+<text :x="(640+745)/2-5" :y="(390+340)/2" text-anchor="end">85</text>
+<path d="M 745 340 L 875 340" stroke="black" />
+<text :x="(745+875)/2" :y="(340+340)/2+15" text-anchor="middle">98</text>
+<path d="M 875 340 L 935 440" stroke="black" />
+<text :x="(875+935)/2-10" :y="(340+440)/2+5" text-anchor="end">86</text>
+<path d="M 745 340 L 850 225" stroke="black" />
+<text :x="(745+850)/2-5" :y="(340+225)/2-5" text-anchor="end">142</text>
+<path d="M 850 225 L 760 120" stroke="black" />
+<text :x="(850+760)/2+5" :y="(225+120)/2" text-anchor="start">92</text>
+<path d="M 760 120 L 625 60" stroke="black" />
+<text :x="(760+625)/2+5" :y="(120+60)/2-5" text-anchor="start">87</text>
+
+<circle cx="75" cy="125" r="10" fill="green" />
+<text x="60" y="130" text-anchor="end">Arad</text>
+<circle cx="100" cy="75" r="10" fill="gray" />
+<text x="85" y="75" text-anchor="end">Zerind</text>
+<circle cx="125" cy="25" r="10" fill="gray" />
+<text x="110" y="20" text-anchor="end">Oradea</text>
+<circle cx="265" cy="175" r="10" fill="gray" />
+<text x="265" y="160" text-anchor="start">Sibiu</text>
+<circle cx="425" cy="175" r="10" fill="gray" />
+<text x="440" y="180" text-anchor="start">Fagaras</text>
+<circle cx="320" cy="230" r="10" fill="gray" />
+<text x="305" y="235" text-anchor="end">Rimnicu Vilcea</text>
+<circle cx="475" cy="310" r="10" fill="gray" />
+<text x="460" y="320" text-anchor="end">Pitesti</text>
+<circle cx="350" cy="465" r="10" fill="gray" />
+<text x="340" y="480" text-anchor="end">Craiova</text>
+<circle cx="185" cy="450" r="10" fill="gray" />
+<text x="170" y="455" text-anchor="end">Drobeta</text>
+<circle cx="190" cy="390" r="10" fill="gray" />
+<text x="175" y="395" text-anchor="end">Mehadia</text>
+<circle cx="185" cy="335" r="10" fill="gray" />
+<text x="170" y="345" text-anchor="end">Lugoj</text>
+<circle cx="85" cy="280" r="10" fill="gray" />
+<text x="70" y="285" text-anchor="end">Timisoara</text>
+<circle cx="640" cy="390" r="10" fill="red" />
+<text x="625" y="400" text-anchor="end">Bucharest</text>
+<circle cx="575" cy="485" r="10" fill="gray" />
+<text x="560" y="490" text-anchor="end">Giurgiu</text>
+<circle cx="745" cy="340" r="10" fill="gray" />
+<text x="730" y="335" text-anchor="end">Urziceni</text>
+<circle cx="875" cy="340" r="10" fill="gray" />
+<text x="875" y="325" text-anchor="end">Hirsova</text>
+<circle cx="935" cy="440" r="10" fill="gray" />
+<text x="920" y="445" text-anchor="end">Eforie</text>
+<circle cx="850" cy="225" r="10" fill="gray" />
+<text x="835" y="230" text-anchor="end">Vaslui</text>
+<circle cx="760" cy="120" r="10" fill="gray" />
+<text x="745" y="135" text-anchor="end">Iasi</text>
+<circle cx="625" cy="60" r="10" fill="gray" />
+<text x="610" y="65" text-anchor="end">Neamt</text>
+</svg>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>new Vue({ el: "#romania" });</script>
+</div>
+
+<h3 id="problem-formulation">Problem formulation</h3>
+<ol>
+<li>
+<p>The coordinates of each town are provided as follows. This will be used later for the purpose of visualisation.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">location_list</span> <span class="o">=</span> <span class="p">[</span> <span class="c1"># [x,y,name]</span>
+  <span class="p">[</span><span class="mi">75</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="s1">&#39;Arad&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="s1">&#39;Zerind&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">125</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;Oradea&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">265</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="s1">&#39;Sibiu&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">425</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="s1">&#39;Fagaras&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">320</span><span class="p">,</span> <span class="mi">230</span><span class="p">,</span> <span class="s1">&#39;Rimnicu Vilcea&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">475</span><span class="p">,</span> <span class="mi">310</span><span class="p">,</span> <span class="s1">&#39;Pitesti&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">350</span><span class="p">,</span> <span class="mi">465</span><span class="p">,</span> <span class="s1">&#39;Craiova&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">185</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="s1">&#39;Drobeta&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">190</span><span class="p">,</span> <span class="mi">390</span><span class="p">,</span> <span class="s1">&#39;Mehadia&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">185</span><span class="p">,</span> <span class="mi">335</span><span class="p">,</span> <span class="s1">&#39;Lugoj&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">280</span><span class="p">,</span> <span class="s1">&#39;Timisoara&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">640</span><span class="p">,</span> <span class="mi">390</span><span class="p">,</span> <span class="s1">&#39;Bucharest&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">575</span><span class="p">,</span> <span class="mi">485</span><span class="p">,</span> <span class="s1">&#39;Giurgiu&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">745</span><span class="p">,</span> <span class="mi">340</span><span class="p">,</span> <span class="s1">&#39;Urziceni&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">875</span><span class="p">,</span> <span class="mi">340</span><span class="p">,</span> <span class="s1">&#39;Hirsova&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">935</span><span class="p">,</span> <span class="mi">440</span><span class="p">,</span> <span class="s1">&#39;Eforie&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">850</span><span class="p">,</span> <span class="mi">225</span><span class="p">,</span> <span class="s1">&#39;Vaslui&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">760</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="s1">&#39;Iasi&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">625</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="s1">&#39;Neamt&#39;</span><span class="p">]</span>
+<span class="p">]</span>
 </code></pre></div></td></tr></table></div>
-<p>The <code>describe</code> method of a data frame provides the statistical summary of the dataset.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">wine</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span>
-</code></pre></div></td></tr></table></div>
-<h3 id="split-data-into-training-and-testing-sets">Split data into training and testing sets</h3>
-<p>scikit-learn library provides a function to split the data into training and testing sets easily. </p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<p>We will split the data into 80% training data and 20% testing data. The first argument will be split into the first two outputs, the second argument the second pair, and so on and so forth.</p>
-<h3 id="data-preprocessing">Data preprocessing</h3>
-<p>From <a href="#examine-the-dataset">Examine the dataset</a>, notice that the range of different features are different. This will cause the training algorithm to be difficult to converge. </p>
-<p>Now we will use the method of standardisation to normalise the data. scikit-learn provides a built-in class to perform the standardisation, <code>StandardScaler</code>.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
-<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
-<p>We will scale the data based on the training data and then apply the scaler to both the training and testing data.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
-<span class="n">X_train</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
-<span class="n">X_test</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<p>Examine the training input data with the following code:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span>
-</code></pre></div></td></tr></table></div>
-<p>Compare this result with the one in <a href="#examine-the-dataset">Examine the dataset</a>. <strong>How are these two datasets different from each other? What did the <code>StandardScaler</code> do to the dataset?</strong></p>
-<h3 id="construct-the-ann-model">Construct the ANN model</h3>
-<p>As the target values are classes, i.e. <code>0</code>, <code>1</code>, or <code>2</code>, we need a classifier to perform the classification. </p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPClassifier</span>
-</code></pre></div></td></tr></table></div>
-<p>We will construct a feedforward neural network with <strong>1 hidden layer of 2 neuron</strong> and <strong>maximum iteration of 1000</strong>.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">mlp</span> <span class="o">=</span> <span class="n">MLPClassifier</span><span class="p">(</span><span class="n">hidden_layer_sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<h3 id="train-the-model">Train the model</h3>
-<p>The model can be trained using the <code>fit</code> method of the classifier. </p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">mlp</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<h3 id="predictions">Predictions</h3>
-<p>The model is now trained. We can use the fitted (trained) model to predict the output of the testing data.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">predictions</span> <span class="o">=</span> <span class="n">mlp</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<h3 id="evaluation">Evaluation</h3>
-<p>With the prediction results, we can evaluate the performance of the fitted model. scikit-learn library provides some built-in metrics such as confusion matrix and classification report.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">classification_report</span>
-</code></pre></div></td></tr></table></div>
-<p>confusion matrix
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">))</span>
-</code></pre></div></td></tr></table></div></p>
-<p>classification report
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">))</span>
-</code></pre></div></td></tr></table></div></p>
-<p><strong>What information is provided by the confusion matrix and the classification report?</strong></p>
-<h3 id="parameters-of-the-fitted-model">Parameters of the fitted model</h3>
-<p>The parameters of the fitted model (<code>mlp</code>) can be access through its public attributes:</p>
-<table>
-<thead>
-<tr>
-<th>attributes</th>
-<th>definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>.coefs_</code></td>
-<td>weight matrix</td>
-</tr>
-<tr>
-<td><code>.intercepts_</code></td>
-<td>bias (threshold) vector</td>
-</tr>
-<tr>
-<td><code>.n_iter_</code></td>
-<td>number of iterations the solver has ran</td>
-</tr>
-<tr>
-<td><code>.n_layers_</code></td>
-<td>number of layers</td>
-</tr>
-<tr>
-<td><code>.n_outputs_</code></td>
-<td>number of outputs</td>
-</tr>
-</tbody>
-</table>
-<h3 id="visualisation-the-neural-network">Visualisation the neural network</h3>
-<p>Copy the following code for the function <code>visualise</code> to the beginning of the script.</p>
+</li>
+<li>
+<p>Then define the travel cost between connected cities. </p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1478,55 +1510,447 @@
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">step_cost</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="s1">&#39;Arad&#39;</span><span class="p">,</span> <span class="s1">&#39;Zerind&#39;</span><span class="p">,</span> <span class="mi">75</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Zerind&#39;</span><span class="p">,</span> <span class="s1">&#39;Oradea&#39;</span><span class="p">,</span> <span class="mi">71</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Oradea&#39;</span><span class="p">,</span> <span class="s1">&#39;Sibiu&#39;</span><span class="p">,</span> <span class="mi">151</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Sibiu&#39;</span><span class="p">,</span> <span class="s1">&#39;Arad&#39;</span><span class="p">,</span> <span class="mi">140</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Sibiu&#39;</span><span class="p">,</span> <span class="s1">&#39;Fagaras&#39;</span><span class="p">,</span> <span class="mi">99</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Sibiu&#39;</span><span class="p">,</span> <span class="s1">&#39;Rimnicu Vilcea&#39;</span><span class="p">,</span> <span class="mi">80</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Fagaras&#39;</span><span class="p">,</span> <span class="s1">&#39;Bucharest&#39;</span><span class="p">,</span> <span class="mi">211</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Bucharest&#39;</span><span class="p">,</span> <span class="s1">&#39;Giurgiu&#39;</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Bucharest&#39;</span><span class="p">,</span> <span class="s1">&#39;Pitesti&#39;</span><span class="p">,</span> <span class="mi">101</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Pitesti&#39;</span><span class="p">,</span> <span class="s1">&#39;Rimnicu Vilcea&#39;</span><span class="p">,</span> <span class="mi">97</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Rimnicu Vilcea&#39;</span><span class="p">,</span> <span class="s1">&#39;Craiova&#39;</span><span class="p">,</span> <span class="mi">146</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Craiova&#39;</span><span class="p">,</span> <span class="s1">&#39;Pitesti&#39;</span><span class="p">,</span> <span class="mi">138</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Craiova&#39;</span><span class="p">,</span> <span class="s1">&#39;Drobeta&#39;</span><span class="p">,</span> <span class="mi">120</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Drobeta&#39;</span><span class="p">,</span> <span class="s1">&#39;Mehadia&#39;</span><span class="p">,</span> <span class="mi">75</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Mehadia&#39;</span><span class="p">,</span> <span class="s1">&#39;Lugoj&#39;</span><span class="p">,</span> <span class="mi">70</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Lugoj&#39;</span><span class="p">,</span> <span class="s1">&#39;Timisoara&#39;</span><span class="p">,</span> <span class="mi">111</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Arad&#39;</span><span class="p">,</span> <span class="s1">&#39;Timisoara&#39;</span><span class="p">,</span> <span class="mi">118</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Bucharest&#39;</span><span class="p">,</span> <span class="s1">&#39;Urziceni&#39;</span><span class="p">,</span> <span class="mi">85</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Urziceni&#39;</span><span class="p">,</span> <span class="s1">&#39;Vaslui&#39;</span><span class="p">,</span> <span class="mi">142</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Vaslui&#39;</span><span class="p">,</span> <span class="s1">&#39;Iasi&#39;</span><span class="p">,</span> <span class="mi">92</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Iasi&#39;</span><span class="p">,</span> <span class="s1">&#39;Neamt&#39;</span><span class="p">,</span> <span class="mi">87</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Urziceni&#39;</span><span class="p">,</span> <span class="s1">&#39;Hirsova&#39;</span><span class="p">,</span> <span class="mi">98</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Hirsova&#39;</span><span class="p">,</span> <span class="s1">&#39;Eforie&#39;</span><span class="p">,</span> <span class="mi">86</span><span class="p">]</span>
+<span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>We will define two class, <code>City</code> and <code>Road</code>.</p>
+</li>
+<li>
+<p>An object of class <code>City</code> has the attributes of <code>name</code> (the name of the city), <code>roads</code> (an array of references to the roads connected to the current city), and <code>coordinates</code> (coordinates of the cities).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">City</span><span class="p">:</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">roads</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">coordinates</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="k">def</span> <span class="nf">visualise</span><span class="p">(</span><span class="n">mlp</span><span class="p">):</span>
-  <span class="c1"># get number of neurons in each layer</span>
-  <span class="n">n_neurons</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span> <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">mlp</span><span class="o">.</span><span class="n">coefs_</span><span class="p">]</span>
-  <span class="n">n_neurons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mlp</span><span class="o">.</span><span class="n">n_outputs_</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">set_coordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coordinates</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">coordinates</span> <span class="o">=</span> <span class="n">coordinates</span>
 
-  <span class="c1"># calculate the coordinates of each neuron on the graph</span>
-  <span class="n">y_range</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">n_neurons</span><span class="p">)]</span>
-  <span class="n">x_range</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">n_neurons</span><span class="p">)]</span>
-  <span class="n">loc_neurons</span> <span class="o">=</span> <span class="p">[[[</span><span class="n">l</span><span class="p">,</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">layer</span><span class="o">+</span><span class="mi">1</span><span class="p">))]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">layer</span><span class="p">)]</span> <span class="k">for</span> <span class="n">l</span><span class="p">,</span><span class="n">layer</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">n_neurons</span><span class="p">)]</span>
-  <span class="n">x_neurons</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">loc_neurons</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="n">layer</span><span class="p">]</span>
-  <span class="n">y_neurons</span> <span class="o">=</span> <span class="p">[</span><span class="n">y</span> <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">loc_neurons</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="n">layer</span><span class="p">]</span>
+  <span class="k">def</span> <span class="nf">add_road</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">road</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">road</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">roads</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">roads</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">road</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>An object of class <code>Road</code> has the attributes of <code>connected_cities</code> (an array of references to the cities connected through this road), <code>cost</code> (the step cost of this road), and <code>pheromone</code> (the pheromone on this road).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Road</span><span class="p">:</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connected_cities</span><span class="p">,</span> <span class="n">cost</span><span class="p">,</span> <span class="n">pheromone</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">connected_cities</span> <span class="o">=</span> <span class="n">connected_cities</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">cost</span> <span class="o">=</span> <span class="n">cost</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">pheromone</span> <span class="o">=</span> <span class="n">pheromone</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>We will construct the list of <code>City</code> objects and <code>Road</code> objects from the information provided by the question, i.e. information in <code>location_list</code> and <code>step_cost</code>. The following code block should be in the <code>main</code> code block.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">cities</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">coord1</span><span class="p">,</span> <span class="n">coord2</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">location_list</span><span class="p">:</span>
+  <span class="n">cities</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">City</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  <span class="n">cities</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">set_coordinates</span><span class="p">([</span><span class="n">coord1</span><span class="p">,</span> <span class="n">coord2</span><span class="p">])</span>
+<span class="n">roads</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">city1</span><span class="p">,</span> <span class="n">city2</span><span class="p">,</span> <span class="n">cost</span> <span class="ow">in</span> <span class="n">step_cost</span><span class="p">:</span>
+  <span class="n">road</span> <span class="o">=</span> <span class="n">Road</span><span class="p">([</span><span class="n">cities</span><span class="p">[</span><span class="n">city1</span><span class="p">],</span> <span class="n">cities</span><span class="p">[</span><span class="n">city2</span><span class="p">]],</span> <span class="n">cost</span><span class="p">)</span>
+  <span class="n">cities</span><span class="p">[</span><span class="n">city1</span><span class="p">]</span><span class="o">.</span><span class="n">add_road</span><span class="p">(</span><span class="n">road</span><span class="p">)</span>
+  <span class="n">cities</span><span class="p">[</span><span class="n">city2</span><span class="p">]</span><span class="o">.</span><span class="n">add_road</span><span class="p">(</span><span class="n">road</span><span class="p">)</span>
+  <span class="n">roads</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">road</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>In the <code>main</code> code block, define the <code>origin</code> and <code>destination</code> cities.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">origin</span> <span class="o">=</span> <span class="n">cities</span><span class="p">[</span><span class="s1">&#39;Arad&#39;</span><span class="p">]</span>
+<span class="n">destination</span> <span class="o">=</span> <span class="n">cities</span><span class="p">[</span><span class="s1">&#39;Bucharest&#39;</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+</li>
+</ol>
+<h3 id="initiating-aco-algorithm">Initiating ACO algorithm</h3>
+<ol>
+<li>
+<p>We then define the parameters for ACO, i.e. number of ants, <code>n_ant</code>, pheromone influence constant, <code>alpha</code>, and evaporation rate, <code>rho</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">n_ant</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="mf">0.1</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>Add the method <code>set_pheromone</code> to the class <code>Road</code>. 
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Road</span><span class="p">:</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="o">...</span>
 
-  <span class="c1"># identify the range of weights</span>
-  <span class="n">weight_range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">min</span><span class="p">([</span><span class="n">layer</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">mlp</span><span class="o">.</span><span class="n">coefs_</span><span class="p">]),</span> <span class="nb">max</span><span class="p">([</span><span class="n">layer</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">mlp</span><span class="o">.</span><span class="n">coefs_</span><span class="p">])]</span>
+  <span class="k">def</span> <span class="nf">set_pheromone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pheromone</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">pheromone</span> <span class="o">=</span> <span class="n">pheromone</span>
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>Set the initial pheromone of each road to 0.01.
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># in main block</span>
+<span class="n">initial_pheromone</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="k">for</span> <span class="n">road</span> <span class="ow">in</span> <span class="n">roads</span><span class="p">:</span>
+  <span class="n">road</span><span class="o">.</span><span class="n">set_pheromone</span><span class="p">(</span><span class="n">initial_pheromone</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>Define the class <code>Ant</code>. 
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Ant</span><span class="p">:</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">cities</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># cities the ant passes through, in sequence</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># roads the ant uses, in sequence</span>
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>Initiate <code>n_ants</code> ants.
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ants</span> <span class="o">=</span> <span class="p">[</span><span class="n">Ant</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_ant</span><span class="p">)]</span>
+</code></pre></div></td></tr></table></div></p>
+</li>
+</ol>
+<h3 id="identify-path-of-each-ant">Identify path of each ant</h3>
+<ol>
+<li>
+<p>In the <code>Ant</code> class, define a method to identify the path by taking the inputs of the available roads, the origin, the destination, and the pheromone influence constant &alpha;.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Ant</span><span class="p">:</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="o">...</span>
 
-  <span class="c1"># prepare the figure</span>
+  <span class="k">def</span> <span class="nf">get_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin</span><span class="p">,</span> <span class="n">destination</span><span class="p">,</span> <span class="n">alpha</span><span class="p">):</span>
+    <span class="c1"># 1. append origin to the self.cities</span>
+    <span class="c1"># 2. if the last city is not destination, search for the next city to go</span>
+    <span class="c1"># 3. after getting to the destination, remove the loop within the path, i.e. if there are repeated cities in self.cities, remove the cities and the roads in between the repetition</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>Define a method to calculate the path length.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Ant</span><span class="p">:</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="o">...</span>
+
+  <span class="k">def</span> <span class="nf">get_path</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="o">...</span>
+
+  <span class="k">def</span> <span class="nf">get_path_length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># calculate path length based on self.path</span>
+    <span class="k">return</span> <span class="n">path_length</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>As the path of each ant will be reset every iteration, define a method that reset the <code>path</code> and <code>cities</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Ant</span><span class="p">:</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="o">...</span>
+
+  <span class="k">def</span> <span class="nf">get_path</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="o">...</span>
+
+  <span class="k">def</span> <span class="nf">get_path_length</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="o">...</span>
+
+  <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">cities</span> <span class="o">=</span> <span class="p">[]</span>
+</code></pre></div></td></tr></table></div>
+</li>
+</ol>
+<h3 id="evaporation">Evaporation</h3>
+<ol>
+<li>
+<p>In the <code>Road</code> class, define a method to evaporate the pheromone by taking the input of evaporation rate &rho;.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Road</span><span class="p">:</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="o">...</span>
+
+  <span class="k">def</span> <span class="nf">set_pheromone</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="o">...</span>
+
+  <span class="k">def</span> <span class="nf">evaporate_pheromone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rho</span><span class="p">):</span>
+    <span class="c1"># update the pheromone of the road</span>
+</code></pre></div></td></tr></table></div>
+</li>
+</ol>
+<h3 id="deposition">Deposition</h3>
+<ol>
+<li>
+<p>In the <code>Road</code> class, define a method to calculate the updated pheromone after pheromone deposition by taking the input of all the ants. We will use the following pheromone deposition formula for ant <span class="arithmatex">\(k\)</span> on road <span class="arithmatex">\(i\)</span>:</p>
+<div class="arithmatex">\[\Delta\tau_{i,k} = \frac{1}{L_k}\]</div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Road</span><span class="p">:</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="o">...</span>
+
+  <span class="k">def</span> <span class="nf">set_pheromone</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="o">...</span>
+
+  <span class="k">def</span> <span class="nf">evaporate_pheromone</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="o">...</span>
+
+  <span class="k">def</span> <span class="nf">deposit_pheromone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ants</span><span class="p">):</span>
+    <span class="c1"># 1. search for ants that uses the raod</span>
+    <span class="c1"># 2. deposit pheromone using the inversely proportionate relationship between path length and deposited pheromone</span>
+</code></pre></div></td></tr></table></div>
+</li>
+</ol>
+<h3 id="termination-conditions">Termination conditions</h3>
+<ol>
+<li>
+<p>We will use the following conditions as the termination conditions:</p>
+<ul>
+<li>maximum iteration of 200</li>
+<li>if &GreaterEqual;90% of the ants use the same path</li>
+</ul>
+</li>
+<li>
+<p>Define a function to calculate the percentage of the most dominant path.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_percentage_of_dominant_path</span><span class="p">(</span><span class="n">ants</span><span class="p">):</span>
+  <span class="o">...</span>
+  <span class="k">return</span> <span class="n">percentage</span>
+</code></pre></div></td></tr></table></div>
+</li>
+</ol>
+<h3 id="loop-until-termination">Loop until termination</h3>
+<ol>
+<li>
+<p>Create a loop to iterate until termination.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># termination threshold</span>
+<span class="n">max_iteration</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">percentage_of_dominant_path</span> <span class="o">=</span> <span class="mf">0.9</span>
+
+<span class="n">iteration</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="o">...</span><span class="p">:</span> <span class="c1"># termination conditions</span>
+  <span class="c1"># loop through all the ants to identify the path of each ant</span>
+  <span class="k">for</span> <span class="n">ant</span> <span class="ow">in</span> <span class="n">ants</span><span class="p">:</span>
+    <span class="c1"># reset the path of the ant</span>
+    <span class="n">ant</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+    <span class="c1"># identify the path of the ant</span>
+    <span class="n">ant</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span> <span class="n">destination</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
+  <span class="c1"># loop through all roads</span>
+  <span class="k">for</span> <span class="n">road</span> <span class="ow">in</span> <span class="n">roads</span><span class="p">:</span>
+    <span class="c1"># evaporate the pheromone on the road</span>
+    <span class="n">road</span><span class="o">.</span><span class="n">evaporate_pheromone</span><span class="p">(</span><span class="n">rho</span><span class="p">)</span>
+    <span class="c1"># deposit the pheromone</span>
+    <span class="n">road</span><span class="o">.</span><span class="n">deposit_pheromone</span><span class="p">(</span><span class="n">ants</span><span class="p">)</span>
+  <span class="c1"># increase iteration count</span>
+  <span class="n">iteration</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="c1"># after exiting the loop, return the most occurred path as the solution</span>
+<span class="o">...</span>
+</code></pre></div></td></tr></table></div>
+</li>
+</ol>
+<h3 id="visualisation">Visualisation</h3>
+<ol>
+<li>
+<p>Define the following functions:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">...</span>
+<span class="k">def</span> <span class="nf">create_graph</span><span class="p">(</span><span class="n">cities</span><span class="p">):</span>
   <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
   <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-  <span class="c1"># draw the neurons</span>
-  <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_neurons</span><span class="p">,</span> <span class="n">y_neurons</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-  <span class="c1"># draw the connections with line width corresponds to the weight of the connection</span>
-  <span class="k">for</span> <span class="n">l</span><span class="p">,</span><span class="n">layer</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">mlp</span><span class="o">.</span><span class="n">coefs_</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">neuron</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">layer</span><span class="p">):</span>
-      <span class="k">for</span> <span class="n">j</span><span class="p">,</span><span class="n">w</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">neuron</span><span class="p">):</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">loc_neurons</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">loc_neurons</span><span class="p">[</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">loc_neurons</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">loc_neurons</span><span class="p">[</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]],</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="p">((</span><span class="n">w</span><span class="o">-</span><span class="n">weight_range</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">weight_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">weight_range</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="mi">5</span><span class="o">+</span><span class="mf">0.2</span><span class="p">)</span><span class="o">*</span><span class="mf">1.2</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">loc_neurons</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">loc_neurons</span><span class="p">[</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">loc_neurons</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">loc_neurons</span><span class="p">[</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]],</span> <span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="p">(</span><span class="n">w</span><span class="o">-</span><span class="n">weight_range</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">weight_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">weight_range</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="mi">5</span><span class="o">+</span><span class="mf">0.2</span><span class="p">)</span>
+  <span class="n">cities_x</span> <span class="o">=</span> <span class="p">[</span><span class="n">city</span><span class="o">.</span><span class="n">coordinates</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">cities</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+  <span class="n">cities_y</span> <span class="o">=</span> <span class="p">[</span><span class="n">city</span><span class="o">.</span><span class="n">coordinates</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">cities</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">cities_x</span><span class="p">,</span> <span class="n">cities_y</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="n">aspect</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">ax</span>
 </code></pre></div></td></tr></table></div>
-<p>To use this function to visualise the neural network, use the following line after the predictions.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">visualise</span><span class="p">(</span><span class="n">mlp</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<h3 id="compare-the-weights-before-and-after-the-training">Compare the weights before and after the training</h3>
-<p>At initiation, the weights are not assigned. Therefore we need to train the model once before we can visualise the neural network. We can train the model once using the <code>.partial_fit</code> method. Put the following lines right after the initiation of <code>mlp</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">mlp</span><span class="o">.</span><span class="n">partial_fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">target</span><span class="p">))</span>
-<span class="n">visualise</span><span class="p">(</span><span class="n">mlp</span><span class="p">)</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">draw_pheromone</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">roads</span><span class="p">):</span>
+  <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">road</span> <span class="ow">in</span> <span class="n">roads</span><span class="p">:</span>
+    <span class="n">from_coord</span> <span class="o">=</span> <span class="n">road</span><span class="o">.</span><span class="n">connected_cities</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">coordinates</span>
+    <span class="n">to_coord</span> <span class="o">=</span> <span class="n">road</span><span class="o">.</span><span class="n">connected_cities</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">coordinates</span>
+    <span class="n">coord_x</span> <span class="o">=</span> <span class="p">[</span><span class="n">from_coord</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">to_coord</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="n">coord_y</span> <span class="o">=</span> <span class="p">[</span><span class="n">from_coord</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">to_coord</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">coord_x</span><span class="p">,</span> <span class="n">coord_y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="n">road</span><span class="o">.</span><span class="n">pheromone</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+  <span class="k">return</span> <span class="n">lines</span>
 </code></pre></div></td></tr></table></div>
-<p>Compare the weights of the two visualisations.</p>
-<h3 id="effect-of-parameters">Effect of parameters</h3>
-<p>Investigate the effect of the following parameters on the performance of the neural network and the number of iterations to achieve convergence.</p>
-<ul>
-<li>number of hidden layers</li>
-<li>number of neurons in hidden layers</li>
-<li>splitting ratio of training and testing sets</li>
-</ul>
+</li>
+<li>
+<p>Add the following lines to the <code>main</code> code block just before the <code>while</code> loop (loop until termination).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ax</span> <span class="o">=</span> <span class="n">create_graph</span><span class="p">(</span><span class="n">cities</span><span class="p">)</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">draw_pheromone</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">roads</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>Add the following lines to after <code>iteration += 1</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># visualise</span>
+<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+  <span class="k">del</span> <span class="n">l</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">draw_pheromone</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">roads</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</li>
+</ol>
+<h3 id="evaluate-effect-of-parameters">Evaluate effect of parameters</h3>
+<ol>
+<li>
+<p>Modify the pheromone depositing formula to</p>
+<div class="arithmatex">\[\Delta\tau_{i,k} = \frac{1}{L_k^{1.5}}\]</div>
+<p>What is the effect of this?</p>
+</li>
+<li>
+<p>Modify the pheromone depositing formula to</p>
+<div class="arithmatex">\[\Delta\tau_{i,k} = \frac{5}{L_k}\]</div>
+<p>What is the effect of this?</p>
+</li>
+<li>
+<p>Investigate the effect of number of ants <code>n_ant</code>.</p>
+</li>
+<li>
+<p>Investigate the effect of pheromone influence constant <span class="arithmatex">\(\alpha\)</span> <code>alpha</code>.</p>
+</li>
+<li>
+<p>Investigate the effect of evaporation rate <span class="arithmatex">\(\rho\)</span> <code>rho</code>.</p>
+</li>
+</ol>
 
 
 
