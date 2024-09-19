@@ -64,7 +64,7 @@ ax = fig.add_subplot(1,1,1)
 ```
 
 #### Visualisation function
-1. Download the [vis.py](files/vis.py) and save it to the same folder as your script.
+1. Download the [vis.py](../../files/vis.py) and save it to the same folder as your script.
 
 2. Import all functions under the namespace of `vis`
   ```python
