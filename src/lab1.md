@@ -176,7 +176,7 @@ For this section. assume the `random.random()` function selects the random numbe
     )
     ```
 
-3. The centers of every arc can be genrated from the sequence of coordinates using the following function:
+3. The centers of every arc can be generated from the sequence of coordinates using the following function:
     ```python title="function generatecenters"
     def generatecenters(coordinates):
         centers = []
