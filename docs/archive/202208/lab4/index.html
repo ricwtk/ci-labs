@@ -10,8 +10,15 @@
       
         <link rel="canonical" href="https://ricwtk.github.io/ci-labs/archive/202208/lab4/">
       
+      
+        <link rel="prev" href="../lab3/">
+      
+      
+        <link rel="next" href="../lab5/">
+      
+      
       <link rel="icon" href="../../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
@@ -19,33 +26,35 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.e8d9bf0c.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#009485">
-        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
-    
+      
+
+
     
     
       
+    
+    
+      
+        
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -58,7 +67,6 @@
     
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -86,7 +94,8 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -105,10 +114,14 @@
       </div>
     </div>
     
+      
+    
+    
     
     
       <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -116,24 +129,27 @@
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -152,22 +168,24 @@
           
             
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  Current
 
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
-        Current
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -176,23 +194,29 @@
   
     
   
-
-
   
+    
+    
+      
   
   
     
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../202309/lab1/" class="md-tabs__link">
+          
+  
+  Archive
 
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../202309/lab1/" class="md-tabs__link md-tabs__link--active">
-        Archive
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
+    
   
 
       
@@ -211,6 +235,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 
   
 
@@ -231,319 +256,486 @@
     
       
       
-      
-
+  
   
   
   
     
+    
+    
+      
+      
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_1">
-          Current
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Current" data-md-level="1">
-        <label class="md-nav__title" for="__nav_1">
-          <span class="md-nav__icon md-icon"></span>
-          Current
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
           
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Current
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Current
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../.." class="md-nav__link">
-        Overview
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../../lab1/" class="md-nav__link">
-        Lab 1: Refresh on Python
+        
+  
+  <span class="md-ellipsis">
+    Lab 1: Refresh on Python
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 2: Fuzzy Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
   
   
     
   
   
+  
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    
+      
+        
+        
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2">
-          Archive
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Archive" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
-          <span class="md-nav__icon md-icon"></span>
-          Archive
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
           
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
   
   
   
+  
+    
+    
+    
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_1">
-          202309
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="202309" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_1">
-          <span class="md-nav__icon md-icon"></span>
-          202309
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
           
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    202309
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            202309
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../202309/lab1/" class="md-nav__link">
-        Lab 1: Refresh on Python
+        
+  
+  <span class="md-ellipsis">
+    Lab 1: Refresh on Python
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../202309/lab2/" class="md-nav__link">
-        Lab 2: Fuzzy Systems
+        
+  
+  <span class="md-ellipsis">
+    Lab 2: Fuzzy Systems
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../202309/lab3/" class="md-nav__link">
-        Lab 3: EC (GA)
+        
+  
+  <span class="md-ellipsis">
+    Lab 3: EC (GA)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../202309/lab4/" class="md-nav__link">
-        Lab 4: EC (PSO)
+        
+  
+  <span class="md-ellipsis">
+    Lab 4: EC (PSO)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../202309/lab5/" class="md-nav__link">
-        Lab 5: EC (ACO)
+        
+  
+  <span class="md-ellipsis">
+    Lab 5: EC (ACO)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../202309/lab6/" class="md-nav__link">
-        Lab 6: ANN (Supervised learning)
+        
+  
+  <span class="md-ellipsis">
+    Lab 6: ANN (Supervised learning)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../202309/lab7/" class="md-nav__link">
-        Lab 7: ANN (Hyperplane)
+        
+  
+  <span class="md-ellipsis">
+    Lab 7: ANN (Hyperplane)
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
-            
-          
+              
             
               
+                
   
   
     
   
   
+  
+    
+    
+    
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_2">
-          202208
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="202208" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_2">
-          <span class="md-nav__icon md-icon"></span>
-          202208
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
           
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    202208
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            202208
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lab1/" class="md-nav__link">
-        Lab 1: Pre-lab
+        
+  
+  <span class="md-ellipsis">
+    Lab 1: Pre-lab
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lab2/" class="md-nav__link">
-        Lab 2: EC (GA)
+        
+  
+  <span class="md-ellipsis">
+    Lab 2: EC (GA)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lab3/" class="md-nav__link">
-        Lab 3: EC (PSO)
+        
+  
+  <span class="md-ellipsis">
+    Lab 3: EC (PSO)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
   
   
     
   
   
+  
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Lab 4: EC (ACO)
+          
+  
+  <span class="md-ellipsis">
+    Lab 4: EC (ACO)
+  </span>
+  
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Lab 4: EC (ACO)
+        
+  
+  <span class="md-ellipsis">
+    Lab 4: EC (ACO)
+  </span>
+  
+
       </a>
       
         
@@ -563,7 +755,9 @@
       
         <li class="md-nav__item">
   <a href="#ant-colony-optimisation" class="md-nav__link">
-    Ant colony optimisation
+    <span class="md-ellipsis">
+      Ant colony optimisation
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Ant colony optimisation">
@@ -571,77 +765,99 @@
         
           <li class="md-nav__item">
   <a href="#objective" class="md-nav__link">
-    Objective
+    <span class="md-ellipsis">
+      Objective
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#problem-to-solve" class="md-nav__link">
-    Problem to solve
+    <span class="md-ellipsis">
+      Problem to solve
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#problem-formulation" class="md-nav__link">
-    Problem formulation
+    <span class="md-ellipsis">
+      Problem formulation
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#initiating-aco-algorithm" class="md-nav__link">
-    Initiating ACO algorithm
+    <span class="md-ellipsis">
+      Initiating ACO algorithm
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#identify-path-of-each-ant" class="md-nav__link">
-    Identify path of each ant
+    <span class="md-ellipsis">
+      Identify path of each ant
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#evaporation" class="md-nav__link">
-    Evaporation
+    <span class="md-ellipsis">
+      Evaporation
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#deposition" class="md-nav__link">
-    Deposition
+    <span class="md-ellipsis">
+      Deposition
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#termination-conditions" class="md-nav__link">
-    Termination conditions
+    <span class="md-ellipsis">
+      Termination conditions
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#loop-until-termination" class="md-nav__link">
-    Loop until termination
+    <span class="md-ellipsis">
+      Loop until termination
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#visualisation" class="md-nav__link">
-    Visualisation
+    <span class="md-ellipsis">
+      Visualisation
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#evaluate-effect-of-parameters" class="md-nav__link">
-    Evaluate effect of parameters
+    <span class="md-ellipsis">
+      Evaluate effect of parameters
+    </span>
   </a>
   
 </li>
@@ -658,452 +874,661 @@
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lab5/" class="md-nav__link">
-        Lab 5: ANN (Supervised learning)
+        
+  
+  <span class="md-ellipsis">
+    Lab 5: ANN (Supervised learning)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lab6/" class="md-nav__link">
-        Lab 6: ANN (Hyperplane)
+        
+  
+  <span class="md-ellipsis">
+    Lab 6: ANN (Hyperplane)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lab7/" class="md-nav__link">
-        Lab 7: Fuzzy Systems
+        
+  
+  <span class="md-ellipsis">
+    Lab 7: Fuzzy Systems
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+    
+      
+      
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_3">
-          202108
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="202108" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_3">
-          <span class="md-nav__icon md-icon"></span>
-          202108
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
           
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    202108
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            202108
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../202108/lab1/" class="md-nav__link">
-        Lab 1: Pre-lab
+        
+  
+  <span class="md-ellipsis">
+    Lab 1: Pre-lab
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../202108/lab2/" class="md-nav__link">
-        Lab 2: EC (GA)
+        
+  
+  <span class="md-ellipsis">
+    Lab 2: EC (GA)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../202108/lab3/" class="md-nav__link">
-        Lab 3: EC (PSO)
+        
+  
+  <span class="md-ellipsis">
+    Lab 3: EC (PSO)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../202108/lab4/" class="md-nav__link">
-        Lab 4: EC (ACO)
+        
+  
+  <span class="md-ellipsis">
+    Lab 4: EC (ACO)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../202108/lab5/" class="md-nav__link">
-        Lab 5: ANN (Supervised learning)
+        
+  
+  <span class="md-ellipsis">
+    Lab 5: ANN (Supervised learning)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../202108/lab6/" class="md-nav__link">
-        Lab 6: ANN (Hyperplane)
+        
+  
+  <span class="md-ellipsis">
+    Lab 6: ANN (Hyperplane)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../202108/lab7/" class="md-nav__link">
-        Lab 7: Fuzzy Systems
+        
+  
+  <span class="md-ellipsis">
+    Lab 7: Fuzzy Systems
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+    
+      
+      
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_4">
-          202008
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="202008" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_4">
-          <span class="md-nav__icon md-icon"></span>
-          202008
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
           
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    202008
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            202008
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../202008/lab1/" class="md-nav__link">
-        Lab 1: Pre-lab
+        
+  
+  <span class="md-ellipsis">
+    Lab 1: Pre-lab
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../202008/lab2/" class="md-nav__link">
-        Lab 2: EC (GA)
+        
+  
+  <span class="md-ellipsis">
+    Lab 2: EC (GA)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../202008/lab3/" class="md-nav__link">
-        Lab 3: EC (PSO)
+        
+  
+  <span class="md-ellipsis">
+    Lab 3: EC (PSO)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../202008/lab4/" class="md-nav__link">
-        Lab 4: EC (ACO)
+        
+  
+  <span class="md-ellipsis">
+    Lab 4: EC (ACO)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../202008/lab5/" class="md-nav__link">
-        Lab 5: ANN (Supervised learning)
+        
+  
+  <span class="md-ellipsis">
+    Lab 5: ANN (Supervised learning)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../202008/lab6/" class="md-nav__link">
-        Lab 6: ANN (Hyperplane)
+        
+  
+  <span class="md-ellipsis">
+    Lab 6: ANN (Hyperplane)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../202008/lab7/" class="md-nav__link">
-        Lab 7: Fuzzy Systems
+        
+  
+  <span class="md-ellipsis">
+    Lab 7: Fuzzy Systems
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+    
+      
+      
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_5">
-          201908
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="201908" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_5">
-          <span class="md-nav__icon md-icon"></span>
-          201908
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
           
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    201908
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            201908
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../201908/lab1/" class="md-nav__link">
-        Lab 1: Pre-lab
+        
+  
+  <span class="md-ellipsis">
+    Lab 1: Pre-lab
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../201908/lab2/" class="md-nav__link">
-        Lab 2: EC (GA)
+        
+  
+  <span class="md-ellipsis">
+    Lab 2: EC (GA)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../201908/lab3/" class="md-nav__link">
-        Lab 3: EC (PSO)
+        
+  
+  <span class="md-ellipsis">
+    Lab 3: EC (PSO)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../201908/lab4/" class="md-nav__link">
-        Lab 4: EC (ACO)
+        
+  
+  <span class="md-ellipsis">
+    Lab 4: EC (ACO)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../201908/lab5/" class="md-nav__link">
-        Lab 5: ANN (Supervised learning)
+        
+  
+  <span class="md-ellipsis">
+    Lab 5: ANN (Supervised learning)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../201908/lab6/" class="md-nav__link">
-        Lab 6: ANN (Hyperplane)
+        
+  
+  <span class="md-ellipsis">
+    Lab 6: ANN (Hyperplane)
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../201908/lab7/" class="md-nav__link">
-        Lab 7: Fuzzy Systems
+        
+  
+  <span class="md-ellipsis">
+    Lab 7: Fuzzy Systems
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1116,10 +1541,11 @@
             
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
 <h1 id="lab-4-ec-aco">Lab 4: EC (ACO)</h1>
@@ -1232,7 +1658,7 @@
 <ol>
 <li>
 <p>The coordinates of each town are provided as follows. This will be used later for the purpose of visualisation.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1253,7 +1679,7 @@
 <span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">location_list</span> <span class="o">=</span> <span class="p">[</span> <span class="c1"># [x,y,name]</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">location_list</span> <span class="o">=</span> <span class="p">[</span> <span class="c1"># [x,y,name]</span>
   <span class="p">[</span><span class="mi">75</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="s1">&#39;Arad&#39;</span><span class="p">],</span>
   <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="s1">&#39;Zerind&#39;</span><span class="p">],</span>
   <span class="p">[</span><span class="mi">125</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;Oradea&#39;</span><span class="p">],</span>
@@ -1275,12 +1701,11 @@
   <span class="p">[</span><span class="mi">760</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="s1">&#39;Iasi&#39;</span><span class="p">],</span>
   <span class="p">[</span><span class="mi">625</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="s1">&#39;Neamt&#39;</span><span class="p">]</span>
 <span class="p">]</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Then define the travel cost between connected cities. </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1304,7 +1729,7 @@
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
-<span class="normal">25</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">step_cost</span> <span class="o">=</span> <span class="p">[</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">step_cost</span> <span class="o">=</span> <span class="p">[</span>
   <span class="p">[</span><span class="s1">&#39;Arad&#39;</span><span class="p">,</span> <span class="s1">&#39;Zerind&#39;</span><span class="p">,</span> <span class="mi">75</span><span class="p">],</span>
   <span class="p">[</span><span class="s1">&#39;Zerind&#39;</span><span class="p">,</span> <span class="s1">&#39;Oradea&#39;</span><span class="p">,</span> <span class="mi">71</span><span class="p">],</span>
   <span class="p">[</span><span class="s1">&#39;Oradea&#39;</span><span class="p">,</span> <span class="s1">&#39;Sibiu&#39;</span><span class="p">,</span> <span class="mi">151</span><span class="p">],</span>
@@ -1329,15 +1754,14 @@
   <span class="p">[</span><span class="s1">&#39;Urziceni&#39;</span><span class="p">,</span> <span class="s1">&#39;Hirsova&#39;</span><span class="p">,</span> <span class="mi">98</span><span class="p">],</span>
   <span class="p">[</span><span class="s1">&#39;Hirsova&#39;</span><span class="p">,</span> <span class="s1">&#39;Eforie&#39;</span><span class="p">,</span> <span class="mi">86</span><span class="p">]</span>
 <span class="p">]</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>We will define two class, <code>City</code> and <code>Road</code>.</p>
 </li>
 <li>
 <p>An object of class <code>City</code> has the attributes of <code>name</code> (the name of the city), <code>roads</code> (an array of references to the roads connected to the current city), and <code>coordinates</code> (coordinates of the cities).</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1348,7 +1772,7 @@
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">City</span><span class="p">:</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">City</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">roads</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1360,26 +1784,24 @@
   <span class="k">def</span> <span class="nf">add_road</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">road</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">road</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">roads</span><span class="p">:</span>
       <span class="bp">self</span><span class="o">.</span><span class="n">roads</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">road</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>An object of class <code>Road</code> has the attributes of <code>connected_cities</code> (an array of references to the cities connected through this road), <code>cost</code> (the step cost of this road), and <code>pheromone</code> (the pheromone on this road).</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Road</span><span class="p">:</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Road</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connected_cities</span><span class="p">,</span> <span class="n">cost</span><span class="p">,</span> <span class="n">pheromone</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">connected_cities</span> <span class="o">=</span> <span class="n">connected_cities</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">cost</span> <span class="o">=</span> <span class="n">cost</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">pheromone</span> <span class="o">=</span> <span class="n">pheromone</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>We will construct the list of <code>City</code> objects and <code>Road</code> objects from the information provided by the question, i.e. information in <code>location_list</code> and <code>step_cost</code>. The following code block should be in the <code>main</code> code block.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1388,7 +1810,7 @@
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">cities</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">cities</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="n">coord1</span><span class="p">,</span> <span class="n">coord2</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">location_list</span><span class="p">:</span>
   <span class="n">cities</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">City</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   <span class="n">cities</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">set_coordinates</span><span class="p">([</span><span class="n">coord1</span><span class="p">,</span> <span class="n">coord2</span><span class="p">])</span>
@@ -1398,89 +1820,82 @@
   <span class="n">cities</span><span class="p">[</span><span class="n">city1</span><span class="p">]</span><span class="o">.</span><span class="n">add_road</span><span class="p">(</span><span class="n">road</span><span class="p">)</span>
   <span class="n">cities</span><span class="p">[</span><span class="n">city2</span><span class="p">]</span><span class="o">.</span><span class="n">add_road</span><span class="p">(</span><span class="n">road</span><span class="p">)</span>
   <span class="n">roads</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">road</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>In the <code>main</code> code block, define the <code>origin</code> and <code>destination</code> cities.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">origin</span> <span class="o">=</span> <span class="n">cities</span><span class="p">[</span><span class="s1">&#39;Arad&#39;</span><span class="p">]</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">origin</span> <span class="o">=</span> <span class="n">cities</span><span class="p">[</span><span class="s1">&#39;Arad&#39;</span><span class="p">]</span>
 <span class="n">destination</span> <span class="o">=</span> <span class="n">cities</span><span class="p">[</span><span class="s1">&#39;Bucharest&#39;</span><span class="p">]</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </li>
 </ol>
 <h3 id="initiating-aco-algorithm">Initiating ACO algorithm</h3>
 <ol>
 <li>
 <p>We then define the parameters for ACO, i.e. number of ants, <code>n_ant</code>, pheromone influence constant, <code>alpha</code>, and evaporation rate, <code>rho</code>.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">n_ant</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">n_ant</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">rho</span> <span class="o">=</span> <span class="mf">0.1</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Add the method <code>set_pheromone</code> to the class <code>Road</code>. 
-    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Road</span><span class="p">:</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Road</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
     <span class="o">...</span>
 
   <span class="k">def</span> <span class="nf">set_pheromone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pheromone</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">pheromone</span> <span class="o">=</span> <span class="n">pheromone</span>
-</code></pre></div>
-</td></tr></table></p>
+</code></pre></div></td></tr></table></div></p>
 </li>
 <li>
 <p>Set the initial pheromone of each road to 0.01.
-    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># in main block</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># in main block</span>
 <span class="n">initial_pheromone</span> <span class="o">=</span> <span class="mf">0.01</span>
 <span class="k">for</span> <span class="n">road</span> <span class="ow">in</span> <span class="n">roads</span><span class="p">:</span>
   <span class="n">road</span><span class="o">.</span><span class="n">set_pheromone</span><span class="p">(</span><span class="n">initial_pheromone</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table></p>
+</code></pre></div></td></tr></table></div></p>
 </li>
 <li>
 <p>Define the class <code>Ant</code>. 
-    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Ant</span><span class="p">:</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Ant</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">cities</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># cities the ant passes through, in sequence</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># roads the ant uses, in sequence</span>
-</code></pre></div>
-</td></tr></table></p>
+</code></pre></div></td></tr></table></div></p>
 </li>
 <li>
 <p>Initiate <code>n_ants</code> ants.
-    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">ants</span> <span class="o">=</span> <span class="p">[</span><span class="n">Ant</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_ant</span><span class="p">)]</span>
-</code></pre></div>
-</td></tr></table></p>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ants</span> <span class="o">=</span> <span class="p">[</span><span class="n">Ant</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_ant</span><span class="p">)]</span>
+</code></pre></div></td></tr></table></div></p>
 </li>
 </ol>
 <h3 id="identify-path-of-each-ant">Identify path of each ant</h3>
 <ol>
 <li>
 <p>In the <code>Ant</code> class, define a method to identify the path by taking the inputs of the available roads, the origin, the destination, and the pheromone influence constant &alpha;.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Ant</span><span class="p">:</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Ant</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
     <span class="o">...</span>
 
@@ -1488,12 +1903,11 @@
     <span class="c1"># 1. append origin to the self.cities</span>
     <span class="c1"># 2. if the last city is not destination, search for the next city to go</span>
     <span class="c1"># 3. after getting to the destination, remove the loop within the path, i.e. if there are repeated cities in self.cities, remove the cities and the roads in between the repetition</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Define a method to calculate the path length.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1502,7 +1916,7 @@
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Ant</span><span class="p">:</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Ant</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
     <span class="o">...</span>
 
@@ -1512,12 +1926,11 @@
   <span class="k">def</span> <span class="nf">get_path_length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="c1"># calculate path length based on self.path</span>
     <span class="k">return</span> <span class="n">path_length</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>As the path of each ant will be reset every iteration, define a method that reset the <code>path</code> and <code>cities</code>.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1529,7 +1942,7 @@
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Ant</span><span class="p">:</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Ant</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
     <span class="o">...</span>
 
@@ -1542,15 +1955,14 @@
   <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">cities</span> <span class="o">=</span> <span class="p">[]</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </li>
 </ol>
 <h3 id="evaporation">Evaporation</h3>
 <ol>
 <li>
 <p>In the <code>Road</code> class, define a method to evaporate the pheromone by taking the input of evaporation rate &rho;.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -1558,7 +1970,7 @@
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Road</span><span class="p">:</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Road</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
     <span class="o">...</span>
 
@@ -1567,8 +1979,7 @@
 
   <span class="k">def</span> <span class="nf">evaporate_pheromone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rho</span><span class="p">):</span>
     <span class="c1"># update the pheromone of the road</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </li>
 </ol>
 <h3 id="deposition">Deposition</h3>
@@ -1576,7 +1987,7 @@
 <li>
 <p>In the <code>Road</code> class, define a method to calculate the updated pheromone after pheromone deposition by taking the input of all the ants. We will use the following pheromone deposition formula for ant <span class="arithmatex">\(k\)</span> on road <span class="arithmatex">\(i\)</span>:</p>
 <div class="arithmatex">\[\Delta\tau_{i,k} = \frac{1}{L_k}\]</div>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1588,7 +1999,7 @@
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Road</span><span class="p">:</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Road</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
     <span class="o">...</span>
 
@@ -1601,8 +2012,7 @@
   <span class="k">def</span> <span class="nf">deposit_pheromone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ants</span><span class="p">):</span>
     <span class="c1"># 1. search for ants that uses the raod</span>
     <span class="c1"># 2. deposit pheromone using the inversely proportionate relationship between path length and deposited pheromone</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </li>
 </ol>
 <h3 id="termination-conditions">Termination conditions</h3>
@@ -1616,20 +2026,19 @@
 </li>
 <li>
 <p>Define a function to calculate the percentage of the most dominant path.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_percentage_of_dominant_path</span><span class="p">(</span><span class="n">ants</span><span class="p">):</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_percentage_of_dominant_path</span><span class="p">(</span><span class="n">ants</span><span class="p">):</span>
   <span class="o">...</span>
   <span class="k">return</span> <span class="n">percentage</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </li>
 </ol>
 <h3 id="loop-until-termination">Loop until termination</h3>
 <ol>
 <li>
 <p>Create a loop to iterate until termination.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1650,7 +2059,7 @@
 <span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># termination threshold</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># termination threshold</span>
 <span class="n">max_iteration</span> <span class="o">=</span> <span class="mi">200</span>
 <span class="n">percentage_of_dominant_path</span> <span class="o">=</span> <span class="mf">0.9</span>
 
@@ -1672,15 +2081,14 @@
   <span class="n">iteration</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="c1"># after exiting the loop, return the most occurred path as the solution</span>
 <span class="o">...</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </li>
 </ol>
 <h3 id="visualisation">Visualisation</h3>
 <ol>
 <li>
 <p>Define the following functions:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1689,7 +2097,7 @@
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="o">...</span>
 <span class="k">def</span> <span class="nf">create_graph</span><span class="p">(</span><span class="n">cities</span><span class="p">):</span>
   <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
@@ -1699,9 +2107,8 @@
   <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">cities_x</span><span class="p">,</span> <span class="n">cities_y</span><span class="p">)</span>
   <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="n">aspect</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
   <span class="k">return</span> <span class="n">ax</span>
-</code></pre></div>
-</td></tr></table>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -1709,7 +2116,7 @@
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">draw_pheromone</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">roads</span><span class="p">):</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">draw_pheromone</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">roads</span><span class="p">):</span>
   <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
   <span class="k">for</span> <span class="n">road</span> <span class="ow">in</span> <span class="n">roads</span><span class="p">:</span>
     <span class="n">from_coord</span> <span class="o">=</span> <span class="n">road</span><span class="o">.</span><span class="n">connected_cities</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">coordinates</span>
@@ -1718,30 +2125,27 @@
     <span class="n">coord_y</span> <span class="o">=</span> <span class="p">[</span><span class="n">from_coord</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">to_coord</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
     <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">coord_x</span><span class="p">,</span> <span class="n">coord_y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="n">road</span><span class="o">.</span><span class="n">pheromone</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
   <span class="k">return</span> <span class="n">lines</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Add the following lines to the <code>main</code> code block just before the <code>while</code> loop (loop until termination).</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">ax</span> <span class="o">=</span> <span class="n">create_graph</span><span class="p">(</span><span class="n">cities</span><span class="p">)</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ax</span> <span class="o">=</span> <span class="n">create_graph</span><span class="p">(</span><span class="n">cities</span><span class="p">)</span>
 <span class="n">lines</span> <span class="o">=</span> <span class="n">draw_pheromone</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">roads</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Add the following lines to after <code>iteration += 1</code>.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># visualise</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># visualise</span>
 <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
   <span class="k">del</span> <span class="n">l</span>
 <span class="n">lines</span> <span class="o">=</span> <span class="n">draw_pheromone</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">roads</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </li>
 </ol>
 <h3 id="evaluate-effect-of-parameters">Evaluate effect of parameters</h3>
@@ -1767,49 +2171,28 @@
 </li>
 </ol>
 
-              
-            </article>
-          </div>
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
       
         <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../lab3/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lab 3: EC (PSO)" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Lab 3: EC (PSO)
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../lab5/" class="md-footer__link md-footer__link--next" aria-label="Next: Lab 5: ANN (Supervised learning)" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Lab 5: ANN (Supervised learning)
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1831,10 +2214,12 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.8aa65030.min.js"></script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
       
         <script src="../../../javascripts/config.js"></script>
       
