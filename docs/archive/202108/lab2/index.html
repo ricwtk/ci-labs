@@ -1530,8 +1530,8 @@
                   
 
 
-<h1 id="lab-2-ec-ga">Lab 2: EC (GA)</h1>
-<h2 id="binary-to-gray-code-conversion">Binary-to-gray code conversion</h2>
+<h1 id="lab-2-ec-ga">Lab 2: EC (GA)<a class="headerlink" href="#lab-2-ec-ga" title="Permanent link">&para;</a></h1>
+<h2 id="binary-to-gray-code-conversion">Binary-to-gray code conversion<a class="headerlink" href="#binary-to-gray-code-conversion" title="Permanent link">&para;</a></h2>
 <p>Binary string is often used in the implementation of genetic algorithm. However, the downside of using a binary code is that the Hamming distance between two adjacent values is not consistent. This situation is solved by using a Gray code in place of a binary code.</p>
 <ol>
 <li>
@@ -1550,7 +1550,7 @@
 <p>Repeat the previous step with Gray codes instead of binary codes.</p>
 </li>
 </ol>
-<h2 id="genetic-algorithm">Genetic algorithm</h2>
+<h2 id="genetic-algorithm">Genetic algorithm<a class="headerlink" href="#genetic-algorithm" title="Permanent link">&para;</a></h2>
 <p>Consider the following problem: </p>
 <div class="admonition abstract">
 <p class="admonition-title">Problem</p>
@@ -1635,7 +1635,7 @@ if __name__ == "__main__":
     ...
 ``` -->
 
-<h3 id="feature-encoding">Feature encoding</h3>
+<h3 id="feature-encoding">Feature encoding<a class="headerlink" href="#feature-encoding" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>In this problem as we only have one feature, i.e. the side length of the square, each chromosome consists of the value of the side length of the square. We will encode the chromosome in the form of Gray code. </p>
@@ -1676,7 +1676,7 @@ if __name__ == "__main__":
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h3 id="population-initialisation">Population initialisation</h3>
+<h3 id="population-initialisation">Population initialisation<a class="headerlink" href="#population-initialisation" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>A population is randomly generated according to the defined population size. </p>
@@ -1702,7 +1702,7 @@ if __name__ == "__main__":
 <p>The printed output should be a series of 8 chromosomes displayed as decimal values.</p>
 </li>
 </ol>
-<h3 id="fitness-calculation">Fitness calculation</h3>
+<h3 id="fitness-calculation">Fitness calculation<a class="headerlink" href="#fitness-calculation" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>The fitness function was designed at the beginning of <a href="#genetic-algorithm">this section</a>. Define a function that takes the input of a chromosome (as decimal value) and returns the fitness of the chromosome.</p>
@@ -1748,7 +1748,7 @@ if __name__ == "__main__":
 
     The printed output should be a series of `0` and/or `1` which denotes the ability of each chromosome to crossover, for example, `[0, 1, 1, 1]`. -->
 
-<h3 id="selection-as-parents">Selection as parents</h3>
+<h3 id="selection-as-parents">Selection as parents<a class="headerlink" href="#selection-as-parents" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>From the list of the chromosomes, we will select the chromosome pairs as parents. As we will be using one-point crossover, each pair of parents will produce exactly two offsprings. Therefore for population size of <code>pop_size</code>, we need <code>pop_size/2</code> pairs of parents.</p>
@@ -1773,7 +1773,7 @@ if __name__ == "__main__":
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h3 id="crossover">Crossover</h3>
+<h3 id="crossover">Crossover<a class="headerlink" href="#crossover" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Define a function that takes a parent pair and returns a pair of offspring after performing one-point crossover.</p>
@@ -1798,7 +1798,7 @@ if __name__ == "__main__":
 <p><em><code>13</code> is <code>1011</code> and <code>9</code> is <code>1101</code> in Gray code, the offsprings <code>10</code> is <code>1111</code> and <code>14</code> is <code>1001</code> in Gray code.</em></p>
 </li>
 </ol>
-<h3 id="mutation">Mutation</h3>
+<h3 id="mutation">Mutation<a class="headerlink" href="#mutation" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Each gene in all chromosomes has the same mutation probability <code>p_mutation</code>. </p>
@@ -1822,7 +1822,7 @@ if __name__ == "__main__":
 <p><em><code>15</code> is <code>1000</code> and <code>14</code> is <code>1001</code> in Gray code. In the example output, the last bit is mutated.</em></p>
 </li>
 </ol>
-<h3 id="repeat-until-termination">Repeat until termination</h3>
+<h3 id="repeat-until-termination">Repeat until termination<a class="headerlink" href="#repeat-until-termination" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>The common termination criteria are the maximum number of iterations and the distance among the fitnesses of the chromosomes of the latest population.</p>
@@ -1847,7 +1847,7 @@ if __name__ == "__main__":
 <p>The printed output should be a decimal value that represents the overall distance of fitnesses.</p>
 </li>
 </ol>
-<h3 id="combining-all-functions">Combining all functions</h3>
+<h3 id="combining-all-functions">Combining all functions<a class="headerlink" href="#combining-all-functions" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>The functions we have created can be combined with the following code snippet to execute the genetic algorithm to solve the problem defined at the beginning of <a href="#genetic-algorithm">this section</a>. Consider the width and the height of the sheet of paper to be <code>20cm</code> and <code>15cm</code>.</p>

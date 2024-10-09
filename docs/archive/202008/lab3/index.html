@@ -1602,13 +1602,13 @@
                   
 
 
-<h1 id="lab-3-ec-pso">Lab 3: EC (PSO)</h1>
-<h2 id="particle-swarm-optimisation">Particle swarm optimisation</h2>
-<h3 id="objective">Objective</h3>
+<h1 id="lab-3-ec-pso">Lab 3: EC (PSO)<a class="headerlink" href="#lab-3-ec-pso" title="Permanent link">&para;</a></h1>
+<h2 id="particle-swarm-optimisation">Particle swarm optimisation<a class="headerlink" href="#particle-swarm-optimisation" title="Permanent link">&para;</a></h2>
+<h3 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">&para;</a></h3>
 <ul>
 <li>develop a Python function to perform global best particle swarm optimisation</li>
 </ul>
-<h3 id="setup-for-spyder">Setup for Spyder</h3>
+<h3 id="setup-for-spyder">Setup for Spyder<a class="headerlink" href="#setup-for-spyder" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>If you are using Spyder for this lab, go to <kbd>Tools</kbd> &gt; <kbd>Preferences</kbd> &gt; <kbd>IPython console</kbd> &gt; <kbd>Graphics</kbd> and set <kbd>Backend</kbd> to <kbd>Automatic</kbd>.</p>
@@ -1617,12 +1617,12 @@
 <p>Restart kernel by going to <kbd>Consoles</kbd> &gt; <kbd>Restart kernel</kbd>.</p>
 </li>
 </ol>
-<h3 id="problem-to-solve">Problem to solve</h3>
+<h3 id="problem-to-solve">Problem to solve<a class="headerlink" href="#problem-to-solve" title="Permanent link">&para;</a></h3>
 <p>Solve the following problem using global best particle swarm optimisation:</p>
 <blockquote>
 <p>Find the value of x to minimise the function f(x) = (x+100)(x+50)(x)(x-20)(x-60)(x-100) for -100 &lt; x &lt; 100</p>
 </blockquote>
-<h3 id="particle-swarm-optimisation_1">Particle swarm optimisation</h3>
+<h3 id="particle-swarm-optimisation_1">Particle swarm optimisation<a class="headerlink" href="#particle-swarm-optimisation_1" title="Permanent link">&para;</a></h3>
 <div class="timeline">
 <div class="container right"><div class="content"><a href='#initialise-particles'>particles initialisation</a></div></div>
 <div class="container right"><div class="content"><a href='#update-personal-best'>personal best identification</a></div></div>
@@ -1632,7 +1632,7 @@
 <div class="container right"><div class="content"><a href="#create-a-loop-until-termination">repeat from personal best identification until termination</a></div></div>
 </div>
 
-<h3 id="parameter-definition">Parameter definition</h3>
+<h3 id="parameter-definition">Parameter definition<a class="headerlink" href="#parameter-definition" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>With global best particle swarm optimisaton, the position update function is given by</p>
@@ -1667,7 +1667,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h3 id="create-a-class-for-particle">Create a class for particle</h3>
+<h3 id="create-a-class-for-particle">Create a class for particle<a class="headerlink" href="#create-a-class-for-particle" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>As each particle is an individual, create a <code>Particle</code> class to hold the data of the particle's current position, velocity, and personal best position.</p>
@@ -1683,7 +1683,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h3 id="fitness-function">Fitness function</h3>
+<h3 id="fitness-function">Fitness function<a class="headerlink" href="#fitness-function" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Fitness function is how we can compare different particles.</p>
@@ -1707,7 +1707,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h3 id="initialise-particles">Initialise particles</h3>
+<h3 id="initialise-particles">Initialise particles<a class="headerlink" href="#initialise-particles" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Particles are initialised with random positions within the constraints. </p>
@@ -1730,7 +1730,7 @@
 <p>Remember to test your function before proceed.</p>
 </li>
 </ol>
-<h3 id="update-personal-best">Update personal best</h3>
+<h3 id="update-personal-best">Update personal best<a class="headerlink" href="#update-personal-best" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Create a method in the class <code>Particle</code> to update the <code>best_position</code> if necessary.</p>
@@ -1757,7 +1757,7 @@
 <p>If the new position has a lower fitness, i.e. the new position is better than the best position, update the <code>best_position</code> to hold the value of the new position.</p>
 </li>
 </ol>
-<h3 id="update-global-best">Update global best</h3>
+<h3 id="update-global-best">Update global best<a class="headerlink" href="#update-global-best" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Initiate a variable named <code>global_best_position</code> with the value <code>None</code> in the <code>__main__</code> block. </p>
@@ -1777,7 +1777,7 @@
 <p>We will later use this function to compare the current global best position with the personal best position of each particle.</p>
 </li>
 </ol>
-<h3 id="update-velocity">Update velocity</h3>
+<h3 id="update-velocity">Update velocity<a class="headerlink" href="#update-velocity" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Create a method in the class <code>Particle</code> to update the velocity given &alpha;<sub>1</sub>, &alpha;<sub>2</sub>, &beta;<sub>1</sub>, &beta;<sub>2</sub>, and the global best position.</p>
@@ -1805,7 +1805,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h3 id="update-particle-position">Update particle position</h3>
+<h3 id="update-particle-position">Update particle position<a class="headerlink" href="#update-particle-position" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>As updating a particle position only require information from within the particle object and the limits of the position, create a method called <code>update_position</code> in the class <code>Particle</code> taking the input of the limits of the position.</p>
@@ -1837,7 +1837,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h3 id="create-a-loop-until-termination">Create a loop (until termination)</h3>
+<h3 id="create-a-loop-until-termination">Create a loop (until termination)<a class="headerlink" href="#create-a-loop-until-termination" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Consider the following termination criteria:</p>
@@ -1943,7 +1943,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h3 id="visualisation">Visualisation</h3>
+<h3 id="visualisation">Visualisation<a class="headerlink" href="#visualisation" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Let's add a few lines to visualise particles "flying" towards to optimal position.</p>
@@ -1982,7 +1982,7 @@
 </ul>
 </li>
 </ol>
-<h3 id="evaluation">Evaluation</h3>
+<h3 id="evaluation">Evaluation<a class="headerlink" href="#evaluation" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Store the values of the variables at each iteration for analysis and evaluation.</p>
@@ -2149,7 +2149,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h3 id="exercise">Exercise</h3>
+<h3 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Multiply the velocity memory, v<sub>i</sub>(t), with a value between 0 and 1, let's say 0.5. How does the process change? This is the effect of inertia weight.</p>
@@ -2164,7 +2164,7 @@
 <p>Modify such that &alpha;<sub>1</sub> is larger than &alpha;<sub>2</sub>. What's the effect?</p>
 </li>
 </ol>
-<h3 id="optional">Optional</h3>
+<h3 id="optional">Optional<a class="headerlink" href="#optional" title="Permanent link">&para;</a></h3>
 <ol>
 <li>How may you modify the formulae for particles with two variables, in which the fitness function is defined as f(x,y) = x<sup>2</sup> + y<sup>2</sup>? </li>
 </ol>

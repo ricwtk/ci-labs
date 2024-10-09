@@ -1566,13 +1566,13 @@
                   
 
 
-<h1 id="lab-5-ann-supervised-learning">Lab 5: ANN (Supervised learning)</h1>
-<h2 id="artificial-neural-networks">Artificial neural networks</h2>
-<h3 id="objective">Objective</h3>
+<h1 id="lab-5-ann-supervised-learning">Lab 5: ANN (Supervised learning)<a class="headerlink" href="#lab-5-ann-supervised-learning" title="Permanent link">&para;</a></h1>
+<h2 id="artificial-neural-networks">Artificial neural networks<a class="headerlink" href="#artificial-neural-networks" title="Permanent link">&para;</a></h2>
+<h3 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">&para;</a></h3>
 <ul>
 <li>to construct an multi-layer perceptron classifier using the scikit-learn Python library</li>
 </ul>
-<h3 id="load-data-to-be-learned">Load data to be learned</h3>
+<h3 id="load-data-to-be-learned">Load data to be learned<a class="headerlink" href="#load-data-to-be-learned" title="Permanent link">&para;</a></h3>
 <p>We will be constructing an artificial neural network and use it to perform prediction.</p>
 <p>The data we will be using today is the results of a chemical analysis of wines grown in the same region in Italy but derived from three different cultivars.</p>
 <p>The dataset is available from the scikit-learn library. Therefore we will first import the module.
@@ -1581,7 +1581,7 @@
 <p>To load the data, 
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_wine</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div></p>
-<h3 id="examine-the-dataset">Examine the dataset</h3>
+<h3 id="examine-the-dataset">Examine the dataset<a class="headerlink" href="#examine-the-dataset" title="Permanent link">&para;</a></h3>
 <p>We will use pandas to get more insight into the dataset. Import <code>pandas</code> and construct a data frame from the input and target values.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1592,14 +1592,14 @@
 <p>The <code>describe</code> method of a data frame provides the statistical summary of the dataset.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">wine</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="split-data-into-training-and-testing-sets">Split data into training and testing sets</h3>
+<h3 id="split-data-into-training-and-testing-sets">Split data into training and testing sets<a class="headerlink" href="#split-data-into-training-and-testing-sets" title="Permanent link">&para;</a></h3>
 <p>scikit-learn library provides a function to split the data into training and testing sets easily. </p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>We will split the data into 80% training data and 20% testing data. The first argument will be split into the first two outputs, the second argument the second pair, and so on and so forth.</p>
-<h3 id="data-preprocessing">Data preprocessing</h3>
+<h3 id="data-preprocessing">Data preprocessing<a class="headerlink" href="#data-preprocessing" title="Permanent link">&para;</a></h3>
 <p>From <a href="#examine-the-dataset">Examine the dataset</a>, notice that the range of different features are different. This will cause the training algorithm to be difficult to converge. </p>
 <p>Now we will use the method of standardisation to normalise the data. scikit-learn provides a built-in class to perform the standardisation, <code>StandardScaler</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1617,22 +1617,22 @@
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span>
 </code></pre></div></td></tr></table></div>
 <p>Compare this result with the one in <a href="#examine-the-dataset">Examine the dataset</a>. <strong>How are these two datasets different from each other? What did the <code>StandardScaler</code> do to the dataset?</strong></p>
-<h3 id="construct-the-ann-model">Construct the ANN model</h3>
+<h3 id="construct-the-ann-model">Construct the ANN model<a class="headerlink" href="#construct-the-ann-model" title="Permanent link">&para;</a></h3>
 <p>As the target values are classes, i.e. <code>0</code>, <code>1</code>, or <code>2</code>, we need a classifier to perform the classification. </p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPClassifier</span>
 </code></pre></div></td></tr></table></div>
 <p>We will construct a feedforward neural network with <strong>1 hidden layer of 2 neuron</strong> and <strong>maximum iteration of 1000</strong>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">mlp</span> <span class="o">=</span> <span class="n">MLPClassifier</span><span class="p">(</span><span class="n">hidden_layer_sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="train-the-model">Train the model</h3>
+<h3 id="train-the-model">Train the model<a class="headerlink" href="#train-the-model" title="Permanent link">&para;</a></h3>
 <p>The model can be trained using the <code>fit</code> method of the classifier. </p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">mlp</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="predictions">Predictions</h3>
+<h3 id="predictions">Predictions<a class="headerlink" href="#predictions" title="Permanent link">&para;</a></h3>
 <p>The model is now trained. We can use the fitted (trained) model to predict the output of the testing data.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">predictions</span> <span class="o">=</span> <span class="n">mlp</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="evaluation">Evaluation</h3>
+<h3 id="evaluation">Evaluation<a class="headerlink" href="#evaluation" title="Permanent link">&para;</a></h3>
 <p>With the prediction results, we can evaluate the performance of the fitted model. scikit-learn library provides some built-in metrics such as confusion matrix and classification report.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">classification_report</span>
 </code></pre></div></td></tr></table></div>
@@ -1643,7 +1643,7 @@
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">))</span>
 </code></pre></div></td></tr></table></div></p>
 <p><strong>What information is provided by the confusion matrix and the classification report?</strong></p>
-<h3 id="parameters-of-the-fitted-model">Parameters of the fitted model</h3>
+<h3 id="parameters-of-the-fitted-model">Parameters of the fitted model<a class="headerlink" href="#parameters-of-the-fitted-model" title="Permanent link">&para;</a></h3>
 <p>The parameters of the fitted model (<code>mlp</code>) can be access through its public attributes:</p>
 <table>
 <thead>
@@ -1675,7 +1675,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="visualisation-the-neural-network">Visualisation the neural network</h3>
+<h3 id="visualisation-the-neural-network">Visualisation the neural network<a class="headerlink" href="#visualisation-the-neural-network" title="Permanent link">&para;</a></h3>
 <p>Copy the following code for the function <code>visualise</code> to the beginning of the script.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1736,14 +1736,14 @@
 <p>To use this function to visualise the neural network, use the following line after the predictions.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">visualise</span><span class="p">(</span><span class="n">mlp</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="compare-the-weights-before-and-after-the-training">Compare the weights before and after the training</h3>
+<h3 id="compare-the-weights-before-and-after-the-training">Compare the weights before and after the training<a class="headerlink" href="#compare-the-weights-before-and-after-the-training" title="Permanent link">&para;</a></h3>
 <p>At initiation, the weights are not assigned. Therefore we need to train the model once before we can visualise the neural network. We can train the model once using the <code>.partial_fit</code> method. Put the following lines right after the initiation of <code>mlp</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">mlp</span><span class="o">.</span><span class="n">partial_fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">target</span><span class="p">))</span>
 <span class="n">visualise</span><span class="p">(</span><span class="n">mlp</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>Compare the weights of the two visualisations.</p>
-<h3 id="effect-of-parameters">Effect of parameters</h3>
+<h3 id="effect-of-parameters">Effect of parameters<a class="headerlink" href="#effect-of-parameters" title="Permanent link">&para;</a></h3>
 <p>Investigate the effect of the following parameters on the performance of the neural network and the number of iterations to achieve convergence.</p>
 <ul>
 <li>number of hidden layers</li>

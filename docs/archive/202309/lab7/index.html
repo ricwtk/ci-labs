@@ -1587,13 +1587,13 @@
                   
 
 
-<h1 id="lab-7-ann-hyperplane">Lab 7: ANN (Hyperplane)</h1>
-<h2 id="artificial-neural-networks">Artificial neural networks</h2>
-<h3 id="objective">Objective</h3>
+<h1 id="lab-7-ann-hyperplane">Lab 7: ANN (Hyperplane)<a class="headerlink" href="#lab-7-ann-hyperplane" title="Permanent link">&para;</a></h1>
+<h2 id="artificial-neural-networks">Artificial neural networks<a class="headerlink" href="#artificial-neural-networks" title="Permanent link">&para;</a></h2>
+<h3 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">&para;</a></h3>
 <ul>
 <li>to visualise the hyperplanes of a neural network configuration for better understanding</li>
 </ul>
-<h3 id="data-preparation">Data preparation</h3>
+<h3 id="data-preparation">Data preparation<a class="headerlink" href="#data-preparation" title="Permanent link">&para;</a></h3>
 <p>We will use the iris data for the training in this lab.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
@@ -1606,8 +1606,8 @@
 <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">iris</span><span class="o">.</span><span class="n">target_names</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">iris</span><span class="o">.</span><span class="n">target_names</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span>
 <span class="n">Y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
 </code></pre></div></td></tr></table></div></p>
-<h3 id="setup-the-first-configuration-for-neural-network">Setup the first configuration for neural network</h3>
-<h4 id="data-preprocessing">Data preprocessing</h4>
+<h3 id="setup-the-first-configuration-for-neural-network">Setup the first configuration for neural network<a class="headerlink" href="#setup-the-first-configuration-for-neural-network" title="Permanent link">&para;</a></h3>
+<h4 id="data-preprocessing">Data preprocessing<a class="headerlink" href="#data-preprocessing" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p>Training and testing sets split</p>
@@ -1630,7 +1630,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h4 id="construct-and-train-the-ann-model">Construct and train the ANN model</h4>
+<h4 id="construct-and-train-the-ann-model">Construct and train the ANN model<a class="headerlink" href="#construct-and-train-the-ann-model" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p>Construct the model</p>
@@ -1645,15 +1645,15 @@
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h3 id="visualise-the-classification-of-a-fitted-model">Visualise the classification of a fitted model</h3>
-<h4 id="prepare-the-figure-and-axis">Prepare the figure and axis</h4>
+<h3 id="visualise-the-classification-of-a-fitted-model">Visualise the classification of a fitted model<a class="headerlink" href="#visualise-the-classification-of-a-fitted-model" title="Permanent link">&para;</a></h3>
+<h4 id="prepare-the-figure-and-axis">Prepare the figure and axis<a class="headerlink" href="#prepare-the-figure-and-axis" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="visualisation-function">Visualisation function</h4>
+<h4 id="visualisation-function">Visualisation function<a class="headerlink" href="#visualisation-function" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p>Download the <a href="../../../files/vis.py">vis.py</a> and save it to the same folder as your script.</p>
@@ -1664,11 +1664,11 @@
 </code></pre></div></td></tr></table></div></p>
 </li>
 </ol>
-<h4 id="visualise-the-result">Visualise the result</h4>
+<h4 id="visualise-the-result">Visualise the result<a class="headerlink" href="#visualise-the-result" title="Permanent link">&para;</a></h4>
 <p>Use the following code to visualise the decision area of the model.
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">vis</span><span class="o">.</span><span class="n">vis2d</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">mlp</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div></p>
-<h3 id="setup-the-second-third-and-more-neural-network-configurations">Setup the second, third, and more neural network configurations</h3>
+<h3 id="setup-the-second-third-and-more-neural-network-configurations">Setup the second, third, and more neural network configurations<a class="headerlink" href="#setup-the-second-third-and-more-neural-network-configurations" title="Permanent link">&para;</a></h3>
 <p>We will investigate the effect of using different activation functions on the hyperplane.</p>
 <p>The activation functions that are available for <code>MLPClassifier</code> are <code>identity</code>, <code>logistic</code>, <code>tanh</code>, and <code>relu</code> (default). They are explained in the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier">documentation</a>.</p>
 <p>We can use a <code>for</code>-loop to construct and train the neural network model with different configurations. The same datasets from previous sections are used.</p>
@@ -1714,7 +1714,7 @@
     <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
 </code></pre></div></td></tr></table></div>
 <p><code>mlp.score(X_test, y_test)</code> gives the prediction accuracy of the model on <code>X_test</code> compared against <code>y_test</code>.</p>
-<h3 id="consider-more-input-features">Consider more input features</h3>
+<h3 id="consider-more-input-features">Consider more input features<a class="headerlink" href="#consider-more-input-features" title="Permanent link">&para;</a></h3>
 <p>We will now use all the input features instead of two. To prepare the data,
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1724,12 +1724,12 @@
 <span class="n">X_train</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
 <span class="n">X_test</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div></p>
-<h3 id="construct-and-train-the-model">Construct and train the model</h3>
+<h3 id="construct-and-train-the-model">Construct and train the model<a class="headerlink" href="#construct-and-train-the-model" title="Permanent link">&para;</a></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">mlp</span> <span class="o">=</span> <span class="n">MLPClassifier</span><span class="p">(</span><span class="n">hidden_layer_sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
 <span class="n">mlp</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="visualise-decision-area-with-more-input-features">Visualise decision area with more input features</h3>
+<h3 id="visualise-decision-area-with-more-input-features">Visualise decision area with more input features<a class="headerlink" href="#visualise-decision-area-with-more-input-features" title="Permanent link">&para;</a></h3>
 <p>We will be using parallel coordinates to display data with more than 2 input features. The following is not a complete parallel coordinates plot but a partial one.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1746,7 +1746,7 @@
 <span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>Is there other alternative to display data with more than 2 input features?</p>
-<h3 id="additional">Additional</h3>
+<h3 id="additional">Additional<a class="headerlink" href="#additional" title="Permanent link">&para;</a></h3>
 <p>There is a <a href="https://playground.tensorflow.org/">tensorflow playground</a> which tries to visualise the training process of a neural network. It's similar to what we did in this lab.</p>
 
 

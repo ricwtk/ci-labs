@@ -1548,13 +1548,13 @@
                   
 
 
-<h1 id="lab-4-ec-aco">Lab 4: EC (ACO)</h1>
-<h2 id="ant-colony-optimisation">Ant colony optimisation</h2>
-<h3 id="objective">Objective</h3>
+<h1 id="lab-4-ec-aco">Lab 4: EC (ACO)<a class="headerlink" href="#lab-4-ec-aco" title="Permanent link">&para;</a></h1>
+<h2 id="ant-colony-optimisation">Ant colony optimisation<a class="headerlink" href="#ant-colony-optimisation" title="Permanent link">&para;</a></h2>
+<h3 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">&para;</a></h3>
 <ul>
 <li>to develop a Python function to perform ant colony optimisation on a problem</li>
 </ul>
-<h3 id="problem-to-solve">Problem to solve</h3>
+<h3 id="problem-to-solve">Problem to solve<a class="headerlink" href="#problem-to-solve" title="Permanent link">&para;</a></h3>
 <p>We will use ant colony optimisation to solve the Nick's route-finding problem in Romania. The problem is a route finding problem to identify the best (cheapest) route to travel from Arad to Bucharest.</p>
 <p>The road map of Romania is provided as follows:</p>
 <div>
@@ -1654,7 +1654,7 @@
 <script>new Vue({ el: "#romania" });</script>
 </div>
 
-<h3 id="problem-formulation">Problem formulation</h3>
+<h3 id="problem-formulation">Problem formulation<a class="headerlink" href="#problem-formulation" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>The coordinates of each town are provided as follows. This will be used later for the purpose of visualisation.</p>
@@ -1830,7 +1830,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h3 id="initiating-aco-algorithm">Initiating ACO algorithm</h3>
+<h3 id="initiating-aco-algorithm">Initiating ACO algorithm<a class="headerlink" href="#initiating-aco-algorithm" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>We then define the parameters for ACO, i.e. number of ants, <code>n_ant</code>, pheromone influence constant, <code>alpha</code>, and evaporation rate, <code>rho</code>.</p>
@@ -1884,7 +1884,7 @@
 </code></pre></div></td></tr></table></div></p>
 </li>
 </ol>
-<h3 id="identify-path-of-each-ant">Identify path of each ant</h3>
+<h3 id="identify-path-of-each-ant">Identify path of each ant<a class="headerlink" href="#identify-path-of-each-ant" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>In the <code>Ant</code> class, define a method to identify the path by taking the inputs of the available roads, the origin, the destination, and the pheromone influence constant &alpha;.</p>
@@ -1958,7 +1958,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h3 id="evaporation">Evaporation</h3>
+<h3 id="evaporation">Evaporation<a class="headerlink" href="#evaporation" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>In the <code>Road</code> class, define a method to evaporate the pheromone by taking the input of evaporation rate &rho;.</p>
@@ -1982,7 +1982,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h3 id="deposition">Deposition</h3>
+<h3 id="deposition">Deposition<a class="headerlink" href="#deposition" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>In the <code>Road</code> class, define a method to calculate the updated pheromone after pheromone deposition by taking the input of all the ants. We will use the following pheromone deposition formula for ant <span class="arithmatex">\(k\)</span> on road <span class="arithmatex">\(i\)</span>:</p>
@@ -2015,7 +2015,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h3 id="termination-conditions">Termination conditions</h3>
+<h3 id="termination-conditions">Termination conditions<a class="headerlink" href="#termination-conditions" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>We will use the following conditions as the termination conditions:</p>
@@ -2034,7 +2034,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h3 id="loop-until-termination">Loop until termination</h3>
+<h3 id="loop-until-termination">Loop until termination<a class="headerlink" href="#loop-until-termination" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Create a loop to iterate until termination.</p>
@@ -2084,7 +2084,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h3 id="visualisation">Visualisation</h3>
+<h3 id="visualisation">Visualisation<a class="headerlink" href="#visualisation" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Define the following functions:</p>
@@ -2148,7 +2148,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h3 id="evaluate-effect-of-parameters">Evaluate effect of parameters</h3>
+<h3 id="evaluate-effect-of-parameters">Evaluate effect of parameters<a class="headerlink" href="#evaluate-effect-of-parameters" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Modify the pheromone depositing formula to</p>

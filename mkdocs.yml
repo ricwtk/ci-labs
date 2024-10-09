@@ -66,6 +66,8 @@ nav:
       - archive/201908/lab6.md
       - archive/201908/lab7.md
 markdown_extensions:
+  - toc:
+      permalink: true
   - meta
   - pymdownx.tabbed
   - admonition
@@ -75,8 +77,8 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 extra_javascript:
   - javascripts/config.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6

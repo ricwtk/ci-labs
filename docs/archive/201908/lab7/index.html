@@ -1534,14 +1534,14 @@
                   
 
 
-<h1 id="lab-7-fuzzy-systems">Lab 7: Fuzzy Systems</h1>
-<h2 id="fuzzy-systems">Fuzzy Systems</h2>
-<h3 id="objective">Objective</h3>
+<h1 id="lab-7-fuzzy-systems">Lab 7: Fuzzy Systems<a class="headerlink" href="#lab-7-fuzzy-systems" title="Permanent link">&para;</a></h1>
+<h2 id="fuzzy-systems">Fuzzy Systems<a class="headerlink" href="#fuzzy-systems" title="Permanent link">&para;</a></h2>
+<h3 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">&para;</a></h3>
 <ul>
 <li>to construct a Mamdani fuzzy system using the <code>scikit-fuzzy</code> Python library</li>
 <li>to evaluate the result of the constructed fuzzy system</li>
 </ul>
-<h3 id="note">Note</h3>
+<h3 id="note">Note<a class="headerlink" href="#note" title="Permanent link">&para;</a></h3>
 <p>As of 3<sup>rd</sup> Nov 2019, the <code>scikit-fuzzy</code> Python library only work properly with Python 3.7 and <code>networkx</code> Python library of version 2.3. <code>networkx</code> version 2.4 is not supported yet.</p>
 <div style='margin-top: 20px'></div>
 
@@ -1553,7 +1553,7 @@
 <span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">scikit</span><span class="o">-</span><span class="n">fuzzy</span>
 </code></pre></div></td></tr></table></div>
 <p>Launch Spyder IDE using the command <code>spyder</code>.</p>
-<h3 id="fuzzy-control-system-for-a-train">Fuzzy control system for a train</h3>
+<h3 id="fuzzy-control-system-for-a-train">Fuzzy control system for a train<a class="headerlink" href="#fuzzy-control-system-for-a-train" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Consider a fuzzy control system to control the <strong>brake</strong> and <strong>throttle</strong> of a train based on the <strong>speed</strong> of the train and the <strong>distance</strong> of the train to the next stop.</p>
@@ -1568,7 +1568,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h4 id="initialise-inputs-and-outputs">Initialise inputs and outputs</h4>
+<h4 id="initialise-inputs-and-outputs">Initialise inputs and outputs<a class="headerlink" href="#initialise-inputs-and-outputs" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p>Speed and distance are the inputs of the system whereas brake and throttle are the outputs.</p>
@@ -1617,7 +1617,7 @@
 <div style='margin-top: 20px'></div>
 
 <p><strong>Task</strong>: Initialise the variables <code>distance</code> as <code>Antecedent</code> object, and <code>brake</code> and <code>throttle</code> as <code>Consequent</code> objects. (Outputs of the system will be consequents of the rules)</p>
-<h4 id="define-membership-functions-for-fuzzy-sets-of-variables">Define membership functions for fuzzy sets of variables</h4>
+<h4 id="define-membership-functions-for-fuzzy-sets-of-variables">Define membership functions for fuzzy sets of variables<a class="headerlink" href="#define-membership-functions-for-fuzzy-sets-of-variables" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p>The fit vectors of the fuzzy sets for the linguistic variables are given as follows:</p>
@@ -1832,7 +1832,7 @@
 <p><strong>Task</strong>: Check if the fuzzy set diagrams match the fit vectors.</p>
 </li>
 </ol>
-<h4 id="define-rules">Define rules</h4>
+<h4 id="define-rules">Define rules<a class="headerlink" href="#define-rules" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p>The rules for this system are displayed in the following fuzzy association memory (FAM) representaion table.</p>
@@ -1903,7 +1903,7 @@
 <p><strong>Task</strong>: Define all the rules. Then combine all the rules in a <code>list</code>, i.e. <code>rules = [rule1, rule2, ...]</code>.</p>
 </li>
 </ol>
-<h4 id="construct-the-fuzzy-control-system">Construct the fuzzy control system</h4>
+<h4 id="construct-the-fuzzy-control-system">Construct the fuzzy control system<a class="headerlink" href="#construct-the-fuzzy-control-system" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p>The train control system can be constructed with</p>
@@ -1950,7 +1950,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h4 id="view-the-controloutput-space">View the control/output space</h4>
+<h4 id="view-the-controloutput-space">View the control/output space<a class="headerlink" href="#view-the-controloutput-space" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p>The control/output space allows us to identify if the outputs fit our expectation.</p>
@@ -2029,7 +2029,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h3 id="fuzzy-tipping-recommendation-system">Fuzzy tipping recommendation system</h3>
+<h3 id="fuzzy-tipping-recommendation-system">Fuzzy tipping recommendation system<a class="headerlink" href="#fuzzy-tipping-recommendation-system" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>A fuzzy expert system is designed to identify the percentage of tips a customer will give based on the service and the food the customer received.</p>
