@@ -8,13 +8,9 @@
       
       
       
-        <link rel="canonical" href="https://ricwtk.github.io/ci-labs/lab1/">
+        <link rel="canonical" href="https://ricwtk.github.io/ci-labs/lab8b/">
       
       
-        <link rel="prev" href="..">
-      
-      
-        <link rel="next" href="../lab2/">
       
       
       <link rel="icon" href="../img/favicon.ico">
@@ -22,7 +18,7 @@
     
     
       
-        <title>Lab 1: Refresh on Python - CSC3034 CI Labs</title>
+        <title>Lab 8b: ANN using Keras - CSC3034 CI Labs</title>
       
     
     
@@ -74,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-1-refresh-on-python" class="md-skip">
+        <a href="#lab-8b-ann-using-keras" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab 1: Refresh on Python
+              Lab 8b: ANN using Keras
             
           </span>
         </div>
@@ -174,12 +170,10 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href=".." class="md-tabs__link">
           
   
@@ -256,28 +250,23 @@
       
   
   
-    
   
   
-  
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -288,7 +277,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             Current
@@ -320,30 +309,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Lab 1: Refresh on Python
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../lab1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -352,62 +321,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#amoeba-community" class="md-nav__link">
-    <span class="md-ellipsis">
-      Amoeba community
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fibonacci-and-golden-ratio" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fibonacci and Golden Ratio
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#random-selection-based-on-probability" class="md-nav__link">
-    <span class="md-ellipsis">
-      Random selection based on probability
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-plot-arc-to-form-golden-spiral" class="md-nav__link">
-    <span class="md-ellipsis">
-      Additional: plot arc to form golden spiral
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1550,204 +1463,118 @@
                   
 
 
-<h1 id="lab-1-refresh-on-python">Lab 1: Refresh on Python<a class="headerlink" href="#lab-1-refresh-on-python" title="Permanent link">&para;</a></h1>
-<h2 id="amoeba-community">Amoeba community<a class="headerlink" href="#amoeba-community" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>Assuming a new amoeba takes one month to grow, and from the second month onwards, it takes one month to duplicate itself to create a new amoeba. Given that there is one new amoeba at the beginning of the first month, this is the progression of the number of amoeba in different months.</p>
-<ul>
-<li><code>Month 0</code>: 1 (new)</li>
-<li><code>Month 1</code>: 1 (grown)</li>
-<li><code>Month 2</code>: 1 (grown) + 1 (new) = 2</li>
-<li><code>Month 3</code>: 2 (grown) + 1 (new) = 3</li>
-<li><code>Month 4</code>: 3 (grown) + 2 (new) = 5</li>
-<li><code>Month 5</code>: 5 (grown) + 3 (new) = 8</li>
-<li><code>Month 6</code>: 8 (grown) + 5 (new) = 13</li>
-<li><code>Month 7</code>: 13 (grown) + 8 (new) = 21</li>
-<li>...</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Hint</p>
-<p>Note the pattern of the sequence</p>
-</div>
-</li>
-<li>
-<p>Write a function that takes the month number as input argument and provides the number of amoeba at the beginning of that month as output.</p>
+<h1 id="lab-8b-ann-using-keras">Lab 8b: ANN using Keras<a class="headerlink" href="#lab-8b-ann-using-keras" title="Permanent link">&para;</a></h1>
+<h2 id="text-classification-using-keras">Text Classification Using Keras<a class="headerlink" href="#text-classification-using-keras" title="Permanent link">&para;</a></h2>
+<p>By right you should have Tensorflow installed, if not run <code>pip install tensorflow</code>. Let's start by importing the required libraries.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">numberofamoeba</span><span class="p">(</span><span class="n">month</span><span class="p">):</span>
-  <span class="o">...</span>
-  <span class="k">return</span> <span class="n">number_of_amoeba</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.preprocessing.text</span> <span class="kn">import</span> <span class="n">Tokenizer</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.preprocessing.sequence</span> <span class="kn">import</span> <span class="n">pad_sequences</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Embedding</span><span class="p">,</span> <span class="n">LSTM</span><span class="p">,</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Dropout</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.datasets</span> <span class="kn">import</span> <span class="n">imdb</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </code></pre></div></td></tr></table></div>
-</li>
-<li>
-<p>Write a function to take the same input argument as <code>numberofamoeba</code> but instead of giving the number of amoeba at that month as output, provide the whole sequence of amoeba number starting from the beginning. For example, if <code>month</code> is <code>4</code>, the output of the function should be the list of <code>[1,1,2,3,5]</code></p>
+<h3 id="load-and-explore-the-dataset">Load and Explore the Dataset<a class="headerlink" href="#load-and-explore-the-dataset" title="Permanent link">&para;</a></h3>
+<p>The IMDb dataset contains 50,000 movie reviews, split equally into training and test sets.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">numberofamoebaseq</span><span class="p">(</span><span class="n">month</span><span class="p">):</span>
-  <span class="o">...</span>
-  <span class="k">return</span> <span class="n">number_seq</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Load the IMDb dataset (only keep the top 10,000 most common words)</span>
+<span class="n">vocab_size</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">max_length</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span> <span class="o">=</span> <span class="n">imdb</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="n">num_words</span><span class="o">=</span><span class="n">vocab_size</span><span class="p">)</span>
+
+
+<span class="c1"># View a sample</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;First review (encoded): </span><span class="si">{</span><span class="n">x_train</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Label (0=negative, 1=positive): </span><span class="si">{</span><span class="n">y_train</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-</li>
-<li>
-<p>Create a scatter plot to plot the sequence of amoeba number from month 0 to month 100.</p>
-<div class="admonition note">
-<p class="admonition-title">Hint</p>
-<p><code>import matplotlib.pyplot as plt</code> to use the Python visualisation library Matplotlib. Scatter plot can be produced with <code>plt.scatter(...)</code>.</p>
-</div>
-</li>
-</ol>
-<h2 id="fibonacci-and-golden-ratio">Fibonacci and Golden Ratio<a class="headerlink" href="#fibonacci-and-golden-ratio" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>The above sequence of number is also known as the Fibonacci sequence.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A Fibonacci sequence may or may not include a 0 as the first element of the series, i.e. <code>0,1,1,2,3,5,8,...</code> instead of <code>1,1,2,3,5,8</code>.</p>
-</div>
-</li>
-<li>
-<p>Plot the ratio between every two consecutive numbers in the Fibonacci sequence. For Fibonacci sequence of <code>1,1,2,3,5,8,13,21</code>, plot the line of <span class="arithmatex">\(\frac{1}{1}\)</span>, <span class="arithmatex">\(\frac{2}{1}\)</span>, <span class="arithmatex">\(\frac{3}{2}\)</span>, <span class="arithmatex">\(\frac{5}{3}\)</span>, <span class="arithmatex">\(\frac{8}{5}\)</span>, <span class="arithmatex">\(\frac{13}{8}\)</span>, <span class="arithmatex">\(\frac{21}{13}\)</span>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The longer the Fibonacci sequence you use, the closer is the value of the ratio between two consecutive numbers to be the golden ratio.</p>
-</div>
-</li>
-<li>
-<p>Generate a series of coordinates following the algorithm:</p>
-<ol>
-<li>Start from <code>(0,0)</code>.</li>
-<li>Get the next Fibonacci number, i.e. <code>1</code>.</li>
-<li>Add <code>(+1,+1)</code> to the previous point <code>(0,0)</code> to get <code>(1,1)</code>.</li>
-<li>Get the next Fibonacci number, i.e. <code>1</code>.</li>
-<li>Add <code>(+1,-1)</code> to the previous point <code>(1,1)</code> to get <code>(2,0)</code>.</li>
-<li>Get the next Fibonacci number, i.e. <code>2</code>.</li>
-<li>Add <code>(-2,-2)</code> to the previous point <code>(2,0)</code> to get <code>(0,-2)</code>.</li>
-<li>Get the next Fibonacci number, i.e. <code>3</code>.</li>
-<li>Add <code>(-3,+3)</code> to the previous point <code>(0,-2)</code> to get <code>(-3,1)</code>.</li>
-<li>Continue with the next Fibonacci number and update the coordinates with the sequence of the signs <code>(+,+), (+,-), (-,-), (-,+)</code>.</li>
-</ol>
-<p>The process will create a spiral in the following manner. The sequence of the signs produce the change in directions, and the fibonacci number provides the distance.
-<div style="text-align:center">
-<svg viewBox="-350 -250 600 500" style="width:50%;max-width:500px">
-<defs>
-<marker
-id="triangle"
-viewBox="0 0 10 10"
-refX="1"
-refY="5"
-markerUnits="strokeWidth"
-markerWidth="10"
-markerHeight="10"
-orient="auto">
-<path d="M 0 0 L 10 5 L 0 10 z" fill="#000" />
-</marker>
-</defs>
-<text x="-10" y="00" text-anchor="end" dominant-baseline="hanging">(0,0)</text>
-<circle cx="0" cy="0" r="5" fill="black" />
-<path d="M 0 0 m 5 -5 l 85 -85" stroke="black" marker-end="url(#triangle)" />
-<text x="100" y="-110" text-anchor="middle" dominant-baseline="auto">(1,1)</text>
-<path d="M 0 0 m 100 -100 m 5 5 l 85 85" stroke="black" marker-end="url(#triangle)" />
-<text x="210" y="0" text-anchor="start" dominant-baseline="middle">(2,0)</text>
-<path d="M 0 0 m 100 -100 m 100 100 m -5 5 l -185 185" stroke="black" marker-end="url(#triangle)" />
-<text x="0" y="210" text-anchor="middle" dominant-baseline="hanging">(0,-2)</text>
-<path d="M 0 0 m 100 -100 m 100 100 m -200 200 m -5 -5 l -285 -285" stroke="black" marker-end="url(#triangle)" />
-<text x="-310" y="-100" text-anchor="end" dominant-baseline="middle">(-3,1)</text>
-<path d="M 0 0 m 100 -100 m 100 100 m -200 200 m -300 -300 m 5 -5 l 45 -45" stroke="black" stroke-dasharray="4" marker-end="url(#triangle)" />
-<!-- <path d="M 0 0 l 100 -100 l 100 100 l -200 200 l -300 -300" stroke="black" fill="transparent" /> -->
-</svg>
-</div></p>
-</li>
-<li>
-<p>Create a line plot of the series of coordinates. If the lines are smoothen, it would form the golden spiral which can be found in pinecorns, seashells, and hurricanes.</p>
-<div class="admonition note">
-<p class="admonition-title">Additional</p>
-<p>If you are interested in how we may plot arc to connect the points instead of using straight lines, you can refer to <a href="#additional-plot-arc-to-form-golden-spiral">Additional: plot arc to form golden spiral</a>.</p>
-</div>
-</li>
-</ol>
-<h2 id="random-selection-based-on-probability">Random selection based on probability<a class="headerlink" href="#random-selection-based-on-probability" title="Permanent link">&para;</a></h2>
-<p>For this section. assume the <code>random.random()</code> function selects the random number with even probability.</p>
-<ol>
-<li>
-<p>Consider a coin tossing event. If the probabilities of getting a head or a tail are even, i.e. 50%. Create a Python function which will simulate the coin tossing event and return the result as <code>head</code> or <code>tail</code>.</p>
+<p>The data comes in encoded. We need to decode it see the original text.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">tossCoin</span><span class="p">():</span>
-  <span class="o">...</span>
-  <span class="k">return</span> <span class="n">headOrTail</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">word_index</span> <span class="o">=</span> <span class="n">imdb</span><span class="o">.</span><span class="n">get_word_index</span><span class="p">()</span>
+<span class="n">reverse_word_index</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">word_index</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+<span class="k">def</span> <span class="nf">decode_review</span><span class="p">(</span><span class="n">encoded_review</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">reverse_word_index</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;?&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">encoded_review</span><span class="p">])</span>
+
+<span class="n">decoded_review</span> <span class="o">=</span> <span class="n">decode_review</span><span class="p">(</span><span class="n">x_train</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Review: </span><span class="si">{</span><span class="n">decoded_review</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-</li>
-<li>
-<p>If the probabilities of getting a head or a tail are not even, with head as 20% and tail as 80%, how would you change the Python function you created previously to adapt to this coin?</p>
-</li>
-<li>
-<p>Consider the event of selecting one option out of three options randomly. The probability of choosing option <code>A</code> is 20%, <code>B</code> is 50%, and  <code>C</code> is 30%. Create a Python function to simulate the random selection of the options.</p>
+<h3 id="preprocess-the-data">Preprocess the Data<a class="headerlink" href="#preprocess-the-data" title="Permanent link">&para;</a></h3>
+<p>We need to pad or truncate reviews to a fixed length for consistent input size.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">chooseFromThree</span><span class="p">():</span>
-  <span class="o">...</span>
-  <span class="k">return</span> <span class="n">selectedOption</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">x_train</span> <span class="o">=</span> <span class="n">pad_sequences</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="n">max_length</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="n">truncating</span><span class="o">=</span><span class="s1">&#39;post&#39;</span><span class="p">)</span>
+<span class="n">x_test</span> <span class="o">=</span> <span class="n">pad_sequences</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="n">max_length</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="n">truncating</span><span class="o">=</span><span class="s1">&#39;post&#39;</span><span class="p">)</span>
+
+<span class="n">padded_review</span> <span class="o">=</span> <span class="n">decode_review</span><span class="p">(</span><span class="n">x_train</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Review after padding: </span><span class="si">{</span><span class="n">padded_review</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-</li>
-</ol>
-<h2 id="additional-plot-arc-to-form-golden-spiral">Additional: plot arc to form golden spiral<a class="headerlink" href="#additional-plot-arc-to-form-golden-spiral" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>The golden spiral can be produced by drawing the arc connecting every consecutive coordinates.
-    <div style="text-align:center">
-    <svg viewBox="-350 -250 600 500" style="width:50%;max-width:500px">
-    <defs>
-    <marker
-    id="triangle"
-    viewBox="0 0 10 10"
-    refX="1"
-    refY="5"
-    markerUnits="strokeWidth"
-    markerWidth="10"
-    markerHeight="10"
-    orient="auto">
-    <path d="M 0 0 L 10 5 L 0 10 z" fill="#000" />
-    </marker>
-    </defs>
-    <text x="-10" y="00" text-anchor="end" dominant-baseline="hanging">(0,0)</text>
-    <circle cx="0" cy="0" r="5" fill="black" />
-    <path d="M 0 0 m 5 -5 l 85 -85" stroke="black" marker-end="url(#triangle)" />
-    <text x="100" y="-110" text-anchor="middle" dominant-baseline="auto">(1,1)</text>
-    <path d="M 0 0 m 100 -100 m 5 5 l 85 85" stroke="black" marker-end="url(#triangle)" />
-    <text x="210" y="0" text-anchor="start" dominant-baseline="middle">(2,0)</text>
-    <path d="M 0 0 m 100 -100 m 100 100 m -5 5 l -185 185" stroke="black" marker-end="url(#triangle)" />
-    <text x="0" y="210" text-anchor="middle" dominant-baseline="hanging">(0,-2)</text>
-    <path d="M 0 0 m 100 -100 m 100 100 m -200 200 m -5 -5 l -285 -285" stroke="black" marker-end="url(#triangle)" />
-    <text x="-310" y="-100" text-anchor="end" dominant-baseline="middle">(-3,1)</text>
-    <path d="M 0 0 m 100 -100 m 100 100 m -200 200 m -300 -300 m 5 -5 l 45 -45" stroke="black" stroke-dasharray="4" marker-end="url(#triangle)" />
-    <path d="M 0 0 A 100 100 0 0 1 100 -100" stroke="#B71C1C" fill="transparent"/>
-    <path d="M 0 0 m 100 -100 A 100 100 0 0 1 200 0" stroke="#B71C1C" fill="transparent"/>
-    <circle cx="100" cy="0" r="5" fill="#B71C1C" />
-    <text x="100" y="10" text-anchor="middle" dominant-baseline="hanging">(1,0)</text>
-    <path d="M 0 0 m 100 -100 m 100 100 A 200 200 0 0 1 0 200" stroke="#007517" fill="transparent"/>
-    <circle cx="0" cy="0" r="5" fill="#007517" />
-    <path d="M 0 0 m 100 -100 m 100 100 m -200 200 A 300 300 0 0 1 -300 -100" stroke="#0064eb" fill="transparent"/>
-    <circle cx="0" cy="-100" r="5" fill="#0064eb" />
-    <text x="0" y="-110" text-anchor="middle" dominant-baseline="auto">(1,0)</text>
-    </svg>
-    </div></p>
-</li>
-<li>
-<p>To draw the arc using <code>matplotlib</code> library, we need to identify the center of each arc. The arc and its corresponding center are colored with the same color in the previous figure. 
-    <div class="highlight"><pre><span></span><code><span class="n">matplotlib</span><span class="o">.</span><span class="n">patches</span><span class="o">.</span><span class="n">Arc</span><span class="p">(</span>
-    <span class="n">xy</span><span class="p">,</span> <span class="c1"># center of the arc</span>
-    <span class="n">width</span><span class="p">,</span> <span class="c1"># length of horizontal axis, </span>
-    <span class="n">height</span><span class="p">,</span> <span class="c1"># length of vertical axis, </span>
-    <span class="n">angle</span><span class="p">,</span> <span class="c1"># rotation of the ellipse in degrees (counterclockwise)</span>
-    <span class="n">theta1</span><span class="p">,</span> <span class="c1"># starting angle of the arc in degrees</span>
-    <span class="n">theta2</span> <span class="c1"># end angle of the arc in degrees</span>
+<h3 id="build-the-model">Build the Model<a class="headerlink" href="#build-the-model" title="Permanent link">&para;</a></h3>
+<p>We'll use an embedding layer to represent words as dense vectors, followed by an LSTM layer for sequence modeling.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">([</span>
+    <span class="n">Embedding</span><span class="p">(</span><span class="n">input_dim</span><span class="o">=</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">output_dim</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">input_length</span><span class="o">=</span><span class="n">max_length</span><span class="p">),</span>
+    <span class="n">LSTM</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">return_sequences</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+    <span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span>
+    <span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+    <span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">)</span>  <span class="c1"># Binary classification (0 or 1)</span>
+<span class="p">])</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="train-the-model">Train the Model<a class="headerlink" href="#train-the-model" title="Permanent link">&para;</a></h3>
+<p>Train the model with the training dataset. We get the validation set using the parameter <code>validation_split</code>,  instead of doing it explicitly like in the Image Classification Lab. </p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+    <span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span>
+    <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">epochs</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span>
 <span class="p">)</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>The centers of every arc can be generated from the sequence of coordinates using the following function:
-    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">function generatecenters</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="evaluate-the-model">Evaluate the Model<a class="headerlink" href="#evaluate-the-model" title="Permanent link">&para;</a></h3>
+<p>Evaluate the model's performance on the test set.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">test_loss</span><span class="p">,</span> <span class="n">test_accuracy</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test Accuracy: </span><span class="si">{</span><span class="n">test_accuracy</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="visualize-training-results-optional">Visualize Training Results (optional)<a class="headerlink" href="#visualize-training-results-optional" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1760,72 +1587,41 @@ orient="auto">
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">generatecenters</span><span class="p">(</span><span class="n">coordinates</span><span class="p">):</span>
-    <span class="n">centers</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">coord</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">coordinates</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># add coordinate to list of center</span>
-        <span class="n">centers</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">coord</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
-        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># change x-coordinate of the first center</span>
-        <span class="n">centers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">coord</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">else</span><span class="p">:</span>
-        <span class="n">centers</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">centers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">centers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]])</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># use y-coordinate as y for new center</span>
-            <span class="n">centers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">coord</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-        <span class="k">else</span><span class="p">:</span> <span class="c1"># use x-coordinate as x for new center</span>
-            <span class="n">centers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">coord</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">centers</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Plot accuracy</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training Accuracy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_accuracy&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Validation Accuracy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Accuracy over Epochs&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epochs&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Plot loss</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training Loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_loss&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Validation Loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Loss over Epochs&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epochs&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-    The <code>coordinates</code> is the list of coordinates generated from <a href="#fibonacci-and-golden-ratio">Fibonacci and Golden Ratio</a> step 3.</p>
-</li>
-<li>
-<p>The following function will then use the generated centers of the arc, and the Fibonacci sequence generated from <code>numberofamoebaseq</code> to draw the arc. The handler of the axis needs to be passed into the function as well.
-    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">function plotspiral</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">plotspiral</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">series</span><span class="p">,</span> <span class="n">centers</span><span class="p">):</span>
-    <span class="n">angle</span> <span class="o">=</span> <span class="mi">90</span>
-    <span class="k">for</span> <span class="n">number</span><span class="p">,</span><span class="n">center</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">series</span><span class="p">,</span><span class="n">centers</span><span class="p">):</span>
-        <span class="n">arc</span> <span class="o">=</span> <span class="n">Arc</span><span class="p">(</span>
-            <span class="n">xy</span><span class="o">=</span><span class="n">center</span><span class="p">,</span> 
-            <span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">number</span><span class="p">,</span> 
-            <span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">number</span><span class="p">,</span> 
-            <span class="n">angle</span><span class="o">=</span><span class="n">angle</span><span class="p">,</span>
-            <span class="n">theta1</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
-            <span class="n">theta2</span><span class="o">=</span><span class="mi">90</span>
-        <span class="p">)</span>
-        <span class="n">axis</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">arc</span><span class="p">)</span>
-        <span class="n">angle</span> <span class="o">-=</span> <span class="mi">90</span>
-</code></pre></div></td></tr></table></div></p>
-<p>In your script, you will first generate the Fibonacci sequence, use the sequence to generate coordinates, generate centers of arcs, and plot the arcs to form the spiral.</p>
+<h3 id="make-predictions">Make Predictions<a class="headerlink" href="#make-predictions" title="Permanent link">&para;</a></h3>
+<p>Use the trained model to predict sentiment for new text data.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">n</span> <span class="o">=</span> <span class="mi">80</span>
-<span class="n">number_seq</span> <span class="o">=</span> <span class="n">numberofamoebaseq</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-<span class="n">coordinates</span> <span class="o">=</span> <span class="n">generatecoordinatesfromseries</span><span class="p">(</span><span class="n">number_seq</span><span class="p">)</span>
-<span class="n">centers</span> <span class="o">=</span> <span class="n">generatecenters</span><span class="p">(</span><span class="n">coordinates</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="c1"># or plt.plot(...) to plot the coordinates as in Fibonacci and Golden Ratio step 4</span>
-<span class="n">plotspiral</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> <span class="n">number_seq</span><span class="p">,</span> <span class="n">centers</span><span class="p">)</span> <span class="c1"># plt.gca() returns handle of the current axis</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">[:</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Predicted Sentiment: </span><span class="si">{</span><span class="s1">&#39;Positive&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">prediction</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;Negative&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># look at the predicted text</span>
+<span class="n">decode_review</span><span class="p">(</span><span class="n">x_test</span><span class="p">[:</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
 </code></pre></div></td></tr></table></div>
-<div class="admonition note">
-<p class="admonition-title">Limitation</p>
-<p>Due to the limitation of matplotlib, the spiral plotting only works for the Fibonacci sequence with length less than 93.</p>
-</div>
-</li>
-</ol>
 
 
 
